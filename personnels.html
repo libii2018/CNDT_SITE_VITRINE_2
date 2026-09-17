@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liste du personnel du Comité National de Développement des Technologies, organisée par niveau hiérarchique.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Personnel | CNDT Cameroun</title>
+  <link rel="stylesheet" href="site.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+        <div class="utility-links">
+          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" lang="en" aria-label="English version">English</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="container main-nav">
+        <a class="brand" href="index.html" aria-label="Accueil du CNDT">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <span class="brand-copy">
+            <strong>Comité National de Développement des Technologies</strong>
+            <small>La technologie au service du développement</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="index.html#secretariats">Secrétariats</a>
+          <a href="organigramme.html">Organisation</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="publications.html">Publications</a>
+          <a class="active" href="personnels.html">Personnel</a>
+          <a href="index.html#institution">À propos</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="inner-hero">
+      <img src="assets/header_personnel.jpg" alt="Personnel du CNDT réuni en activité" width="1100" height="825">
+      <div class="container">
+        <p class="page-kicker">Ressources humaines</p>
+        <h1>Le personnel du CNDT</h1>
+        <p>Une équipe organisée par niveaux hiérarchiques, du Secrétariat Permanent aux Secrétariats techniques.</p>
+      </div>
+    </section>
+
+    <section class="inner-section">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">›</span>
+          <a href="organigramme.html">Organisation</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Personnel</span>
+        </nav>
+
+        <div class="page-heading">
+          <div>
+            <p class="page-kicker">Annuaire interne</p>
+            <h2>Effectif par niveau hiérarchique</h2>
+          </div>
+          <p>Chaque ligne sépare un niveau hiérarchique. Cliquez sur une personne pour voir sa fiche.</p>
+        </div>
+
+        <!-- =========================================================
+             BARRE DE RECHERCHE
+             ========================================================= -->
+        <div class="staff-search" role="search">
+          <label for="staff-search-input" class="staff-search__label">
+            <span class="visually-hidden">Rechercher un membre du personnel</span>
+            <svg class="staff-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+            </svg>
+            <input
+              id="staff-search-input"
+              type="search"
+              placeholder="Rechercher un nom, une fonction ou un Secrétariat…"
+              autocomplete="off"
+              spellcheck="false"
+              data-staff-search
+            >
+          </label>
+
+          <p class="staff-search__meta" aria-live="polite">
+            <span data-staff-count>0</span> personne(s) affichée(s)
+            <button type="button" class="staff-search__reset" data-staff-reset hidden>Réinitialiser</button>
+          </p>
+        </div>
+
+        <!-- =========================================================
+             LISTE HIÉRARCHIQUE
+             ========================================================= -->
+        <div class="staff-hierarchy" data-staff-hierarchy>
+
+          <!-- ---------- Niveau 1 : Direction ---------- -->
+          <section class="staff-level" data-staff-level aria-labelledby="level-1">
+            <header class="staff-level__head">
+              <h3 id="level-1" class="staff-level__title">Direction</h3>
+              <span class="staff-level__count" data-level-count>1 personne</span>
+            </header>
+
+            <div class="staff-level__grid">
+              <a class="staff-person" href="membres/president-comite.html"
+                 data-staff-item
+                 data-search="président du comité présidence membres du comité direction">
+                <img src="assets/people/ministre.jpg" alt="Président du Comité" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>Président du Comité</strong>
+                  <span>Présidence et membres du Comité</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <section class="staff-level" data-staff-level aria-labelledby="level-2">
+            <header class="staff-level__head">
+              <h3 id="level-2" class="staff-level__title">Secrétariat Permanent</h3>
+              <span class="staff-level__count" data-level-count>1 personne</span>
+            </header>
+
+            <div class="staff-level__grid">
+              <a class="staff-person" href="membres/ele-abiama-patrice.html"
+                 data-staff-item
+                 data-search="dr ele abiama patrice secrétaire permanent secrétariat permanent">
+                <img src="assets/people/sp.webp" alt="Dr ELE ABIAMA Patrice" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>Dr ELE ABIAMA Patrice</strong>
+                  <span>Secrétaire Permanent</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- ---------- Niveau 3 : Coordinations exécutives ---------- -->
+          <section class="staff-level" data-staff-level aria-labelledby="level-3">
+            <header class="staff-level__head">
+              <h3 id="level-3" class="staff-level__title">Coordinations exécutives adjointes</h3>
+              <span class="staff-level__count" data-level-count>3 personnes</span>
+            </header>
+
+            <div class="staff-level__grid">
+              <a class="staff-person" href="membres/tsuanyo-david.html"
+                 data-staff-item
+                 data-search="dr tsuanyo david coordonnateur exécutif adjoint coordination exécutive">
+                <img src="assets/people/tsuanyo.webp" alt="Dr TSUANYO David" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>Dr TSUANYO David</strong>
+                  <span>Coordonnateur exécutif adjoint</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/bilounga-sandrine.html"
+                 data-staff-item
+                 data-search="bilounga marie sandrine coordonnatrice exécutive adjointe coordination exécutive">
+                <img src="assets/people/bilounga.webp" alt="BILOUNGA Marie Sandrine" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>BILOUNGA Marie Sandrine</strong>
+                  <span>Coordonnatrice exécutive adjointe</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/isaoura-benite.html"
+                 data-staff-item
+                 data-search="isaoura bénite coordonnatrice exécutive adjointe coordination exécutive">
+                <img src="assets/people/isaoura.webp" alt="ISAOURA Bénite" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>ISAOURA Bénite</strong>
+                  <span>Coordonnatrice exécutive adjointe</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- ---------- Niveau 4 : Chefs de Secrétariat ---------- -->
+          <section class="staff-level" data-staff-level aria-labelledby="level-4">
+            <header class="staff-level__head">
+              <h3 id="level-4" class="staff-level__title">Chefs de Secrétariat technique</h3>
+              <span class="staff-level__count" data-level-count>5 personnes</span>
+            </header>
+
+            <div class="staff-level__grid">
+              <a class="staff-person" href="membres/isaoura-benite.html"
+                 data-staff-item
+                 data-search="isaoura bénite chef secrétariat 01 tic ia technologies information communication intelligence artificielle">
+                <img src="assets/people/isaoura.webp" alt="ISAOURA Bénite" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>ISAOURA Bénite</strong>
+                  <span>Chef — Secrétariat 01 · TIC &amp; IA</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/bilounga-sandrine.html"
+                 data-staff-item
+                 data-search="bilounga marie sandrine chef secrétariat 02 transformations industrielles">
+                <img src="assets/people/bilounga.webp" alt="BILOUNGA Marie Sandrine" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>BILOUNGA Marie Sandrine</strong>
+                  <span>Chef — Secrétariat 02 · Transformations industrielles</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/tsuanyo-david.html"
+                 data-staff-item
+                 data-search="dr tsuanyo david chef secrétariat 03 énergie mines environnement">
+                <img src="assets/people/tsuanyo.webp" alt="Dr TSUANYO David" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>Dr TSUANYO David</strong>
+                  <span>Chef — Secrétariat 03 · Énergie, mines &amp; environnement</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/temgoua-pelagie.html"
+                 data-staff-item
+                 data-search="temgoua nanfack pelagie chef secrétariat 04 biosciences technologies agricoles">
+                <img src="assets/people/temgoua.webp" alt="TEMGOUA Pélagie" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>TEMGOUA Pélagie</strong>
+                  <span>Chef — Secrétariat 04 · Biosciences</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/amada-brahim.html"
+                 data-staff-item
+                 data-search="amada brahim chef secrétariat 05 politiques scientifiques technologiques">
+                <img src="assets/people/amada.webp" alt="AMADA Brahim" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>AMADA Brahim</strong>
+                  <span>Chef — Secrétariat 05 · Politiques S&amp;T</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- ---------- Niveau 5 : Chefs adjoints ---------- -->
+          <section class="staff-level" data-staff-level aria-labelledby="level-5">
+            <header class="staff-level__head">
+              <h3 id="level-5" class="staff-level__title">Chefs adjoints</h3>
+              <span class="staff-level__count" data-level-count>5 personnes</span>
+            </header>
+
+            <div class="staff-level__grid">
+              <a class="staff-person" href="membres/kouna-jean.html"
+                 data-staff-item
+                 data-search="kouna jean chef adjoint secrétariat 01 tic ia">
+                <img src="assets/people/kouna.webp" alt="KOUNA Jean" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>KOUNA Jean</strong>
+                  <span>Chef adjoint — Secrétariat 01</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/amada-brahim.html"
+                 data-staff-item
+                 data-search="amada brahim chef adjoint secrétariat 02 transformations industrielles">
+                <img src="assets/people/amada.webp" alt="AMADA Brahim" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>AMADA Brahim</strong>
+                  <span>Chef adjoint — Secrétariat 02</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/el-boukar.html"
+                 data-staff-item
+                 data-search="dr el boukar chef adjoint secrétariat 03 énergie mines environnement">
+                <img src="assets/people/el-boukar.webp" alt="Dr EL BOUKAR" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>Dr EL BOUKAR</strong>
+                  <span>Chef adjoint — Secrétariat 03</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/eyoum-henriette.html"
+                 data-staff-item
+                 data-search="eyoum henriette chef adjoint secrétariat 04 biosciences">
+                <img src="assets/people/eyoum.webp" alt="EYOUM Henriette" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>EYOUM Henriette</strong>
+                  <span>Chef adjoint — Secrétariat 04</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/eyoum-henriette.html"
+                 data-staff-item
+                 data-search="eyoum henriette chef adjoint secrétariat 05 politiques">
+                <img src="assets/people/eyoum.webp" alt="EYOUM Henriette" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>EYOUM Henriette</strong>
+                  <span>Chef adjoint — Secrétariat 05</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- ---------- Niveau 6 : Membres ---------- -->
+          <section class="staff-level" data-staff-level aria-labelledby="level-6">
+            <header class="staff-level__head">
+              <h3 id="level-6" class="staff-level__title">Membres des Secrétariats</h3>
+              <span class="staff-level__count" data-level-count>4 personnes</span>
+            </header>
+
+            <div class="staff-level__grid">
+              <a class="staff-person" href="membres/amada-brahim.html"
+                 data-staff-item
+                 data-search="amada brahim membre réseaux infrastructures tic">
+                <img src="assets/people/amada.webp" alt="AMADA Brahim" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>AMADA Brahim</strong>
+                  <span>Membre — Réseaux &amp; infrastructures</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/temgoua-pelagie.html"
+                 data-staff-item
+                 data-search="temgoua pelagie membre intelligence artificielle ia">
+                <img src="assets/people/temgoua.webp" alt="TEMGOUA Pélagie" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>TEMGOUA Pélagie</strong>
+                  <span>Membre — Intelligence artificielle</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/kouna-jean.html"
+                 data-staff-item
+                 data-search="kouna jean membre systèmes information si">
+                <img src="assets/people/kouna.webp" alt="KOUNA Jean" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>KOUNA Jean</strong>
+                  <span>Membre — Systèmes d'information</span>
+                </div>
+              </a>
+
+              <a class="staff-person" href="membres/el-boukar.html"
+                 data-staff-item
+                 data-search="dr el boukar membre cybersécurité sécurité systèmes information">
+                <img src="assets/people/el-boukar.webp" alt="Dr EL BOUKAR" loading="lazy">
+                <div class="staff-person__info">
+                  <strong>Dr EL BOUKAR</strong>
+                  <span>Membre — Cybersécurité</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- État vide -->
+        <div class="staff-empty" data-staff-empty hidden>
+          <p><strong>Aucun résultat</strong></p>
+          <p>Aucune personne ne correspond à votre recherche. Essayez un autre nom, une fonction ou un Secrétariat.</p>
+          <button type="button" class="staff-search__reset staff-search__reset--lg" data-staff-reset>Réinitialiser la recherche</button>
+        </div>
+
+        <!-- Lien retour -->
+        <div class="project-back">
+          <a class="text-link" href="organigramme.html">← Retour à l'organigramme <span aria-hidden="true">→</span></a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+        <p>Comité National de Développement des Technologies</p>
+      </div>
+      <div>
+        <h2>Coordonnées</h2>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+      </div>
+      <div>
+        <h2>Accès rapide</h2>
+        <a href="index.html#institution">Présentation</a>
+        <a href="index.html#secretariats">Secrétariats</a>
+        <a href="organigramme.html">Organigramme</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="publications.html">Publications</a>
+      </div>
+      <div>
+        <h2>Institution de tutelle</h2>
+        <p>Ministère de la Recherche Scientifique et de l'Innovation</p>
+        <a class="footer-external" href="https://minresi.gov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+      <p>La technologie au service du développement</p>
+    </div>
+  </footer>
+</body>
+</html>

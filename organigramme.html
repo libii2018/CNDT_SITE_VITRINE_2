@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Organisation institutionnelle, Secrétariats techniques et équipe du Comité National de Développement des Technologies.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Organigramme et équipe | CNDT Cameroun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="site.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+        <div class="utility-links">
+          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" lang="en" aria-label="English version">English</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="container main-nav">
+        <a class="brand" href="index.html" aria-label="Accueil du CNDT">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <span class="brand-copy">
+            <strong>Comité National de Développement des Technologies</strong>
+            <small>La technologie au service du développement</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="index.html#secretariats">Secrétariats</a>
+          <a class="active" href="organigramme.html">Organisation</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="publications.html">Publications</a>
+          <a href="personnels.html">Personnel</a>
+          <a href="index.html#institution">À propos</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="inner-hero">
+      <img src="assets/organisation.jpg" alt="Responsables et participants à une activité du CNDT" width="1100" height="825">
+      <div class="container">
+        <p class="page-kicker">Le CNDT</p>
+        <h1>Organigramme et équipe</h1>
+        <p>Une organisation structurée autour du Secrétariat Permanent, de trois coordinations exécutives adjointes et de cinq Secrétariats techniques.</p>
+      </div>
+    </section>
+
+    <section class="inner-section" aria-labelledby="org-title">
+      <div class="container">
+        <div class="page-heading">
+          <div>
+            <p class="page-kicker">Organisation institutionnelle</p>
+            <h2 id="org-title">La structure du CNDT</h2>
+          </div>
+          <p>Le Comité comprend un organe délibérant et un organe opérationnel chargé de la mise en œuvre de ses missions.</p>
+        </div>
+
+        <div class="org-intro">
+          <p>Créé par le décret présidentiel n° 78/109 du 1er avril 1978, modifié et complété par le décret n° 82/126 du 18 mars 1982, le CNDT est un organisme de coordination, de réflexion et d’information en matière de transfert et de développement des technologies.</p>
+        </div>
+
+        <!-- Conteneur avec fond sombre profond -->
+        <div class="org-container" style="position: relative; width: 100%; height: 680px; background-color: #0f1715; border: 1px solid #0f1715; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+          
+          <!-- Barre d'outils (Boutons ajustés au thème sombre) -->
+          <div style="position: absolute; top: 16px; left: 16px; z-index: 10; display: flex; gap: 8px; flex-wrap: wrap;">
+            <button data-chart-action="zoom-in" style="padding: 8px 14px; cursor: pointer; background: #163824; color: #e2e8f0; border: 1px solid #2d5a3f; border-radius: 6px; font-weight: 600; font-size: 13px; transition: all 0.2s;">Zoom +</button>
+            <button data-chart-action="zoom-out" style="padding: 8px 14px; cursor: pointer; background: #163824; color: #e2e8f0; border: 1px solid #2d5a3f; border-radius: 6px; font-weight: 600; font-size: 13px; transition: all 0.2s;">Zoom -</button>
+            <button data-chart-action="fit" style="padding: 8px 14px; cursor: pointer; background: #2d3748; color: #e2e8f0; border: 1px solid #4a5568; border-radius: 6px; font-weight: 600; font-size: 13px; transition: all 0.2s;">Recentrer</button>
+            <!-- <button data-chart-action="export-pdf" style="padding: 8px 14px; cursor: pointer; background: #991b1b; color: #ffffff; border: 1px solid #dc2626; border-radius: 6px; font-weight: 600; font-size: 13px; transition: all 0.2s;">📄 Télécharger PDF</button> -->
+          </div>
+          
+          <div class="chart-container" style="width: 100%; height: 100%;"></div>
+        </div>
+
+        <!-- <div class="org-chart" aria-label="Organigramme du CNDT">
+          <div class="org-level">
+            <article class="org-governance">
+              <span class="org-label">Organe délibérant</span>
+              <h2>Présidence et membres du Comité</h2>
+              <p>Représentants des administrations camerounaises</p>
+            </article>
+          </div>
+
+          <div class="org-connector" aria-hidden="true"></div>
+
+          <div class="org-level">
+            <article class="org-card leader">
+              <img src="assets/hero-1.webp" alt="Dr ELE ABIAMA Patrice" width="640" height="480">
+              <div>
+                <span class="org-label">Organe opérationnel</span>
+                <h2>Dr ELE ABIAMA Patrice</h2>
+                <p>Secrétaire Permanent du CNDT</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="org-connector" aria-hidden="true"></div>
+
+          <div class="deputy-grid" aria-label="Coordonnateurs exécutifs adjoints">
+            <article class="deputy-card">
+              <img src="assets/people/tsuanyo.webp" alt="Dr TSUANYO David" width="480" height="640" loading="lazy">
+              <div><span class="org-label">Coordination exécutive</span><h2>Dr TSUANYO David</h2><p>Coordonnateur exécutif adjoint</p></div>
+            </article>
+            <article class="deputy-card">
+              <img src="assets/people/bilounga.webp" alt="BILOUNGA Marie Sandrine" width="480" height="640" loading="lazy">
+              <div><span class="org-label">Coordination exécutive</span><h2>BILOUNGA Marie Sandrine</h2><p>Coordonnatrice exécutive adjointe</p></div>
+            </article>
+            <article class="deputy-card">
+              <img src="assets/people/isaoura.webp" alt="ISAOURA Bénite" width="480" height="640" loading="lazy">
+              <div><span class="org-label">Coordination exécutive</span><h2>ISAOURA Bénite</h2><p>Coordonnatrice exécutive adjointe</p></div>
+            </article>
+          </div>
+
+          <div class="org-connector" aria-hidden="true"></div>
+
+          <div class="org-branches" aria-label="Cinq Secrétariats techniques">
+            <a href="#tic-ia"><span>01</span><h3>Technologies de l’information, de la communication et intelligence artificielle</h3><i>Voir la structure →</i></a>
+            <a href="#transformations"><span>02</span><h3>Technologies et transformations industrielles</h3><i>Voir la structure →</i></a>
+            <a href="#energie"><span>03</span><h3>Technologies de l’énergie, des mines et de l’environnement</h3><i>Voir la structure →</i></a>
+            <a href="#biosciences"><span>04</span><h3>Biosciences et technologies agricoles</h3><i>Voir la structure →</i></a>
+            <a href="#politiques"><span>05</span><h3>Politiques scientifiques et technologiques</h3><i>Voir la structure →</i></a>
+          </div>
+        </div> -->
+
+        <!-- <section class="secretariat-details" aria-labelledby="details-title">
+          <div class="page-heading">
+            <div>
+              <p class="page-kicker">Organisation opérationnelle</p>
+              <h2 id="details-title">Missions et équipes des Secrétariats</h2>
+            </div>
+            <p>Sélectionnez un Secrétariat pour consulter ses missions et son organisation interne.</p>
+          </div>
+          <div class="secretariat-accordion">
+            <details id="tic-ia" class="secretariat-panel">
+              <summary><span>01</span><strong>Technologies de l’information, de la communication et intelligence artificielle</strong><i aria-hidden="true">+</i></summary>
+              <div class="secretariat-body"><div class="mission"><h3>Missions</h3><p>Assurer la veille sur les technologies numériques, accompagner leur adaptation aux besoins nationaux et contribuer au développement de solutions en intelligence artificielle.</p></div><div class="team-tree"><article><img src="assets/people/isaoura.webp" alt="ISAOURA Bénite"><strong>ISAOURA Bénite</strong><span>Chef de Secrétariat</span></article><article><img src="assets/people/kouna.webp" alt="KOUNA Jean"><strong>KOUNA Jean</strong><span>Chef adjoint</span></article><div class="team-members"><article><img src="assets/people/amada.webp" alt="AMADA Brahim"><strong>AMADA Brahim</strong><span>Membre</span></article><article><img src="assets/people/temgoua.webp" alt="TEMGOUA Pélagie"><strong>TEMGOUA Pélagie</strong><span>Membre</span></article></div></div></div>
+            </details>
+            <details id="transformations" class="secretariat-panel">
+              <summary><span>02</span><strong>Technologies et transformations industrielles</strong><i aria-hidden="true">+</i></summary>
+              <div class="secretariat-body"><div class="mission"><h3>Missions</h3><p>Identifier et promouvoir les technologies de transformation locale, renforcer les capacités industrielles et soutenir la valorisation des résultats de recherche.</p></div><div class="team-tree"><article><img src="assets/people/bilounga.webp" alt="BILOUNGA Marie Sandrine"><strong>BILOUNGA Marie Sandrine</strong><span>Chef de Secrétariat</span></article><article><img src="assets/people/amada.webp" alt="AMADA Brahim"><strong>AMADA Brahim</strong><span>Chef adjoint</span></article><div class="team-members"><article><img src="assets/people/el-boukar.webp" alt="Dr EL BOUKAR"><strong>Dr EL BOUKAR</strong><span>Membre</span></article><article><img src="assets/people/eyoum.webp" alt="EYOUM Henriette"><strong>EYOUM Henriette</strong><span>Membre</span></article></div></div></div>
+            </details>
+            <details id="energie" class="secretariat-panel">
+              <summary><span>03</span><strong>Technologies de l’énergie, des mines et de l’environnement</strong><i aria-hidden="true">+</i></summary>
+              <div class="secretariat-body"><div class="mission"><h3>Missions</h3><p>Évaluer les technologies énergétiques et minières, favoriser les solutions durables et accompagner les initiatives de protection et de gestion de l’environnement.</p></div><div class="team-tree"><article><img src="assets/people/tsuanyo.webp" alt="Dr TSUANYO David"><strong>Dr TSUANYO David</strong><span>Chef de Secrétariat</span></article><article><img src="assets/people/el-boukar.webp" alt="Dr EL BOUKAR"><strong>Dr EL BOUKAR</strong><span>Chef adjoint</span></article><div class="team-members"><article><img src="assets/people/kouna.webp" alt="KOUNA Jean"><strong>KOUNA Jean</strong><span>Membre</span></article><article><img src="assets/people/temgoua.webp" alt="TEMGOUA Pélagie"><strong>TEMGOUA Pélagie</strong><span>Membre</span></article></div></div></div>
+            </details>
+            <details id="biosciences" class="secretariat-panel">
+              <summary><span>04</span><strong>Biosciences et technologies agricoles</strong><i aria-hidden="true">+</i></summary>
+              <div class="secretariat-body"><div class="mission"><h3>Missions</h3><p>Promouvoir les technologies adaptées à l’agriculture, à l’agro-industrie et aux biosciences, dans une perspective de sécurité alimentaire et de développement durable.</p></div><div class="team-tree"><article><img src="assets/people/temgoua.webp" alt="TEMGOUA Pélagie"><strong>TEMGOUA Pélagie</strong><span>Chef de Secrétariat</span></article><article><img src="assets/people/eyoum.webp" alt="EYOUM Henriette"><strong>EYOUM Henriette</strong><span>Chef adjoint</span></article><div class="team-members"><article><img src="assets/people/amada.webp" alt="AMADA Brahim"><strong>AMADA Brahim</strong><span>Membre</span></article><article><img src="assets/people/kouna.webp" alt="KOUNA Jean"><strong>KOUNA Jean</strong><span>Membre</span></article></div></div></div>
+            </details>
+            <details id="politiques" class="secretariat-panel">
+              <summary><span>05</span><strong>Politiques scientifiques et technologiques</strong><i aria-hidden="true">+</i></summary>
+              <div class="secretariat-body"><div class="mission"><h3>Missions</h3><p>Produire des analyses d’aide à la décision, suivre les politiques de développement technologique et contribuer à la diffusion de l’information scientifique et technique.</p></div><div class="team-tree"><article><img src="assets/people/amada.webp" alt="AMADA Brahim"><strong>AMADA Brahim</strong><span>Chef de Secrétariat</span></article><article><img src="assets/people/eyoum.webp" alt="EYOUM Henriette"><strong>EYOUM Henriette</strong><span>Chef adjoint</span></article><div class="team-members"><article><img src="assets/people/bilounga.webp" alt="BILOUNGA Marie Sandrine"><strong>BILOUNGA Marie Sandrine</strong><span>Membre</span></article><article><img src="assets/people/isaoura.webp" alt="ISAOURA Bénite"><strong>ISAOURA Bénite</strong><span>Membre</span></article></div></div></div>
+            </details>
+          </div>
+        </section> -->
+      </div>
+    </section>
+  </main>
+
+  <section class="instituts">
+      <div class="block-heading">
+          <!-- <p>Le Secrétariat Permanent</p> -->
+          <h2 class="sp-title">Instituts et Partenaires</h2>
+      </div>
+
+      <!-- Conteneur du Carrousel Swiper -->
+      <div class="swiper instituts-carousel">
+          <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                  <a href="http://anrp.cm/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                      <img src="assets/instituts/anrp-1.jpg" alt="ANRP" loading="lazy">
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                  <a href="http://irad.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                      <img src="assets/instituts/irad-1.jpg" alt="IRAD" loading="lazy">
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                  <a href="https://impm-cm.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                      <img src="assets/instituts/impm.png" alt="IMPM" loading="lazy">
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                  <a href="http://www.inc.ayoos.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                      <img src="assets/instituts/inc-1.jpg" alt="INC" loading="lazy">
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                  <a href="http://www.mipromalo.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                      <img src="assets/instituts/mipromalo-1.jpg" alt="MIPROMALO" loading="lazy">
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                  <a href="http://195.24.207.248/~minresi/index.php/2015/07/21/accueil_principal/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                      <img src="assets/instituts/cne-1.jpg" alt="CNE" loading="lazy">
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                  <a href="https://irgm-cameroun.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                      <img src="assets/instituts/irgm-1.jpg" alt="IRGM" loading="lazy">
+                  </a>
+              </div>
+
+          </div>
+
+          <!-- Navigation & Pagination -->
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+      </div>
+        
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+        <p>Comité National de Développement des Technologies</p>
+      </div>
+      <div>
+        <h2>Coordonnées</h2>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+      </div>
+      <div>
+        <h2>Accès rapide</h2>
+        <a href="index.html#institution">Présentation</a>
+        <a href="index.html#secretariats">Secrétariats</a>
+        <a href="organigramme.html">Organigramme</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="publications.html">Publications</a>
+      </div>
+      <div>
+        <h2>Institution de tutelle</h2>
+        <p>Ministère de la Recherche Scientifique et de l’Innovation</p>
+        <a class="footer-external" href="https://minresi.gov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+      <p>La technologie au service du développement</p>
+    </div>
+  </footer>
+
+ 
+  <script src"app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3"></script>
+  <!-- jsPDF pour la génération du document PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>
