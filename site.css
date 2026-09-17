@@ -293,8 +293,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  padding-bottom: 45px;
+  justify-content: flex-end;
+  padding-bottom: 5px;
   color: var(--white);
 }
 
@@ -327,11 +327,12 @@ button {
 
 .button {
   min-height: 44px;
-  margin-top: 24px;
+  margin-top: 4px;
   padding: 10px 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin-left: 510px;
   gap: 20px;
   border: 1px solid transparent;
   font-size: 0.82rem;
