@@ -523,6 +523,129 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
   }
 
+  /* =========================================================
+   11. ORGANIGRAMME — rendu automatique des pages organisation
+   ========================================================= */
+const renderOrgPage = () => {
+  const currentId = document.body.dataset.orgCurrent;
+  if (!currentId || !window.CNDT_ORG) return;
+
+  // Aplatir l'arbre pour retrouver chaque nœud + son chemin
+  const flat = [];
+  const walk = (node, parents = []) => {
+    const path = [...parents, node];
+    flat.push({ node, path });
+    (node.children || []).forEach((child) => walk(child, path));
+  };
+  window.CNDT_ORG.chapters.forEach((ch) => {
+    walk(ch, [window.CNDT_ORG.root]);
+    (ch.units || []).forEach((u) => walk(u, [window.CNDT_ORG.root, ch]));
+  });
+
+  const found = flat.find((item) => item.node.id === currentId);
+  if (!found) return;
+  const { node, path } = found;
+
+  /* ---------- Breadcrumb ---------- */
+  const bc = document.querySelector('[data-org-breadcrumb]');
+  if (bc) {
+    bc.innerHTML = path
+      .map((n, i) => {
+        const isLast = i === path.length - 1;
+        const label = n.label || n.code || '';
+        return isLast
+          ? `<span aria-current="page">${label}</span>`
+          : `<a href="${n.url}">${label}</a><span aria-hidden="true">›</span>`;
+      })
+      .join('');
+  }
+
+  /* ---------- Sidebar : 3 chapitres + unités du chapitre courant ---------- */
+  const sb = document.querySelector('[data-org-sidebar]');
+  if (sb) {
+    const chapter = path.find((p) => p.code && /^[IVX]+$/.test(p.code));
+
+    sb.innerHTML = `
+      <p class="project-toc__title">Organisation</p>
+      <nav class="project-toc__nav">
+        <ol>
+          ${window.CNDT_ORG.chapters
+            .map((ch) => {
+              const isCurrentChapter = chapter && chapter.id === ch.id;
+              const unitList = (ch.units || [])
+                .map((u) => {
+                  if (u.children && u.children.length) {
+                    return `
+                      <li>
+                        <a href="${u.url || '#'}">${u.label}</a>
+                        <ol>
+                          ${u.children
+                            .map((c) =>
+                              c.children && c.children.length
+                                ? `<li>
+                                     <a href="${c.url || '#'}">${c.label}</a>
+                                     <ol>
+                                       ${c.children
+                                         .map((cc) =>
+                                           `<li><a href="${cc.url}">${cc.label}</a></li>`
+                                         )
+                                         .join('')}
+                                     </ol>
+                                   </li>`
+                                : `<li><a href="${c.url}">${c.label}</a></li>`
+                            )
+                            .join('')}
+                        </ol>
+                      </li>`;
+                  }
+                  return `<li><a href="${u.url}">${u.label}</a></li>`;
+                })
+                .join('');
+
+              return `
+                <li>
+                  <a href="${ch.url}" class="${isCurrentChapter ? 'is-active' : ''}">${ch.label}</a>
+                  ${isCurrentChapter ? `<ol>${unitList}</ol>` : ''}
+                </li>`;
+            })
+            .join('')}
+        </ol>
+      </nav>
+    `;
+  }
+
+  /* ---------- Frères (même niveau, même parent) ---------- */
+  const sib = document.querySelector('[data-org-siblings]');
+  if (sib && path.length > 1) {
+    const parent = path[path.length - 2];
+    const siblings = parent.children || parent.units || [];
+    if (siblings.length > 1) {
+      sib.innerHTML = `
+        <div class="block-heading heading-row">
+          <div>
+            <p>Explorer</p>
+            <h2 class="secretariats-title">Autres unités — ${parent.label}</h2>
+          </div>
+        </div>
+        <div class="secretariat-list">
+          ${siblings
+            .filter((s) => s.id !== currentId && s.url)
+            .map((s) => `<a href="${s.url}"><span>${s.code || '—'}</span><strong>${s.label}</strong><i aria-hidden="true">↗</i></a>`)
+            .join('')}
+        </div>
+      `;
+    }
+  }
+
+  /* ---------- Titre + kicker ---------- */
+  const t = document.querySelector('[data-org-title]');
+  if (t) t.textContent = `${node.label} | CNDT Cameroun`;
+  const k = document.querySelector('[data-org-kicker]');
+  if (k && node.code) k.textContent = `${node.code} · ${path[1]?.label || ''}`;
+};
+
+document.addEventListener('DOMContentLoaded', renderOrgPage);
+
 });
 
 
