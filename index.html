@@ -42,10 +42,57 @@
 
         <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
           <a class="active" href="index.html">Accueil</a>
-          <a href="index.html#secretariats">Secrétariats</a>
+          <a href="index.html#secretariats">Secrétariats Permanents</a>
           <a href="actualites.html">Actualités</a>
           <a href="publications.html">Publications</a>
-          <a href="index.html#institution">À propos du CNDT</a>
+          <a href="index.html#institution">Contact</a>
+
+          <!-- =========================================================
+              BARRE DE RECHERCHE
+              ========================================================= -->
+          <div class="nav-search" data-nav-search role="search">
+            <form class="nav-search__form" autocomplete="off" novalidate>
+              <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
+
+              <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+              </svg>
+
+              <input
+                id="nav-search-input"
+                class="nav-search__input"
+                type="search"
+                name="q"
+                placeholder="Rechercher…"
+                aria-autocomplete="list"
+                aria-controls="nav-search-results"
+                aria-expanded="false"
+                data-nav-search-input
+              >
+
+              <button
+                class="nav-search__clear"
+                type="button"
+                aria-label="Effacer la recherche"
+                data-nav-search-clear
+                hidden
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                </svg>
+              </button>
+            </form>
+
+            <!-- Résultats dropdown -->
+            <div
+              id="nav-search-results"
+              class="nav-search__results"
+              role="listbox"
+              aria-label="Résultats de recherche"
+              hidden
+              data-nav-search-results
+            ></div>
+          </div>
         </nav>
       </div>
     </div>
@@ -114,7 +161,7 @@
     </section>
 
     <section id="institution" class="home-content">
-      <div class="container ecart home-grid">
+      <div class="container home-grid">
         <div class="main-column">
           <section class="secretary-block" aria-labelledby="sp-title">
             <div class="block-heading">
@@ -140,8 +187,8 @@
 
           <section class="missions-block" aria-labelledby="missions-title">
             <div class="block-heading">
-              <p>Nos missions</p>
-              <h2 class="sp-title">Ce que nous faisons</h2>
+              <p>Ce que nous faisons</p>
+              <h2 class="sp-title">Nos missions</h2>
             </div>
 
             <div class="cndt-grid">
@@ -207,7 +254,7 @@
         <aside class="sidebar" aria-label="Actualités et publications du CNDT">
           <section class="news-agenda" aria-labelledby="news-title">
             <div class="sidebar-heading">
-              <h2 id="news-title">Actualités du CNDT</h2>
+              <h2 id="news-title">Actualités</h2>
             </div>
             <div class="agenda-list">
               <a href="actualites.html#per-numerique">
@@ -242,6 +289,7 @@
               <a href="publications.html#documents"><span aria-hidden="true">›</span> Documents techniques</a>
               <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww" target="_blank" rel="noopener"><span aria-hidden="true">›</span> Émissions TV</a>
               <a href="publications.html#phototheque"><span aria-hidden="true">›</span> Photothèque</a>
+              <a href="publications.html#innovation"><span aria-hidden="true">›</span> Innovation</a>
             </nav>
           </section>
         </aside>
@@ -252,24 +300,175 @@
     <section id="secretariats" class="secretariats-block container" aria-labelledby="secretariats-title">
         <div class="block-heading heading-row">
           <div>
-            <p>Expertise scientifique</p>
-            <h2 class="secretariats-title">Nos Secrétariats</h2>
+            <h2 class="secretariats-title">Organigramme</h2>
           </div>
           <!-- <a class="text-link" href="organigramme.html">Voir l’organigramme <span aria-hidden="true">→</span></a> -->
         </div>
 
-        <div class="secretariat-list">
-          <a href="sticia.html"><strong>CABINET DU SECRETAIRE PERMANENT</strong><i aria-hidden="true">↗</i></a>
-          <a href="organigramme.html#transformations"><strong>COMMISSION OPERATIONNELLE</strong><i aria-hidden="true">↗</i></a>
-          <a href="organigramme.html#energie"><strong>COMMISSION SUPPORT</strong><i aria-hidden="true">↗</i></a>
-          <a class="text-link"  href="organigramme.html">Voir l’organigramme <span aria-hidden="true">→</span></a>
-        </div>
+        <!-- =========================================================
+     GRILLE DE CARTES — inspirée du DSFR Tuile (verticale)
+     ========================================================= -->
+      <div class="cndt-tiles" role="list">
+
+        <!-- =========================================================
+        Carte 1 — Cabinet du Secrétaire Permanent
+        ========================================================= -->
+        <a class="cndt-tile" role="listitem" href="sticia.html"
+          aria-label="Découvrir le Cabinet du Secrétaire Permanent">
+          <div class="cndt-tile__header">
+            <svg class="cndt-tile__pictogram" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+              <path d="M40 6 L74 28 H6 Z" fill="#1d5a3b"/>
+              <rect x="10" y="28" width="60" height="4" fill="#c7a65d"/>
+              <rect x="14" y="32" width="6" height="32" fill="#1d5a3b"/>
+              <rect x="26" y="32" width="6" height="32" fill="#1d5a3b"/>
+              <rect x="37" y="32" width="6" height="32" fill="#1d5a3b"/>
+              <rect x="48" y="32" width="6" height="32" fill="#1d5a3b"/>
+              <rect x="60" y="32" width="6" height="32" fill="#1d5a3b"/>
+              <rect x="10" y="64" width="60" height="4" fill="#1d5a3b"/>
+              <rect x="6"  y="68" width="68" height="4" fill="#1d5a3b"/>
+              <circle cx="40" cy="20" r="3" fill="#c7a65d"/>
+            </svg>
+          </div>
+          <div class="cndt-tile__body">
+            <h3 class="cndt-tile__title">Cabinet du Secrétaire Permanent</h3>
+            <p class="cndt-tile__desc">
+              Unités rattachées directement à la direction exécutive du CNDT.
+            </p>
+            <span class="cndt-tile__cta" aria-hidden="true">Consulter <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- =========================================================
+            Carte 2 — Commission Technique
+            ========================================================= -->
+        <a class="cndt-tile" role="listitem" href="organigramme.html#transformations"
+          aria-label="Découvrir les Commissions Techniques">
+          <div class="cndt-tile__header">
+            <svg class="cndt-tile__pictogram" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+              <g transform="translate(40 40)">
+                <g fill="#1d5a3b">
+                  <circle r="24"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5" transform="rotate(45)"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5" transform="rotate(90)"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5" transform="rotate(135)"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5" transform="rotate(180)"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5" transform="rotate(225)"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5" transform="rotate(270)"/>
+                  <rect x="-5" y="-32" width="10" height="12" rx="1.5" transform="rotate(315)"/>
+                </g>
+                <circle r="10" fill="#f3f7f4"/>
+                <circle r="5" fill="#c7a65d"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cndt-tile__body">
+            <h3 class="cndt-tile__title">Commission Technique</h3>
+            <p class="cndt-tile__desc">
+              Cinq Secrétariats techniques couvrant les domaines scientifiques prioritaires.
+            </p>
+            <span class="cndt-tile__cta" aria-hidden="true">Consulter <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- =========================================================
+            Carte 5 — Secrétariat Permanent (CARTE EN VEDETTE)
+            Traitement visuel distinctif : fond sombre + or
+            ========================================================= -->
+        <a class="cndt-tile cndt-tile--featured" role="listitem" href="secretariat-permanent.html"
+          aria-label="Découvrir le Secrétariat Permanent du CNDT">
+          <div class="cndt-tile__header">
+            <svg class="cndt-tile__pictogram" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+              <!-- Couronne de laurier (partie gauche) -->
+              <path d="M14 40 C14 58 26 68 40 74"
+                    stroke="#c7a65d" stroke-width="3"
+                    fill="none" stroke-linecap="round"/>
+              <!-- Couronne de laurier (partie droite) -->
+              <path d="M66 40 C66 58 54 68 40 74"
+                    stroke="#c7a65d" stroke-width="3"
+                    fill="none" stroke-linecap="round"/>
+              <!-- Feuilles de laurier gauche -->
+              <ellipse cx="14" cy="34" rx="4" ry="2" fill="#c7a65d" transform="rotate(-40 14 34)"/>
+              <ellipse cx="13" cy="44" rx="4" ry="2" fill="#c7a65d" transform="rotate(-70 13 44)"/>
+              <ellipse cx="16" cy="54" rx="4" ry="2" fill="#c7a65d" transform="rotate(-100 16 54)"/>
+              <ellipse cx="22" cy="62" rx="4" ry="2" fill="#c7a65d" transform="rotate(-130 22 62)"/>
+              <!-- Feuilles de laurier droite -->
+              <ellipse cx="66" cy="34" rx="4" ry="2" fill="#c7a65d" transform="rotate(40 66 34)"/>
+              <ellipse cx="67" cy="44" rx="4" ry="2" fill="#c7a65d" transform="rotate(70 67 44)"/>
+              <ellipse cx="64" cy="54" rx="4" ry="2" fill="#c7a65d" transform="rotate(100 64 54)"/>
+              <ellipse cx="58" cy="62" rx="4" ry="2" fill="#c7a65d" transform="rotate(130 58 62)"/>
+              <!-- Étoile centrale -->
+              <path d="M40 14 L44 26 L56 26 L46 34 L50 46 L40 38 L30 46 L34 34 L24 26 L36 26 Z"
+                    fill="#f3f7f4"/>
+              <!-- Disque doré en dessous -->
+              <circle cx="40" cy="54" r="6" fill="#c7a65d"/>
+              <circle cx="40" cy="54" r="3" fill="#1d5a3b"/>
+            </svg>
+          </div>
+          <div class="cndt-tile__body">
+            <h3 class="cndt-tile__title">Secrétariat Permanent</h3>
+            <p class="cndt-tile__desc">
+              Coordination générale, pilotage stratégique et représentation officielle du CNDT.
+            </p>
+            <span class="cndt-tile__cta" aria-hidden="true">Découvrir <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- =========================================================
+            Carte 3 — Commission Opérationnelle
+            ========================================================= -->
+        <a class="cndt-tile" role="listitem" href="organigramme.html#energie"
+          aria-label="Découvrir la Commission Opérationnelle">
+          <div class="cndt-tile__header">
+            <svg class="cndt-tile__pictogram" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+              <circle cx="36" cy="44" r="26" fill="#1d5a3b"/>
+              <circle cx="36" cy="44" r="18" fill="#f3f7f4"/>
+              <circle cx="36" cy="44" r="11" fill="#1d5a3b"/>
+              <circle cx="36" cy="44" r="5"  fill="#c7a65d"/>
+              <path d="M36 44 L72 8" stroke="#c7a65d" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <path d="M72 8 L62 10" stroke="#c7a65d" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <path d="M72 8 L70 18" stroke="#c7a65d" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="cndt-tile__body">
+            <h3 class="cndt-tile__title">Commission Opérationnelle</h3>
+            <p class="cndt-tile__desc">
+              Recherche, management des projets, documentation et communication.
+            </p>
+            <span class="cndt-tile__cta" aria-hidden="true">Consulter <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- =========================================================
+            Carte 4 — Commission Support
+            ========================================================= -->
+        <a class="cndt-tile" role="listitem" href="organigramme.html#energie"
+          aria-label="Découvrir la Commission Support">
+          <div class="cndt-tile__header">
+            <svg class="cndt-tile__pictogram" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+              <path d="M40 6 L70 18 V40 C70 56 56 68 40 74 C24 68 10 56 10 40 V18 Z" fill="#1d5a3b"/>
+              <path d="M40 14 L62 22 V40 C62 52 53 61 40 66 C27 61 18 52 18 40 V22 Z" fill="#c7a65d"/>
+              <path d="M28 40 L36 48 L54 30"
+                    stroke="#f3f7f4" stroke-width="5"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="cndt-tile__body">
+            <h3 class="cndt-tile__title">Commission Support</h3>
+            <p class="cndt-tile__desc">
+              Ressources humaines, coopération, affaires juridiques et financières.
+            </p>
+            <span class="cndt-tile__cta" aria-hidden="true">Consulter <span>→</span></span>
+          </div>
+        </a>
+
+      </div>
     </section>
 
     <section class="instituts">
         <div class="block-heading">
               <!-- <p>Le Secrétariat Permanent</p> -->
-              <h2 class="sp-title">Instituts et Partenaires</h2>
+              <h2 class="sp-title">Instituts sous tutelle du MINRESI</h2>
         </div>
 
         <!-- Conteneur du Carrousel Swiper -->
@@ -338,7 +537,7 @@
       </div>
       <div>
         <h2>Coordonnées</h2>
-        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 Yaoundé</address>
         <a href="tel:+237222222509">(+237) 222 22 25 09</a>
         <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
       </div>
@@ -347,8 +546,10 @@
         <a href="#institution">Présentation</a>
         <a href="#secretariats">Secrétariats</a>
         <a href="organigramme.html">Organigramme</a>
-        <a href="actualites.html">Actualités</a>
-        <a href="publications.html">Publications</a>
+        <div>
+          <a href="actualites.html">Actualités</a>
+          <a href="publications.html">Publications</a>
+        </div>
       </div>
       <div>
         <h2>Institution de tutelle</h2>

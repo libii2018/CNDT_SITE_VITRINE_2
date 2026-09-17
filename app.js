@@ -526,125 +526,444 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =========================================================
    11. ORGANIGRAMME — rendu automatique des pages organisation
    ========================================================= */
-const renderOrgPage = () => {
-  const currentId = document.body.dataset.orgCurrent;
-  if (!currentId || !window.CNDT_ORG) return;
+  const renderOrgPage = () => {
+    const currentId = document.body.dataset.orgCurrent;
+    if (!currentId || !window.CNDT_ORG) return;
 
-  // Aplatir l'arbre pour retrouver chaque nœud + son chemin
-  const flat = [];
-  const walk = (node, parents = []) => {
-    const path = [...parents, node];
-    flat.push({ node, path });
-    (node.children || []).forEach((child) => walk(child, path));
-  };
-  window.CNDT_ORG.chapters.forEach((ch) => {
-    walk(ch, [window.CNDT_ORG.root]);
-    (ch.units || []).forEach((u) => walk(u, [window.CNDT_ORG.root, ch]));
-  });
+    // Aplatir l'arbre pour retrouver chaque nœud + son chemin
+    const flat = [];
+    const walk = (node, parents = []) => {
+      const path = [...parents, node];
+      flat.push({ node, path });
+      (node.children || []).forEach((child) => walk(child, path));
+    };
+    window.CNDT_ORG.chapters.forEach((ch) => {
+      walk(ch, [window.CNDT_ORG.root]);
+      (ch.units || []).forEach((u) => walk(u, [window.CNDT_ORG.root, ch]));
+    });
 
-  const found = flat.find((item) => item.node.id === currentId);
-  if (!found) return;
-  const { node, path } = found;
+    const found = flat.find((item) => item.node.id === currentId);
+    if (!found) return;
+    const { node, path } = found;
 
-  /* ---------- Breadcrumb ---------- */
-  const bc = document.querySelector('[data-org-breadcrumb]');
-  if (bc) {
-    bc.innerHTML = path
-      .map((n, i) => {
-        const isLast = i === path.length - 1;
-        const label = n.label || n.code || '';
-        return isLast
-          ? `<span aria-current="page">${label}</span>`
-          : `<a href="${n.url}">${label}</a><span aria-hidden="true">›</span>`;
-      })
-      .join('');
-  }
+    /* ---------- Breadcrumb ---------- */
+    const bc = document.querySelector('[data-org-breadcrumb]');
+    if (bc) {
+      bc.innerHTML = path
+        .map((n, i) => {
+          const isLast = i === path.length - 1;
+          const label = n.label || n.code || '';
+          return isLast
+            ? `<span aria-current="page">${label}</span>`
+            : `<a href="${n.url}">${label}</a><span aria-hidden="true">›</span>`;
+        })
+        .join('');
+    }
 
-  /* ---------- Sidebar : 3 chapitres + unités du chapitre courant ---------- */
-  const sb = document.querySelector('[data-org-sidebar]');
-  if (sb) {
-    const chapter = path.find((p) => p.code && /^[IVX]+$/.test(p.code));
+    /* ---------- Sidebar : 3 chapitres + unités du chapitre courant ---------- */
+    const sb = document.querySelector('[data-org-sidebar]');
+    if (sb) {
+      const chapter = path.find((p) => p.code && /^[IVX]+$/.test(p.code));
 
-    sb.innerHTML = `
-      <p class="project-toc__title">Organisation</p>
-      <nav class="project-toc__nav">
-        <ol>
-          ${window.CNDT_ORG.chapters
-            .map((ch) => {
-              const isCurrentChapter = chapter && chapter.id === ch.id;
-              const unitList = (ch.units || [])
-                .map((u) => {
-                  if (u.children && u.children.length) {
-                    return `
-                      <li>
-                        <a href="${u.url || '#'}">${u.label}</a>
-                        <ol>
-                          ${u.children
-                            .map((c) =>
-                              c.children && c.children.length
-                                ? `<li>
-                                     <a href="${c.url || '#'}">${c.label}</a>
-                                     <ol>
-                                       ${c.children
-                                         .map((cc) =>
-                                           `<li><a href="${cc.url}">${cc.label}</a></li>`
-                                         )
-                                         .join('')}
-                                     </ol>
-                                   </li>`
-                                : `<li><a href="${c.url}">${c.label}</a></li>`
-                            )
-                            .join('')}
-                        </ol>
-                      </li>`;
-                  }
-                  return `<li><a href="${u.url}">${u.label}</a></li>`;
-                })
-                .join('');
+      sb.innerHTML = `
+        <p class="project-toc__title">Organisation</p>
+        <nav class="project-toc__nav">
+          <ol>
+            ${window.CNDT_ORG.chapters
+              .map((ch) => {
+                const isCurrentChapter = chapter && chapter.id === ch.id;
+                const unitList = (ch.units || [])
+                  .map((u) => {
+                    if (u.children && u.children.length) {
+                      return `
+                        <li>
+                          <a href="${u.url || '#'}">${u.label}</a>
+                          <ol>
+                            ${u.children
+                              .map((c) =>
+                                c.children && c.children.length
+                                  ? `<li>
+                                      <a href="${c.url || '#'}">${c.label}</a>
+                                      <ol>
+                                        ${c.children
+                                          .map((cc) =>
+                                            `<li><a href="${cc.url}">${cc.label}</a></li>`
+                                          )
+                                          .join('')}
+                                      </ol>
+                                    </li>`
+                                  : `<li><a href="${c.url}">${c.label}</a></li>`
+                              )
+                              .join('')}
+                          </ol>
+                        </li>`;
+                    }
+                    return `<li><a href="${u.url}">${u.label}</a></li>`;
+                  })
+                  .join('');
 
-              return `
-                <li>
-                  <a href="${ch.url}" class="${isCurrentChapter ? 'is-active' : ''}">${ch.label}</a>
-                  ${isCurrentChapter ? `<ol>${unitList}</ol>` : ''}
-                </li>`;
-            })
-            .join('')}
-        </ol>
-      </nav>
-    `;
-  }
-
-  /* ---------- Frères (même niveau, même parent) ---------- */
-  const sib = document.querySelector('[data-org-siblings]');
-  if (sib && path.length > 1) {
-    const parent = path[path.length - 2];
-    const siblings = parent.children || parent.units || [];
-    if (siblings.length > 1) {
-      sib.innerHTML = `
-        <div class="block-heading heading-row">
-          <div>
-            <p>Explorer</p>
-            <h2 class="secretariats-title">Autres unités — ${parent.label}</h2>
-          </div>
-        </div>
-        <div class="secretariat-list">
-          ${siblings
-            .filter((s) => s.id !== currentId && s.url)
-            .map((s) => `<a href="${s.url}"><span>${s.code || '—'}</span><strong>${s.label}</strong><i aria-hidden="true">↗</i></a>`)
-            .join('')}
-        </div>
+                return `
+                  <li>
+                    <a href="${ch.url}" class="${isCurrentChapter ? 'is-active' : ''}">${ch.label}</a>
+                    ${isCurrentChapter ? `<ol>${unitList}</ol>` : ''}
+                  </li>`;
+              })
+              .join('')}
+          </ol>
+        </nav>
       `;
     }
+
+    /* ---------- Frères (même niveau, même parent) ---------- */
+    const sib = document.querySelector('[data-org-siblings]');
+    if (sib && path.length > 1) {
+      const parent = path[path.length - 2];
+      const siblings = parent.children || parent.units || [];
+      if (siblings.length > 1) {
+        sib.innerHTML = `
+          <div class="block-heading heading-row">
+            <div>
+              <p>Explorer</p>
+              <h2 class="secretariats-title">Autres unités — ${parent.label}</h2>
+            </div>
+          </div>
+          <div class="secretariat-list">
+            ${siblings
+              .filter((s) => s.id !== currentId && s.url)
+              .map((s) => `<a href="${s.url}"><span>${s.code || '—'}</span><strong>${s.label}</strong><i aria-hidden="true">↗</i></a>`)
+              .join('')}
+          </div>
+        `;
+      }
+    }
+
+    /* ---------- Titre + kicker ---------- */
+    const t = document.querySelector('[data-org-title]');
+    if (t) t.textContent = `${node.label} | CNDT Cameroun`;
+    const k = document.querySelector('[data-org-kicker]');
+    if (k && node.code) k.textContent = `${node.code} · ${path[1]?.label || ''}`;
+  };
+
+  document.addEventListener('DOMContentLoaded', renderOrgPage);
+
+
+    /* =========================================================
+     12. BARRE DE RECHERCHE NAVBAR
+     =========================================================
+     - Index statique des pages principales du site
+     - Recherche instantanée (nom, mots-clés)
+     - Navigation clavier (↑ ↓ Entrée Échap)
+     - Surlignage du terme trouvé
+     ========================================================= */
+  const navSearch = document.querySelector('[data-nav-search]');
+
+  if (navSearch) {
+    const input   = navSearch.querySelector('[data-nav-search-input]');
+    const clearBtn= navSearch.querySelector('[data-nav-search-clear]');
+    const results = navSearch.querySelector('[data-nav-search-results]');
+
+    /* ---------- Index du site ----------
+       Ajoutez/supprimez des entrées selon votre arborescence réelle.
+       Le chemin est RELATIF à la racine du site (index.html).
+       Si vos pages sont dans des sous-dossiers (organisation/, membres/…),
+       indiquez les chemins complets. */
+    const BASE = (() => {
+      // Détecte si on est dans un sous-dossier pour préfixer les liens
+      const path = window.location.pathname;
+      // On remonte à la racine du site en comptant les niveaux après le domaine
+      const depth = (path.match(/\//g) || []).length;
+      // Ajustez cette valeur si votre site est déployé dans un sous-répertoire
+      // (ex: /cndt-site/…) — sinon laissez '' pour un déploiement à la racine.
+      return '';
+    })();
+
+    const SEARCH_INDEX = [
+      /* --- Pages principales --- */
+      { title: "Accueil",                    url: "index.html",
+        group: "Pages", excerpt: "Présentation institutionnelle du CNDT",
+        keywords: "accueil cndt accueil comité technologie cameroun" },
+
+      { title: "Organigramme",               url: "organigramme.html",
+        group: "Pages", excerpt: "Structure et organisation du CNDT",
+        keywords: "organigramme organisation équipe structure hierarchy" },
+
+      { title: "Personnel",                  url: "personnel.html",
+        group: "Pages", excerpt: "Annuaire du personnel par niveau hiérarchique",
+        keywords: "personnel équipe staff membres annuaire" },
+
+      { title: "Actualités",                 url: "actualites.html",
+        group: "Pages", excerpt: "Événements, rencontres et activités du CNDT",
+        keywords: "actualités news événements rencontres communiqués" },
+
+      { title: "Publications",               url: "publications.html",
+        group: "Pages", excerpt: "Rapports, actes et documents scientifiques",
+        keywords: "publications documents rapports technomag médias" },
+
+      /* --- Organisation --- */
+      { title: "Cabinet du Secrétaire Permanent", url: "organisation/cabinet.html",
+        group: "Organisation", excerpt: "Chapitre I — 7 unités rattachées au SP",
+        keywords: "cabinet secrétaire permanent chapitre I" },
+
+      { title: "Commission Opérationnelle",  url: "organisation/commission-operationnelle.html",
+        group: "Organisation", excerpt: "Chapitre II — Recherche, projets, communication",
+        keywords: "commission opérationnelle recherche projets communication" },
+
+      { title: "Commission Support",         url: "organisation/commission-support.html",
+        group: "Organisation", excerpt: "Chapitre III — RH, coopération, finances",
+        keywords: "commission support ressources humaines finances juridique" },
+
+      /* --- Secrétariats techniques --- */
+      { title: "Secrétariat 01 — TIC & IA",
+        url: "organisation/recherche-projets/commissions-techniques/01-tic-ia.html",
+        group: "Secrétariats", excerpt: "Technologies de l'information et intelligence artificielle",
+        keywords: "tic ia numérique intelligence artificielle réseaux cybersécurité" },
+
+      { title: "Secrétariat 02 — Transformations industrielles",
+        url: "organisation/recherche-projets/commissions-techniques/02-transformations.html",
+        group: "Secrétariats", excerpt: "Technologies et transformations industrielles",
+        keywords: "industries transformation fabrication procédés" },
+
+      { title: "Secrétariat 03 — Énergie, mines & environnement",
+        url: "organisation/recherche-projets/commissions-techniques/03-biosciences.html",
+        group: "Secrétariats", excerpt: "Technologies énergétiques, minières et environnementales",
+        keywords: "énergie mines environnement renouvelable" },
+
+      { title: "Secrétariat 04 — Biosciences",
+        url: "organisation/recherche-projets/commissions-techniques/04-energie-mines.html",
+        group: "Secrétariats", excerpt: "Biosciences et technologies agricoles",
+        keywords: "biosciences agriculture agroalimentaire biotech" },
+
+      { title: "Secrétariat 05 — Politiques S&T",
+        url: "organisation/recherche-projets/commissions-techniques/05-politiques.html",
+        group: "Secrétariats", excerpt: "Politiques scientifiques et technologiques",
+        keywords: "politiques scientifiques technologiques stratégie" },
+
+      /* --- Unités du Cabinet --- */
+      { title: "Secrétariat du Secrétaire Permanent",
+        url: "organisation/cabinet/secretariat-sp.html",
+        group: "Cabinet", excerpt: "Accueil, protocole, courrier et archives",
+        keywords: "secrétariat courrier protocole archives" },
+
+      { title: "Cellule Audit Interne",
+        url: "organisation/cabinet/audit-interne.html",
+        group: "Cabinet", excerpt: "Suivi, contrôle et audit interne du CNDT",
+        keywords: "audit interne contrôle suivi conformité" },
+
+      { title: "Cellule Informatique",
+        url: "organisation/cabinet/cellule-informatique.html",
+        group: "Cabinet", excerpt: "Stratégie TIC, parc informatique, site web",
+        keywords: "informatique tic réseau site web cybersécurité" },
+
+      { title: "Comptabilité-Matières",
+        url: "organisation/cabinet/comptabilite-matieres.html",
+        group: "Cabinet", excerpt: "Gestion des biens et du matériel",
+        keywords: "comptabilité matières biens matériel équipements" },
+
+      { title: "Cellule de Traduction",
+        url: "organisation/cabinet/cellule-traduction.html",
+        group: "Cabinet", excerpt: "Traduction FR/EN et terminologie scientifique",
+        keywords: "traduction français anglais terminologie bilingue" },
+
+      { title: "Action Sociale & Multiculturalisme",
+        url: "organisation/cabinet/action-sociale.html",
+        group: "Cabinet", excerpt: "Assistance sociale, santé, genre et bilinguisme",
+        keywords: "action sociale santé genre bilinguisme multiculturalisme" },
+
+      { title: "Vulgarisation & Transfert",
+        url: "organisation/cabinet/vulgarisation-transfert.html",
+        group: "Cabinet", excerpt: "Formation, séminaires et Centre des métiers",
+        keywords: "vulgarisation transfert formation séminaires ateliers" },
+    ];
+
+    /* ---------- Normalisation ---------- */
+    const normalize = (str) =>
+      (str || "").toString().toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+
+    // Pré-calcul des index normalisés
+    SEARCH_INDEX.forEach((item) => {
+      item._index = normalize(`${item.title} ${item.excerpt} ${item.keywords}`);
+    });
+
+    /* ---------- Échappement HTML ---------- */
+    const escapeHtml = (str) =>
+      str.replace(/[&<>"']/g, (c) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+      }[c]));
+
+    /* ---------- Surlignage du terme trouvé ---------- */
+    const highlight = (text, tokens) => {
+      let safe = escapeHtml(text);
+      tokens.forEach((t) => {
+        if (t.length < 2) return;
+        const re = new RegExp(`(${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
+        safe = safe.replace(re, "<mark>$1</mark>");
+      });
+      return safe;
+    };
+
+    /* ---------- Recherche ---------- */
+    const search = (rawTerm) => {
+      const term = normalize(rawTerm);
+      if (!term) return [];
+      const tokens = term.split(/\s+/);
+
+      return SEARCH_INDEX
+        .map((item) => {
+          const idx = item._index;
+          let score = 0;
+          tokens.forEach((t) => {
+            if (idx.includes(t)) {
+              score += 1;
+              if (normalize(item.title).includes(t)) score += 2; // bonus titre
+            }
+          });
+          return { item, score, matchesAll: tokens.every((t) => idx.includes(t)) };
+        })
+        .filter((r) => r.matchesAll && r.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 8)
+        .map((r) => ({ ...r.item, _tokens: tokens }));
+    };
+
+    /* ---------- Rendu des résultats ---------- */
+    let currentActive = -1;
+
+    const renderResults = (results, term) => {
+      currentActive = -1;
+
+      if (!term) {
+        results.hidden = true;
+        input.setAttribute("aria-expanded", "false");
+        return;
+      }
+
+      if (!results.length) {
+        results.innerHTML = `
+          <div class="nav-search__empty">
+            <strong>Aucun résultat</strong>
+            Aucune page ne correspond à « ${escapeHtml(term)} ».
+          </div>
+          <div class="nav-search__hint">
+            <span>Essayez un autre mot-clé</span>
+          </div>`;
+        results.hidden = false;
+        input.setAttribute("aria-expanded", "true");
+        return;
+      }
+
+      // Regroupement par catégorie
+      const grouped = results.reduce((acc, item) => {
+        (acc[item.group] = acc[item.group] || []).push(item);
+        return acc;
+      }, {});
+
+      let html = "";
+      Object.entries(grouped).forEach(([group, items]) => {
+        html += `<div class="nav-search__group">${escapeHtml(group)}</div>`;
+        items.forEach((item) => {
+          html += `
+            <a class="nav-search__item"
+               href="${item.url}"
+               role="option"
+               data-nav-search-item>
+              <strong>${highlight(item.title, item._tokens)}</strong>
+              <span>${highlight(item.excerpt, item._tokens)}</span>
+            </a>`;
+        });
+      });
+
+      html += `
+        <div class="nav-search__hint">
+          <span><kbd>↑</kbd> <kbd>↓</kbd> pour naviguer</span>
+          <span><kbd>Entrée</kbd> pour ouvrir</span>
+        </div>`;
+
+      results.innerHTML = html;
+      results.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+    };
+
+    /* ---------- Debounce ---------- */
+    let searchTimer = null;
+    const handleInput = () => {
+      if (searchTimer) clearTimeout(searchTimer);
+      const value = input.value;
+
+      clearBtn.hidden = value.length === 0;
+
+      searchTimer = setTimeout(() => {
+        const resultsList = search(value);
+        renderResults(resultsList, value.trim());
+      }, 90);
+    };
+
+    /* ---------- Événements ---------- */
+    input.addEventListener("input", handleInput);
+    input.addEventListener("focus", () => {
+      if (input.value.trim()) handleInput();
+    });
+
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      clearBtn.hidden = true;
+      results.hidden = true;
+      input.setAttribute("aria-expanded", "false");
+      input.focus();
+    });
+
+    /* ---------- Navigation clavier ---------- */
+    input.addEventListener("keydown", (e) => {
+      const items = [...results.querySelectorAll("[data-nav-search-item]")];
+      if (!items.length) {
+        if (e.key === "Escape") {
+          input.value = "";
+          clearBtn.hidden = true;
+          results.hidden = true;
+        }
+        return;
+      }
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        currentActive = (currentActive + 1) % items.length;
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        currentActive = (currentActive - 1 + items.length) % items.length;
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (currentActive >= 0) items[currentActive].click();
+        return;
+      } else if (e.key === "Escape") {
+        input.value = "";
+        clearBtn.hidden = true;
+        results.hidden = true;
+        input.setAttribute("aria-expanded", "false");
+        return;
+      } else {
+        return;
+      }
+
+      items.forEach((el, i) => el.classList.toggle("is-active", i === currentActive));
+      items[currentActive]?.scrollIntoView({ block: "nearest" });
+    });
+
+    /* ---------- Fermer au clic extérieur ---------- */
+    document.addEventListener("click", (e) => {
+      if (!navSearch.contains(e.target)) {
+        results.hidden = true;
+        input.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* ---------- Raccourci clavier « / » ---------- */
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        input.focus();
+      }
+    });
   }
-
-  /* ---------- Titre + kicker ---------- */
-  const t = document.querySelector('[data-org-title]');
-  if (t) t.textContent = `${node.label} | CNDT Cameroun`;
-  const k = document.querySelector('[data-org-kicker]');
-  if (k && node.code) k.textContent = `${node.code} · ${path[1]?.label || ''}`;
-};
-
-document.addEventListener('DOMContentLoaded', renderOrgPage);
 
 });
 
