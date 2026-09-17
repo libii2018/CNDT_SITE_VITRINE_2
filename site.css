@@ -137,7 +137,7 @@ button {
 }
 
 .main-nav {
-  min-height: 94px;
+  /* min-height: 94px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -153,8 +153,8 @@ button {
 }
 
 .brand img {
-  width: 64px;
-  height: 62px;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
   object-fit: contain;
 }
@@ -189,7 +189,7 @@ button {
 
 .primary-nav a {
   position: relative;
-  padding: 36px 10px 33px;
+  padding: 30px 10px 30px;
   color: #3b463f;
   font-size: 0.82rem;
   font-weight: 600;
@@ -1437,13 +1437,9 @@ a.project-card:focus-visible::after {
     display: none;
   }
 
-  .main-nav {
-    min-height: 82px;
-  }
-
   .brand img {
-    width: 62px;
-    height: 52px;
+    width: 25px;
+    height: 25px;
   }
 
   .brand-copy {
@@ -1476,7 +1472,7 @@ a.project-card:focus-visible::after {
   }
 
   .primary-nav a {
-    padding: 14px 4px;
+    padding: 10px 4px;
     color: rgba(255, 255, 255, 0.84);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     font-size: 0.9rem;
