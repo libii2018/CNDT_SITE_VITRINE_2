@@ -1015,6 +1015,84 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  
+
 });
 
 
+  /* =========================================================
+     14. MEGA-MENU — ouverture / fermeture
+     ========================================================= */
+  const megaTrigger = document.querySelector('[data-mega-trigger]');
+  const megaMenu    = document.querySelector('[data-mega-menu]');
+  const megaClose   = document.querySelector('[data-mega-close]');
+
+  if (megaTrigger && megaMenu) {
+    const isMobile = () => window.innerWidth <= 860;
+
+    const openMega = () => {
+      megaTrigger.setAttribute('aria-expanded', 'true');
+      megaMenu.classList.add('is-open');
+      megaMenu.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeMega = () => {
+      megaTrigger.setAttribute('aria-expanded', 'false');
+      megaMenu.classList.remove('is-open');
+      megaMenu.setAttribute('aria-hidden', 'true');
+    };
+
+    const toggleMega = () => {
+      const isOpen = megaTrigger.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMega() : openMega();
+    };
+
+    // Clic sur le trigger
+    megaTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleMega();
+    });
+
+    // Bouton « Fermer » dans le panneau
+    megaClose?.addEventListener('click', () => {
+      closeMega();
+      megaTrigger.focus();
+    });
+
+    // Échap ferme le mega-menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && megaMenu.classList.contains('is-open')) {
+        closeMega();
+        megaTrigger.focus();
+      }
+    });
+
+    // Clic extérieur : ferme le panneau (desktop uniquement)
+    document.addEventListener('click', (e) => {
+      if (isMobile()) return;
+      if (!megaMenu.classList.contains('is-open')) return;
+      if (megaMenu.contains(e.target) || megaTrigger.contains(e.target)) return;
+      closeMega();
+    });
+
+    // Clic sur un lien du mega-menu → ferme le panneau
+    megaMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (isMobile()) {
+          // Sur mobile, le lien navigue normalement, mais on referme le menu coulissant
+          closeMega();
+          if (typeof closePrimaryMenu === 'function') closePrimaryMenu();
+        } else {
+          closeMega();
+        }
+      });
+    });
+
+    // Réinitialisation au redimensionnement
+    window.addEventListener('resize', () => {
+      // Si on passe de mobile à desktop (ou inversement) avec le menu ouvert, on ferme
+      if (megaMenu.classList.contains('is-open')) {
+        closeMega();
+      }
+    });
+  }
