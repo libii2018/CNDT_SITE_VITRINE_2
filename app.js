@@ -965,6 +965,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+    /* =========================================================
+     13. FORMULAIRE DE CONTACT
+     ========================================================= */
+  const contactForm = document.getElementById('contact-form');
+
+  if (contactForm) {
+    const feedback = contactForm.querySelector('[data-contact-feedback]');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const data = new FormData(contactForm);
+      const required = ['name', 'email', 'subject', 'message'];
+      const missing = required.filter((name) => !String(data.get(name) || '').trim());
+
+      if (missing.length) {
+        showFeedback('Veuillez remplir tous les champs obligatoires.', 'error');
+        return;
+      }
+
+      const email = String(data.get('email') || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showFeedback('Veuillez saisir une adresse email valide.', 'error');
+        return;
+      }
+
+      if (!data.get('consent')) {
+        showFeedback('Veuillez accepter la clause de confidentialité.', 'error');
+        return;
+      }
+
+      /* Démo locale : à remplacer par un POST vers votre backend ou service d'envoi
+         (Formspree, EmailJS, API maison…) */
+      showFeedback('Merci ! Votre message a bien été envoyé. Nous vous répondrons sous 48 h.', 'success');
+      contactForm.reset();
+    });
+
+    function showFeedback(message, type) {
+      if (!feedback) return;
+      feedback.textContent = message;
+      feedback.classList.remove('is-success', 'is-error');
+      feedback.classList.add(type === 'success' ? 'is-success' : 'is-error');
+      feedback.hidden = false;
+
+      setTimeout(() => {
+        if (type === 'success') feedback.hidden = true;
+      }, 8000);
+    }
+  }
+
 });
 
 
