@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Commission Support du CNDT — Ressources Humaines, Coopération, Affaires Juridiques, Administration, Finances et CATI.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Commission Support | CNDT Cameroun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="site.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+        <div class="utility-links">
+          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" lang="en" aria-label="English version">English</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="main-nav">
+        <a class="brand" href="index.html" aria-label="Accueil du CNDT">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <span class="brand-copy">
+            <strong>Comité National de Développement des Technologies</strong>
+            <small>La technologie au service du développement</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+
+          <!-- Trigger mega-menu -->
+          <button
+            type="button"
+            class="primary-nav__trigger"
+            aria-expanded="false"
+            aria-controls="mega-organisation"
+            data-mega-trigger
+          >
+            <span>Secrétariats Permanents</span>
+            <svg class="primary-nav__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.4 9.2 12 14.8l5.6-5.6-1.4-1.4L12 12l-4.2-4.2z"/>
+            </svg>
+          </button>
+
+          <a href="actualites.html">Actualités</a>
+          <a href="publication.html">Publications</a>
+          <a href="contact.html">Contact</a>
+
+          <!-- Barre de recherche -->
+          <div class="nav-search" data-nav-search role="search">
+            <form class="nav-search__form" autocomplete="off" novalidate>
+              <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
+
+              <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+              </svg>
+
+              <input
+                id="nav-search-input"
+                class="nav-search__input"
+                type="search"
+                name="q"
+                placeholder="Rechercher…"
+                aria-autocomplete="list"
+                aria-controls="nav-search-results"
+                aria-expanded="false"
+                data-nav-search-input
+              >
+
+              <button
+                class="nav-search__clear"
+                type="button"
+                aria-label="Effacer la recherche"
+                data-nav-search-clear
+                hidden
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                </svg>
+              </button>
+            </form>
+
+            <div
+              id="nav-search-results"
+              class="nav-search__results"
+              role="listbox"
+              aria-label="Résultats de recherche"
+              hidden
+              data-nav-search-results
+            ></div>
+          </div>
+
+          <!-- Mega-menu -->
+          <div
+            id="mega-organisation"
+            class="mega-menu"
+            aria-hidden="true"
+            data-mega-menu
+          >
+            <div class="mega-menu__inner">
+              <div class="container">
+
+                <div class="mega-menu__head">
+                  <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
+                  <button
+                    type="button"
+                    class="mega-menu__close"
+                    aria-label="Fermer le menu Organisation"
+                    data-mega-close
+                  >
+                    Fermer
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="mega-menu__grid">
+
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="index.html#institution"><span>Mot du Secrétaire Permanent</span></a></li>
+                      <li><a href="comite.html"><span>Comité</span></a></li>
+                      <li><a href="cabinet.html"><span>Cabinet du Secrétaire Permanent</span></a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="coordinateur-technique.html"><span>Coordinateur technique</span></a></li>
+                      <li><a href="coordinateur-operationnel.html"><span>Coordinateur opérationnel</span></a></li>
+                      <li><a href="coordinateur-support.html"><span>Coordinateur support</span></a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="personnel.html"><span>Catalogue du personnel</span></a></li>
+                    </ul>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="container ecart home-grid">
+
+      <section class="inner-section">
+        <div class="container">
+
+          <!-- ---------- Présentation de la Commission Support ---------- -->
+          <div class="page-heading">
+            <div>
+              <p class="page-kicker">Présentation générale</p>
+              <h2>La Commission Support en bref</h2>
+            </div>
+          </div>
+
+          <div class="org-intro">
+            <p>
+              La <strong>Commission Support</strong> du CNDT regroupe les entités chargées de la gestion
+              administrative, financière, juridique et des ressources humaines du Comité. Elle assure
+              le bon fonctionnement interne de l'institution, la mobilisation des ressources, la
+              préparation et le suivi de l'exécution du budget, ainsi que la gestion des partenariats
+              et de la coopération au bénéfice de l'ensemble des activités du CNDT.
+            </p>
+            <p style="margin-top:14px;">
+              Elle est structurée en <strong>deux Commissions spécialisées</strong>, chacune placée sous
+              l'autorité d'un Coordonnateur Exécutif Adjoint et appuyée par plusieurs Secrétariats
+              techniques. Elle constitue le socle administratif et financier indispensable à la mise en
+              œuvre de la mission scientifique du Comité.
+            </p>
+          </div>
+
+          <!-- =========================================================
+               COMMISSION 1 — RESSOURCES HUMAINES, COOPÉRATION & AFFAIRES JURIDIQUES
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <p class="page-kicker">Première Commission</p>
+              <h2>Ressources Humaines, Coopération &amp; Affaires Juridiques</h2>
+            </div>
+          </div>
+
+          <div class="org-intro" style="margin-bottom:24px;">
+            <p>
+              Cette Commission est chargée de la mise en œuvre de la stratégie de coopération et de
+              partenariat, du suivi de la coopération bilatérale et multilatérale, de la gestion
+              prévisionnelle des effectifs, des plans de formation, ainsi que de la défense des
+              intérêts juridiques du CNDT.
+            </p>
+          </div>
+
+          <div class="org-chapter-grid">
+
+            <!-- ---------- Secrétariat de la Coopération et du Partenariat ---------- -->
+            <a class="org-chapter-card" href="support/cooperation-partenariat.html"
+               aria-label="Voir le Secrétariat de la Coopération et du Partenariat">
+              <h3>Secrétariat de la Coopération &amp; du Partenariat</h3>
+              <p>Stratégie de coopération, conventions, accords et recherche de financements.</p>
+            </a>
+
+            <!-- ---------- Secrétariat des Ressources Humaines ---------- -->
+            <a class="org-chapter-card" href="support/ressources-humaines.html"
+               aria-label="Voir le Secrétariat des Ressources Humaines">
+              <h3>Secrétariat des Ressources Humaines</h3>
+              <p>Gestion prévisionnelle des effectifs, formation, discipline et stagiaires.</p>
+            </a>
+
+            <!-- ---------- Secrétariat Juridique et du Contentieux ---------- -->
+            <a class="org-chapter-card" href="support/juridique-contentieux.html"
+               aria-label="Voir le Secrétariat Juridique et du Contentieux">
+              <h3>Secrétariat Juridique &amp; du Contentieux</h3>
+              <p>Conseil juridique, défense des intérêts du CNDT et suivi des contentieux.</p>
+            </a>
+
+          </div>
+
+          <!-- =========================================================
+               COMMISSION 2 — AFFAIRES ADMINISTRATIVES, FINANCIÈRES & ENGAGEMENTS
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <p class="page-kicker">Deuxième Commission</p>
+              <h2>Affaires Administratives, Financières &amp; des Engagements</h2>
+            </div>
+          </div>
+
+          <div class="org-intro" style="margin-bottom:24px;">
+            <p>
+              Cette Commission est chargée de la préparation, du suivi et du contrôle de l'exécution du
+              budget, de la tenue de la comptabilité budgétaire, générale et analytique, de la
+              mobilisation des ressources financières, ainsi que de la préparation et de la mise en
+              œuvre des engagements. Elle anime également le Centre d'Appui à la Technologie et à
+              l'Innovation (CATI) du CNDT.
+            </p>
+          </div>
+
+          <div class="org-chapter-grid">
+
+            <!-- ---------- Secrétariat chargé de l'Administration Générale ---------- -->
+            <a class="org-chapter-card" href="support/affaires-admin-financieres/administration-generale.html"
+               aria-label="Voir le Secrétariat chargé de l'Administration Générale">
+              <h3>Secrétariat chargé de l'Administration Générale</h3>
+              <p>Gestion administrative, rapports d'activités et comptes rendus institutionnels.</p>
+            </a>
+
+            <!-- ---------- Secrétariat des Affaires Financières et des Engagements ---------- -->
+            <a class="org-chapter-card" href="support/affaires-admin-financieres/affaires-financieres.html"
+               aria-label="Voir le Secrétariat des Affaires Financières et des Engagements">
+              <h3>Secrétariat des Affaires Financières &amp; des Engagements</h3>
+              <p>États financiers, engagements, liquidations et ordonnancements des dépenses.</p>
+            </a>
+
+            <!-- ---------- Secrétariat Préparation et Suivi de l'Exécution du Budget ---------- -->
+            <a class="org-chapter-card" href="support/affaires-admin-financieres/preparation-budget.html"
+               aria-label="Voir le Secrétariat de Préparation et de Suivi de l'Exécution du Budget">
+              <h3>Secrétariat Préparation &amp; Suivi de l'Exécution du Budget</h3>
+              <p>Préparation du budget, suivi des disponibilités et comptes d'emplois.</p>
+            </a>
+
+            <!-- ---------- Secrétariat en charge du CATI ---------- -->
+            <a class="org-chapter-card" href="support/affaires-admin-financieres/cati.html"
+               aria-label="Voir le Secrétariat en charge du Centre d'Appui à la Technologie et à l'Innovation">
+              <h3>Secrétariat en charge du CATI</h3>
+              <p>Centre d'Appui à la Technologie et à l'Innovation — propriété intellectuelle et OMPI.</p>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SIDEBAR (identique aux autres pages)
+           ========================================================= -->
+      <aside class="sidebar" aria-label="Actualités et publications du CNDT">
+        <section class="news-agenda" aria-labelledby="news-title">
+          <div class="sidebar-heading">
+            <h2 id="news-title">Actualités du CNDT</h2>
+          </div>
+          <div class="agenda-list">
+            <a href="actualites.html#per-numerique">
+              <time datetime="2026-09-15"><small>MAR</small><strong>15</strong><span>SEP<br>2026</span></time>
+              <p>Le Cameroun à la 70ᵉ Conférence Générale de l'AIEA</p>
+            </a>
+            <a href="actualites.html#sia-2026">
+              <time datetime="2026-06-15"><small>LUN</small><strong>15</strong><span>JUN<br>2026</span></time>
+              <p>Première édition de la Semaine de l'Intelligence Artificielle au MINRESI</p>
+            </a>
+            <a href="actualites.html#souverainete-numerique">
+              <time datetime="2026-05-25"><small>LUN</small><strong>25</strong><span>MAI<br>2026</span></time>
+              <p>Intelligence artificielle et souveraineté numérique : chercheurs et experts en dialogue</p>
+            </a>
+            <a href="actualites.html#propriete-intellectuelle">
+              <time datetime="2026-03-18"><small>MER</small><strong>18</strong><span>MAR<br>2026</span></time>
+              <p>Renforcement des capacités en propriété intellectuelle et import-substitution</p>
+            </a>
+            <a href="actualites.html#per-numerique">
+              <time datetime="2026-09-04"><small>VEN</small><strong>04</strong><span>SEP<br>2026</span></time>
+              <p>Rétrocession de la plateforme énergétique rurale numérique à la Commune de Bayangam</p>
+            </a>
+          </div>
+          <a class="sidebar-more" href="actualites.html">Toutes les actualités <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section id="ressources" class="resource-module" aria-labelledby="resources-title">
+          <h2 id="resources-title">Publications &amp; médias</h2>
+          <nav aria-label="Publications et médias">
+            <a href="publication.html#technomag"><span aria-hidden="true">›</span> Technomag</a>
+            <a href="publication.html#rapports"><span aria-hidden="true">›</span> Rapports et actes scientifiques</a>
+            <a href="publication.html#documents"><span aria-hidden="true">›</span> Documents techniques</a>
+            <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww" target="_blank" rel="noopener"><span aria-hidden="true">›</span> Émissions TV</a>
+            <a href="publication.html#phototheque"><span aria-hidden="true">›</span> Photothèque</a>
+          </nav>
+        </section>
+      </aside>
+
+    </section>
+
+    <section class="instituts">
+      <div class="block-heading">
+        <h2 class="sp-title">Instituts et Partenaires</h2>
+      </div>
+
+      <div class="swiper instituts-carousel">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <a href="http://anrp.cm/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/anrp-1.jpg" alt="ANRP" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://irad.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/irad-1.jpg" alt="IRAD" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://impm-cm.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/impm.png" alt="IMPM" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.inc.ayoos.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/inc-1.jpg" alt="INC" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.mipromalo.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/mipromalo-1.jpg" alt="MIPROMALO" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://195.24.207.248/~minresi/index.php/2015/07/21/accueil_principal/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/cne-1.jpg" alt="CNE" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://irgm-cameroun.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/irgm-1.jpg" alt="IRGM" loading="lazy">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+        <p>Comité National de Développement des Technologies</p>
+      </div>
+      <div>
+        <h2>Coordonnées</h2>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+      </div>
+      <div>
+        <h2>Accès rapide</h2>
+        <a href="index.html#institution">Présentation</a>
+        <a href="index.html#secretariats">Secrétariats</a>
+        <a href="organigramme.html">Organigramme</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="publication.html">Publications</a>
+      </div>
+      <div>
+        <h2>Institution de tutelle</h2>
+        <p>Ministère de la Recherche Scientifique et de l'Innovation</p>
+        <a class="footer-external" href="https://minresgov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+      <p>La technologie au service du développement</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

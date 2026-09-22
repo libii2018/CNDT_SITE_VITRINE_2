@@ -41,9 +41,26 @@
 
         <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
           <a href="index.html">Accueil</a>
-          <a href="index.html#secretariats">Secrétariats Permanents</a>
+
+          <!-- =========================================================
+              TRIGGER DU MEGA-MENU
+              ========================================================= -->
+          <button
+            type="button"
+            class="primary-nav__trigger"
+            aria-expanded="false"
+            aria-controls="mega-organisation"
+            data-mega-trigger
+          >
+            <span>Secrétariats Permanents</span>
+            <svg class="primary-nav__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.4 9.2 12 14.8l5.6-5.6-1.4-1.4L12 12l-4.2-4.2z"/>
+            </svg>
+          </button>
+
+          <!-- <a href="index.html#secretariats">Secrétariats Permanents</a> -->
           <a href="actualites.html">Actualités</a>
-          <a class="active" href="publications.html">Publications</a>
+          <a class="active"  href="publication.html">Publications</a>
           <a href="contact.html">Contact</a>
 
           <!-- =========================================================
@@ -91,6 +108,109 @@
               hidden
               data-nav-search-results
             ></div>
+          </div> 
+
+          <!-- =========================================================
+              MEGA-MENU — placé en fin de nav
+              Positionné en absolute sous le header sur desktop
+              Devient accordéon inline sur mobile
+              ========================================================= -->
+          <div
+            id="mega-organisation"
+            class="mega-menu"
+            aria-hidden="true"
+            data-mega-menu
+          >
+            <div class="mega-menu__inner">
+              <div class="container">
+
+                <!-- En-tête du panneau -->
+                <div class="mega-menu__head">
+                  <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
+                  <button
+                    type="button"
+                    class="mega-menu__close"
+                    aria-label="Fermer le menu Organisation"
+                    data-mega-close
+                  >
+                    Fermer
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Grille des colonnes -->
+                <div class="mega-menu__grid">
+
+                  <!-- Colonne 1 — Institution -->
+                  <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Institution</h3> -->
+                    <ul class="mega-menu__list">
+                      <li>
+                        <a href="index.html#institution">
+                          <span>Mot du Secrétaire Permanent</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="comite.html">
+                          <span>Comité</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cabinet.html">
+                          <span>Cabinet du Secrétaire Permanent</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Colonne 2 — Coordinations -->
+                  <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Coordinations</h3> -->
+                    <ul class="mega-menu__list">
+                      <li>
+                        <a href="coordinateur-technique.html">
+                          <span>Coordinateur technique</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="coordinateur-operationnel.html">
+                          <span>Coordinateur opérationnel</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="coordinateur-support.html">
+                          <span>Coordinateur support</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Colonne 3 — Ressources humaines -->
+                  <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Ressources humaines</h3> -->
+                    <ul class="mega-menu__list">
+                      <li>
+                        <a href="personnel.html">
+                          <span>Catalogue du personnel</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <!-- Pied du panneau -->
+                <!-- <div class="mega-menu__foot">
+                  <a class="mega-menu__cta" href="organigramme.html">
+                    Voir l'organigramme complet
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div> -->
+
+              </div>
+            </div>
           </div>
         </nav>
       </div>
@@ -165,7 +285,7 @@
         <a href="index.html#secretariats">Secrétariats</a>
         <a href="organigramme.html">Organigramme</a>
         <a href="actualites.html">Actualités</a>
-        <a href="publications.html">Publications</a>
+        <a href="publication.html">Publications</a>
       </div>
       <div>
         <h2>Institution de tutelle</h2>

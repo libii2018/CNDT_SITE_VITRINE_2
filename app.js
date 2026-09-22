@@ -695,12 +695,12 @@ document.addEventListener('DOMContentLoaded', () => {
         group: "Pages", excerpt: "Événements, rencontres et activités du CNDT",
         keywords: "actualités news événements rencontres communiqués" },
 
-      { title: "Publications",               url: "publications.html",
+      { title: "Publications",               url: "publication.html",
         group: "Pages", excerpt: "Rapports, actes et documents scientifiques",
         keywords: "publications documents rapports technomag médias" },
 
       /* --- Organisation --- */
-      { title: "Cabinet du Secrétaire Permanent", url: "organisation/cabinet.html",
+      { title: "Cabinet du Secrétaire Permanent", url: "cabinet.html",
         group: "Organisation", excerpt: "Chapitre I — 7 unités rattachées au SP",
         keywords: "cabinet secrétaire permanent chapitre I" },
 

@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cellule de Suivi, Contrôle et Audit Interne du CNDT — Suivi des activités, contrôle qualité et audit interne du Comité.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Cellule de Suivi, Contrôle et Audit Interne | CNDT Cameroun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../site.css">
+  <script defer src="../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+        <div class="utility-links">
+          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" lang="en" aria-label="English version">English</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="main-nav">
+        <a class="brand" href="../index.html" aria-label="Accueil du CNDT">
+          <img src="../assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <span class="brand-copy">
+            <strong>Comité National de Développement des Technologies</strong>
+            <small>La technologie au service du développement</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+          <a href="../index.html">Accueil</a>
+
+          <button
+            type="button"
+            class="primary-nav__trigger"
+            aria-expanded="false"
+            aria-controls="mega-organisation"
+            data-mega-trigger
+          >
+            <span>Secrétariats Permanents</span>
+            <svg class="primary-nav__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.4 9.2 12 14.8l5.6-5.6-1.4-1.4L12 12l-4.2-4.2z"/>
+            </svg>
+          </button>
+
+          <a href="../actualites.html">Actualités</a>
+          <a href="../publication.html">Publications</a>
+          <a href="../contact.html">Contact</a>
+
+          <div class="nav-search" data-nav-search role="search">
+            <form class="nav-search__form" autocomplete="off" novalidate>
+              <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
+              <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+              </svg>
+              <input
+                id="nav-search-input"
+                class="nav-search__input"
+                type="search"
+                name="q"
+                placeholder="Rechercher…"
+                aria-autocomplete="list"
+                aria-controls="nav-search-results"
+                aria-expanded="false"
+                data-nav-search-input
+              >
+              <button
+                class="nav-search__clear"
+                type="button"
+                aria-label="Effacer la recherche"
+                data-nav-search-clear
+                hidden
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                </svg>
+              </button>
+            </form>
+            <div
+              id="nav-search-results"
+              class="nav-search__results"
+              role="listbox"
+              aria-label="Résultats de recherche"
+              hidden
+              data-nav-search-results
+            ></div>
+          </div>
+
+          <div id="mega-organisation" class="mega-menu" aria-hidden="true" data-mega-menu>
+            <div class="mega-menu__inner">
+              <div class="container">
+                <div class="mega-menu__head">
+                  <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
+                  <button type="button" class="mega-menu__close" aria-label="Fermer le menu Organisation" data-mega-close>
+                    Fermer
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="mega-menu__grid">
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="../index.html#institution"><span>Mot du Secrétaire Permanent</span></a></li>
+                      <li><a href="../comite.html"><span>Comité</span></a></li>
+                      <li><a href="../cabinet.html"><span>Cabinet du Secrétaire Permanent</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="../coordinateur-technique.html"><span>Coordinateur technique</span></a></li>
+                      <li><a href="../coordinateur-operationnel.html"><span>Coordinateur opérationnel</span></a></li>
+                      <li><a href="../coordinateur-support.html"><span>Coordinateur support</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="../personnel.html"><span>Catalogue du personnel</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="container ecart home-grid">
+
+      <section class="inner-section">
+        <div class="container">
+
+          <!-- Fil d'Ariane -->
+          <nav class="breadcrumb" aria-label="Fil d'Ariane">
+            <a href="../index.html">Accueil</a>
+            <span aria-hidden="true">›</span>
+            <a href="../cabinet.html">Cabinet du Secrétaire Permanent</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Cellule Audit Interne</span>
+          </nav>
+
+          <!-- ---------- Présentation ---------- -->
+          <div class="page-heading">
+            <div>
+              <p class="page-kicker">Unité du Cabinet</p>
+              <h2>Cellule de Suivi, Contrôle et Audit Interne</h2>
+            </div>
+          </div>
+
+          <div class="org-intro">
+            <p>
+              Placée sous l'autorité d'un <strong>Chef de Cellule</strong>, la Cellule de Suivi, de Contrôle
+              et de l'Audit Interne a pour mission de suivre les activités du CNDT, de vérifier le respect
+              des règles et des normes, en analysant objectivement les fonctionnements technique,
+              administratif et financier du Comité National de Développement des Technologies, afin de
+              détecter les défaillances et les risques susceptibles de mettre en péril le bon
+              fonctionnement de ses services internes.
+            </p>
+          </div>
+
+          <!-- ---------- Attributions ---------- -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <p class="page-kicker">Attributions</p>
+              <h2>Ce dont la Cellule est chargée</h2>
+            </div>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>Du suivi des activités du Secrétariat Permanent ;</li>
+            <li>Du contrôle, du suivi et de l'exploitation des rapports de missions des chercheurs et personnels du CNDT ;</li>
+            <li>Du suivi et de l'évaluation des activités du CNDT ;</li>
+            <li>D'élaborer et de planifier un programme d'audit interne ;</li>
+            <li>De communiquer le programme d'audit interne aux différents responsables ;</li>
+            <li>De conduire les missions d'audit interne ;</li>
+            <li>De donner avec objectivité des conseils de bonne pratique et de suivre des actions de progrès ;</li>
+            <li>De réaliser en temps opportun des contrôles préventifs et des contrôles de détection ;</li>
+            <li>De s'assurer de l'application des instructions de la hiérarchie et favoriser l'amélioration de la performance des services ;</li>
+            <li>De respecter les clauses de confidentialité liées aux missions d'audit et de contrôle internes ;</li>
+            <li>De soumettre les rapports d'audit et de contrôle internes au Secrétaire Permanent.</li>
+          </ul>
+
+          <!-- ---------- Composition ---------- -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <p class="page-kicker">Composition</p>
+              <h2>Équipe de la Cellule</h2>
+            </div>
+          </div>
+
+          <div class="org-chapter-grid">
+
+            <a class="org-chapter-card" href="../membres/chef-cellule-audit.html"
+               aria-label="Voir la fiche du Chef de Cellule Audit Interne">
+              <h3>Chef de Cellule</h3>
+              <p>Coordination générale, supervision des missions d'audit et reporting au Secrétaire Permanent.</p>
+            </a>
+
+            <a class="org-chapter-card" href="../membres/responsable-suivi.html"
+               aria-label="Voir la fiche du Responsable du Suivi">
+              <h3>Responsable du Suivi</h3>
+              <p>Suivi des activités du CNDT et exploitation des rapports de missions.</p>
+            </a>
+
+            <a class="org-chapter-card" href="../membres/responsable-controle-audit.html"
+               aria-label="Voir la fiche du Responsable du Contrôle et de l'Audit Interne">
+              <h3>Responsable du Contrôle &amp; de l'Audit Interne</h3>
+              <p>Missions d'audit interne, contrôles préventifs et de détection.</p>
+            </a>
+
+          </div>
+
+          <a class="text-link" href="../cabinet.html">← Retour au Cabinet du Secrétaire Permanent</a>
+
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SIDEBAR
+           ========================================================= -->
+      <aside class="sidebar" aria-label="Actualités et publications du CNDT">
+        <section class="news-agenda" aria-labelledby="news-title">
+          <div class="sidebar-heading">
+            <h2 id="news-title">Actualités du CNDT</h2>
+          </div>
+          <div class="agenda-list">
+            <a href="../actualites.html#per-numerique">
+              <time datetime="2026-09-15"><small>MAR</small><strong>15</strong><span>SEP<br>2026</span></time>
+              <p>Le Cameroun à la 70ᵉ Conférence Générale de l'AIEA</p>
+            </a>
+            <a href="../actualites.html#sia-2026">
+              <time datetime="2026-06-15"><small>LUN</small><strong>15</strong><span>JUN<br>2026</span></time>
+              <p>Première édition de la Semaine de l'Intelligence Artificielle au MINRESI</p>
+            </a>
+            <a href="../actualites.html#souverainete-numerique">
+              <time datetime="2026-05-25"><small>LUN</small><strong>25</strong><span>MAI<br>2026</span></time>
+              <p>Intelligence artificielle et souveraineté numérique : chercheurs et experts en dialogue</p>
+            </a>
+            <a href="../actualites.html#propriete-intellectuelle">
+              <time datetime="2026-03-18"><small>MER</small><strong>18</strong><span>MAR<br>2026</span></time>
+              <p>Renforcement des capacités en propriété intellectuelle et import-substitution</p>
+            </a>
+            <a href="../actualites.html#per-numerique">
+              <time datetime="2026-09-04"><small>VEN</small><strong>04</strong><span>SEP<br>2026</span></time>
+              <p>Rétrocession de la plateforme énergétique rurale numérique à la Commune de Bayangam</p>
+            </a>
+          </div>
+          <a class="sidebar-more" href="../actualites.html">Toutes les actualités <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section id="ressources" class="resource-module" aria-labelledby="resources-title">
+          <h2 id="resources-title">Publications &amp; médias</h2>
+          <nav aria-label="Publications et médias">
+            <a href="../publication.html#technomag"><span aria-hidden="true">›</span> Technomag</a>
+            <a href="../publication.html#rapports"><span aria-hidden="true">›</span> Rapports et actes scientifiques</a>
+            <a href="../publication.html#documents"><span aria-hidden="true">›</span> Documents techniques</a>
+            <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww" target="_blank" rel="noopener"><span aria-hidden="true">›</span> Émissions TV</a>
+            <a href="../publication.html#phototheque"><span aria-hidden="true">›</span> Photothèque</a>
+          </nav>
+        </section>
+      </aside>
+
+    </section>
+
+    <!-- Carrousel partenaires -->
+    <section class="instituts">
+      <div class="block-heading">
+        <h2 class="sp-title">Instituts et Partenaires</h2>
+      </div>
+
+      <div class="swiper instituts-carousel">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <a href="http://anrp.cm/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/anrp-1.jpg" alt="ANRP" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://irad.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/irad-1.jpg" alt="IRAD" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://impm-cm.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/impm.png" alt="IMPM" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.inc.ayoos.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/inc-1.jpg" alt="INC" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.mipromalo.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/mipromalo-1.jpg" alt="MIPROMALO" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://195.24.207.248/~minresi/index.php/2015/07/21/accueil_principal/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/cne-1.jpg" alt="CNE" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://irgm-cameroun.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/irgm-1.jpg" alt="IRGM" loading="lazy">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+        <p>Comité National de Développement des Technologies</p>
+      </div>
+      <div>
+        <h2>Coordonnées</h2>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+      </div>
+      <div>
+        <h2>Accès rapide</h2>
+        <a href="../index.html#institution">Présentation</a>
+        <a href="../index.html#secretariats">Secrétariats</a>
+        <a href="../organigramme.html">Organigramme</a>
+        <a href="../actualites.html">Actualités</a>
+        <a href="../publication.html">Publications</a>
+      </div>
+      <div>
+        <h2>Institution de tutelle</h2>
+        <p>Ministère de la Recherche Scientifique et de l'Innovation</p>
+        <a class="footer-external" href="https://minresgov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+      <p>La technologie au service du développement</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

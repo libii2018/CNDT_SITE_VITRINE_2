@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Commission Technique Politiques Scientifiques et Technologiques du CNDT — Analyses prospectives, aide à la décision et stratégie nationale S&T.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Politiques Scientifiques &amp; Technologiques | CNDT Cameroun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../site.css">
+  <script defer src="../app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+        <div class="utility-links">
+          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" lang="en" aria-label="English version">English</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="main-nav">
+        <a class="brand" href="../index.html" aria-label="Accueil du CNDT">
+          <img src="../assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <span class="brand-copy">
+            <strong>Comité National de Développement des Technologies</strong>
+            <small>La technologie au service du développement</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+          <a href="../index.html">Accueil</a>
+
+          <button
+            type="button"
+            class="primary-nav__trigger"
+            aria-expanded="false"
+            aria-controls="mega-organisation"
+            data-mega-trigger
+          >
+            <span>Secrétariats Permanents</span>
+            <svg class="primary-nav__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.4 9.2 12 14.8l5.6-5.6-1.4-1.4L12 12l-4.2-4.2z"/>
+            </svg>
+          </button>
+
+          <a href="../actualites.html">Actualités</a>
+          <a href="../publication.html">Publications</a>
+          <a href="../contact.html">Contact</a>
+
+          <div class="nav-search" data-nav-search role="search">
+            <form class="nav-search__form" autocomplete="off" novalidate>
+              <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
+              <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+              </svg>
+              <input
+                id="nav-search-input"
+                class="nav-search__input"
+                type="search"
+                name="q"
+                placeholder="Rechercher…"
+                aria-autocomplete="list"
+                aria-controls="nav-search-results"
+                aria-expanded="false"
+                data-nav-search-input
+              >
+              <button
+                class="nav-search__clear"
+                type="button"
+                aria-label="Effacer la recherche"
+                data-nav-search-clear
+                hidden
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                </svg>
+              </button>
+            </form>
+            <div
+              id="nav-search-results"
+              class="nav-search__results"
+              role="listbox"
+              aria-label="Résultats de recherche"
+              hidden
+              data-nav-search-results
+            ></div>
+          </div>
+
+          <div id="mega-organisation" class="mega-menu" aria-hidden="true" data-mega-menu>
+            <div class="mega-menu__inner">
+              <div class="container">
+                <div class="mega-menu__head">
+                  <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
+                  <button type="button" class="mega-menu__close" aria-label="Fermer le menu Organisation" data-mega-close>
+                    Fermer
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="mega-menu__grid">
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="../index.html#institution"><span>Mot du Secrétaire Permanent</span></a></li>
+                      <li><a href="../comite.html"><span>Comité</span></a></li>
+                      <li><a href="../cabinet.html"><span>Cabinet du Secrétaire Permanent</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="../coordinateur-technique.html"><span>Coordinateur technique</span></a></li>
+                      <li><a href="../coordinateur-operationnel.html"><span>Coordinateur opérationnel</span></a></li>
+                      <li><a href="../coordinateur-support.html"><span>Coordinateur support</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="../personnel.html"><span>Catalogue du personnel</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="container ecart home-grid">
+
+      <section class="inner-section">
+        <div class="container">
+
+          <!-- Fil d'Ariane -->
+          <nav class="breadcrumb" aria-label="Fil d'Ariane">
+            <a href="../index.html">Accueil</a>
+            <span aria-hidden="true">›</span>
+            <a href="../coordinateur-technique.html">Commission Technique</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Politiques Scientifiques &amp; Technologiques</span>
+          </nav>
+
+          <!-- ---------- Présentation ---------- -->
+          <div class="page-heading">
+            <div>
+              <p class="page-kicker">Commission Technique</p>
+              <h2>Politiques Scientifiques &amp; Technologiques</h2>
+            </div>
+          </div>
+
+          <div class="org-intro">
+            <p>
+              La Commission Technique <strong>Politiques Scientifiques et Technologiques</strong> est l'un
+              des cinq Secrétariats spécialisés de la Commission Technique du CNDT. Elle est chargée de
+              la production d'analyses prospectives, de l'aide à la décision publique et de la
+              contribution à la définition de la stratégie nationale en matière de science, de
+              technologie et d'innovation.
+            </p>
+            <p style="margin-top:14px;">
+              Elle éclaire les choix technologiques du Cameroun, produit des notes d'analyse destinées
+              aux décideurs publics, contribue au suivi des politiques nationales de développement
+              technologique et accompagne l'articulation entre recherche, innovation et priorités
+              économiques et sociales du pays.
+            </p>
+          </div>
+
+          <!-- ---------- Domaines d'intervention ---------- -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <p class="page-kicker">Champs d'action</p>
+              <h2>Domaines d'intervention</h2>
+            </div>
+          </div>
+
+          <ul class="chip-list" aria-label="Domaines d'intervention de la Commission">
+            <li class="chip">Analyses prospectives</li>
+            <li class="chip">Aide à la décision publique</li>
+            <li class="chip">Stratégie nationale S&amp;T</li>
+            <li class="chip">Veille stratégique</li>
+            <li class="chip">Évaluation des politiques</li>
+            <li class="chip">Articulation recherche-innovation</li>
+          </ul>
+
+          <!-- ---------- Attributions ---------- -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <p class="page-kicker">Attributions</p>
+              <h2>Ce dont la Commission est chargée</h2>
+            </div>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>Faire la veille technologique ;</li>
+            <li>Collecter et traiter l'information technologique ;</li>
+            <li>Inventorier les technologies locales pertinentes pour le développement ;</li>
+            <li>Concevoir et réaliser des prototypes technologiques ;</li>
+            <li>Mener des études de conception et d'adaptation des technologies ;</li>
+            <li>Mener des travaux de recherche ;</li>
+            <li>Préparer les contenus de l'information technologique destinée à la diffusion ;</li>
+            <li>Proposer des modules de formation ;</li>
+            <li>Proposer des thèmes de conférences organisées par le CNDT ;</li>
+            <li>Réaliser tous les autres travaux confiés par le Secrétaire Permanent.</li>
+          </ul>
+
+          <!-- ---------- Composition ---------- -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <p class="page-kicker">Composition</p>
+              <h2>Équipe de la Commission</h2>
+            </div>
+          </div>
+
+          <div class="org-chapter-grid">
+
+            <a class="org-chapter-card" href="../membres/chef-secretariat-politiques.html"
+               aria-label="Voir la fiche du Chef de Secrétariat Politiques Scientifiques et Technologiques">
+              <h3>Chef de Secrétariat</h3>
+              <p>Animation, programmation, suivi et évaluation des activités de la Commission.</p>
+            </a>
+
+            <a class="org-chapter-card" href="../membres/chef-adjoint-politiques.html"
+               aria-label="Voir la fiche du Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint</h3>
+              <p>Appui à la coordination des travaux et au suivi des analyses prospectives.</p>
+            </a>
+
+            <a class="org-chapter-card" href="../membres/membres-chercheurs-politiques.html"
+               aria-label="Voir l'équipe des Membres-Chercheurs et Membres-Experts">
+              <h3>Membres-Chercheurs &amp; Membres-Experts</h3>
+              <p>Économistes, politistes et experts en politiques publiques mobilisés selon les besoins.</p>
+            </a>
+
+            <a class="org-chapter-card" href="../membres/personnel-appui-politiques.html"
+               aria-label="Voir l'équipe du personnel d'appui">
+              <h3>Personnel d'Appui</h3>
+              <p>Support administratif et technique aux activités de la Commission.</p>
+            </a>
+
+          </div>
+
+          <a class="text-link" href="../coordinateur-technique.html">← Retour à la Commission Technique</a>
+
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SIDEBAR
+           ========================================================= -->
+      <aside class="sidebar" aria-label="Actualités et publications du CNDT">
+        <section class="news-agenda" aria-labelledby="news-title">
+          <div class="sidebar-heading">
+            <h2 id="news-title">Actualités du CNDT</h2>
+          </div>
+          <div class="agenda-list">
+            <a href="../actualites.html#per-numerique">
+              <time datetime="2026-09-15"><small>MAR</small><strong>15</strong><span>SEP<br>2026</span></time>
+              <p>Le Cameroun à la 70ᵉ Conférence Générale de l'AIEA</p>
+            </a>
+            <a href="../actualites.html#sia-2026">
+              <time datetime="2026-06-15"><small>LUN</small><strong>15</strong><span>JUN<br>2026</span></time>
+              <p>Première édition de la Semaine de l'Intelligence Artificielle au MINRESI</p>
+            </a>
+            <a href="../actualites.html#souverainete-numerique">
+              <time datetime="2026-05-25"><small>LUN</small><strong>25</strong><span>MAI<br>2026</span></time>
+              <p>Intelligence artificielle et souveraineté numérique : chercheurs et experts en dialogue</p>
+            </a>
+            <a href="../actualites.html#propriete-intellectuelle">
+              <time datetime="2026-03-18"><small>MER</small><strong>18</strong><span>MAR<br>2026</span></time>
+              <p>Renforcement des capacités en propriété intellectuelle et import-substitution</p>
+            </a>
+            <a href="../actualites.html#per-numerique">
+              <time datetime="2026-09-04"><small>VEN</small><strong>04</strong><span>SEP<br>2026</span></time>
+              <p>Rétrocession de la plateforme énergétique rurale numérique à la Commune de Bayangam</p>
+            </a>
+          </div>
+          <a class="sidebar-more" href="../actualites.html">Toutes les actualités <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section id="ressources" class="resource-module" aria-labelledby="resources-title">
+          <h2 id="resources-title">Publications &amp; médias</h2>
+          <nav aria-label="Publications et médias">
+            <a href="../publication.html#technomag"><span aria-hidden="true">›</span> Technomag</a>
+            <a href="../publication.html#rapports"><span aria-hidden="true">›</span> Rapports et actes scientifiques</a>
+            <a href="../publication.html#documents"><span aria-hidden="true">›</span> Documents techniques</a>
+            <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww" target="_blank" rel="noopener"><span aria-hidden="true">›</span> Émissions TV</a>
+            <a href="../publication.html#phototheque"><span aria-hidden="true">›</span> Photothèque</a>
+          </nav>
+        </section>
+      </aside>
+
+    </section>
+
+    <!-- Carrousel partenaires -->
+    <section class="instituts">
+      <div class="block-heading">
+        <h2 class="sp-title">Instituts et Partenaires</h2>
+      </div>
+
+      <div class="swiper instituts-carousel">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <a href="http://anrp.cm/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/anrp-1.jpg" alt="ANRP" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://irad.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/irad-1.jpg" alt="IRAD" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://impm-cm.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/impm.png" alt="IMPM" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.inc.ayoos.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/inc-1.jpg" alt="INC" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.mipromalo.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/mipromalo-1.jpg" alt="MIPROMALO" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://195.24.207.248/~minresi/index.php/2015/07/21/accueil_principal/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/cne-1.jpg" alt="CNE" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://irgm-cameroun.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="../assets/instituts/irgm-1.jpg" alt="IRGM" loading="lazy">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+        <p>Comité National de Développement des Technologies</p>
+      </div>
+      <div>
+        <h2>Coordonnées</h2>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+      </div>
+      <div>
+        <h2>Accès rapide</h2>
+        <a href="../index.html#institution">Présentation</a>
+        <a href="../index.html#secretariats">Secrétariats</a>
+        <a href="../organigramme.html">Organigramme</a>
+        <a href="../actualites.html">Actualités</a>
+        <a href="../publication.html">Publications</a>
+      </div>
+      <div>
+        <h2>Institution de tutelle</h2>
+        <p>Ministère de la Recherche Scientifique et de l'Innovation</p>
+        <a class="footer-external" href="https://minresgov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+      <p>La technologie au service du développement</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

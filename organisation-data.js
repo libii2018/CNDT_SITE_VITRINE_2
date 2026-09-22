@@ -16,7 +16,7 @@ window.CNDT_ORG = {
       id: "cabinet",
       code: "I",
       label: "Cabinet du Secrétaire Permanent",
-      url: "organisation/cabinet.html",
+      url: "cabinet.html",
       units: [
         { id: "secretariat-sp",         code: "I.1", label: "Secrétariat du Secrétaire Permanent",
           url: "organisation/cabinet/secretariat-sp.html" },

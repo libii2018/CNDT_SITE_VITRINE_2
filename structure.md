@@ -3,7 +3,7 @@
 ├── 📄 organigramme.html                   
 ├── 📄 index.html
 ├── 📄 actualites.html
-├── 📄 publications.html
+├── 📄 publication.html
 ├── 📄 personnel.html
 ├── 📄 site.css
 ├── 📄 app.js

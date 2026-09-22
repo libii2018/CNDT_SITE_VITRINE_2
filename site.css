@@ -195,7 +195,7 @@ button {
   font-weight: 600;
 }
 
-/* .primary-nav a::after {
+.primary-nav > a::after {
   content: "";
   position: absolute;
   right: 10px;
@@ -205,7 +205,7 @@ button {
   background: var(--green-600);
   transform: scaleX(0);
   transition: transform 180ms ease;
-} */
+}
 
 .primary-nav a:hover,
 .primary-nav a:focus-visible,
@@ -4492,12 +4492,9 @@ a.project-card:focus-visible::after {
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
-
-  svg {
-    margin-top: -4px;
-  }
 }
 .mega-menu__close svg {
+  margin-bottom: 6px;
   width: 12px;
   height: 12px;
   fill: currentColor;
