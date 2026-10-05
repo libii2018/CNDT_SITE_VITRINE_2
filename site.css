@@ -727,17 +727,17 @@ button {
 }
 
 .resource-module nav {
-  padding: 15px 18px;
+  padding: 25px 20px;
 }
 
 .resource-module nav a {
-  padding: 12px 4px;
+  padding: 15px 4px;
   display: flex;
   align-items: center;
   gap: 9px;
   color: #69726c;
   border-bottom: 1px solid var(--line);
-  font-size: 0.83rem;
+  font-size: 1rem;
 }
 
 .resource-module nav a:last-child {
