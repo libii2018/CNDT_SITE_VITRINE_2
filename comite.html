@@ -15,7 +15,7 @@
 
   <header class="site-header">
     <div class="utility-bar">
-      <div class="container utility-inner">
+      <div class="utility-inner">
         <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
         <div class="utility-links">
           <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
@@ -28,7 +28,7 @@
     <div class="main-nav-wrap">
       <div class="main-nav">
         <a class="brand" href="index.html" aria-label="Accueil du CNDT">
-          <img src="assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT">
           <span class="brand-copy">
             <strong>Comité National de Développement des Technologies</strong>
             <small>La technologie au service du développement</small>
@@ -41,8 +41,11 @@
         </button>
 
         <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
-          <a href="index.html">Accueil</a>
+          <a class="active" href="index.html">Accueil</a>
 
+          <!-- =========================================================
+              TRIGGER DU MEGA-MENU
+              ========================================================= -->
           <button
             type="button"
             class="primary-nav__trigger"
@@ -56,16 +59,22 @@
             </svg>
           </button>
 
+          <!-- <a href="index.html#secretariats">Secrétariats Permanents</a> -->
           <a href="actualites.html">Actualités</a>
           <a href="publication.html">Publications</a>
           <a href="contact.html">Contact</a>
 
+          <!-- =========================================================
+              BARRE DE RECHERCHE
+              ========================================================= -->
           <div class="nav-search" data-nav-search role="search">
             <form class="nav-search__form" autocomplete="off" novalidate>
               <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
+
               <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
               </svg>
+
               <input
                 id="nav-search-input"
                 class="nav-search__input"
@@ -77,6 +86,7 @@
                 aria-expanded="false"
                 data-nav-search-input
               >
+
               <button
                 class="nav-search__clear"
                 type="button"
@@ -89,6 +99,8 @@
                 </svg>
               </button>
             </form>
+
+            <!-- Résultats dropdown -->
             <div
               id="nav-search-results"
               class="nav-search__results"
@@ -97,41 +109,131 @@
               hidden
               data-nav-search-results
             ></div>
-          </div>
+          </div> 
 
-          <div id="mega-organisation" class="mega-menu" aria-hidden="true" data-mega-menu>
+          <ul class="nav-socials" aria-label="Nos réseaux sociaux">
+            <li>
+              <a href="https://www.facebook.com/cndtcameroun"
+                target="_blank" rel="noopener"
+                aria-label="Page Facebook du CNDT"
+                class="nav-social nav-social--facebook">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
+                target="_blank" rel="noopener"
+                aria-label="Chaîne YouTube du CNDT"
+                class="nav-social nav-social--youtube">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!-- =========================================================
+              MEGA-MENU — placé en fin de nav
+              Positionné en absolute sous le header sur desktop
+              Devient accordéon inline sur mobile
+              ========================================================= -->
+          <div
+            id="mega-organisation"
+            class="mega-menu"
+            aria-hidden="true"
+            data-mega-menu
+          >
             <div class="mega-menu__inner">
               <div class="container">
+
+                <!-- En-tête du panneau -->
                 <div class="mega-menu__head">
                   <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
-                  <button type="button" class="mega-menu__close" aria-label="Fermer le menu Organisation" data-mega-close>
+                  <button
+                    type="button"
+                    class="mega-menu__close"
+                    aria-label="Fermer le menu Organisation"
+                    data-mega-close
+                  >
                     Fermer
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                       <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
                     </svg>
                   </button>
                 </div>
+
+                <!-- Grille des colonnes -->
                 <div class="mega-menu__grid">
+
+                  <!-- Colonne 1 — Institution -->
                   <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Institution</h3> -->
                     <ul class="mega-menu__list">
-                      <li><a href="index.html#institution"><span>Mot du Secrétaire Permanent</span></a></li>
-                      <li><a href="comite.html"><span>Comité</span></a></li>
-                      <li><a href="cabinet.html"><span>Cabinet du Secrétaire Permanent</span></a></li>
+                      <li>
+                        <a href="index.html#institution">
+                          <span>Mot du Secrétaire Permanent</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="comite.html">
+                          <span>Comité</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cabinet.html">
+                          <span>Cabinet du Secrétaire Permanent</span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
+
+                  <!-- Colonne 2 — Coordinations -->
                   <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Coordinations</h3> -->
                     <ul class="mega-menu__list">
-                      <li><a href="coordinateur-technique.html"><span>Coordinateur technique</span></a></li>
-                      <li><a href="coordinateur-operationnel.html"><span>Coordinateur opérationnel</span></a></li>
-                      <li><a href="coordinateur-support.html"><span>Coordinateur support</span></a></li>
+                      <li>
+                        <a href="crmp.html">
+                          <span>Commission recherche et management des projets</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="caaf.html">
+                          <span>Commission des affaires administratives, financières et des engagements</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cdcrp.html">
+                          <span>Commission documentation, communication et relations publiques</span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
+
+                  <!-- Colonne 3 — Ressources humaines -->
                   <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Ressources humaines</h3> -->
                     <ul class="mega-menu__list">
-                      <li><a href="personnel.html"><span>Catalogue du personnel</span></a></li>
+                      <li>
+                        <a href="ct.html">
+                          <span>Commission technique</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="personnel.html">
+                          <span>Catalogue du personnel</span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
+
                 </div>
+
+                <!-- Pied du panneau -->
+                <!-- <div class="mega-menu__foot">
+                  <a class="mega-menu__cta" href="organigramme.html">
+                    Voir l'organigramme complet
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div> -->
+
               </div>
             </div>
           </div>
@@ -150,8 +252,8 @@
           <!-- ---------- Présentation du Comité ---------- -->
           <div class="page-heading">
             <div>
-              <p class="page-kicker">Organe délibérant</p>
-              <h2>Le Comité en bref</h2>
+              <!-- <p class="page-kicker">Organe délibérant</p> -->
+              <h2>Le Comité</h2>
             </div>
           </div>
 
@@ -192,7 +294,7 @@
           <div class="page-heading" style="margin-top:56px;">
             <div>
               <p class="page-kicker">Présidence</p>
-              <h2>Président du Comité</h2>
+              <h2>Présidente du Comité</h2>
             </div>
           </div>
 
@@ -208,9 +310,31 @@
               <span class="opening-quote" aria-hidden="true">“</span>
               <p>Le Comité National de Développement des Technologies constitue un instrument stratégique au service de la souveraineté technologique du Cameroun.</p>
               <p>À travers ses délibérations, il veille à ce que la recherche scientifique et l'innovation technologique soient pleinement mobilisées pour répondre aux priorités nationales de développement.</p>
-              <a class="text-link" href="organigramme.html">Voir l'organigramme <span aria-hidden="true">→</span></a>
+              <!-- <a class="text-link" href="organigramme.html">Voir l'organigramme <span aria-hidden="true">→</span></a> -->
             </div>
           </article>
+
+          <section class="secretary-block" aria-labelledby="sp-title">
+            <div class="block-heading">
+              <p>Le Secrétariat Permanent</p>
+              <h2 class="sp-title">Mot du Secrétaire Permanent</h2>
+            </div>
+            <div class="secretary-card">
+              <figure>
+                <img src="assets/people/sp/1.jpeg" alt="Dr ELE ABIAMA Patrice, Secrétaire Permanent du CNDT" width="640" height="480" loading="lazy">
+                <figcaption>
+                  <strong>Dr ELE ABIAMA Patrice</strong>
+                  <span>Secrétaire Permanent</span>
+                </figcaption>
+              </figure>
+              <div class="secretary-copy">
+                <span class="opening-quote" aria-hidden="true">“</span>
+                <p>Je vous souhaite, chers internautes, une agréable bienvenue sur le site officiel du Comité National de Développement des Technologies.</p>
+                <p>Cet espace met en valeur nos actions de veille, d’adaptation et de transfert des technologies, avec l’ambition de rapprocher la recherche des besoins concrets de développement du Cameroun.</p>
+                <!-- <a class="text-link" href="comite.html">Découvrir le CNDT <span aria-hidden="true">→</span></a> -->
+              </div>
+            </div>
+          </section>
 
           <!-- ---------- Composition du Comité ---------- -->
           <div class="page-heading" style="margin-top:56px;">
@@ -220,77 +344,46 @@
             </div>
           </div>
 
-          <p style="margin:0 0 22px;color:#4f5c54;font-size:0.9rem;line-height:1.65;">
-            Le Comité réunit les représentants des administrations camerounaises et des institutions
-            partenaires concernées par le développement et le transfert des technologies.
+          <p style="margin:0 0 26px;color:#4f5c54;font-size:0.9rem;line-height:1.65;">
+            Le Comité réunit les représentants des administrations camerounaises, des instituts de recherche
+            et des organismes partenaires concernés par le développement et le transfert des technologies.
           </p>
 
-          <div class="staff-grid">
-
-            <article class="staff-card">
-              <img src="assets/people/ministre.jpg" alt="MINRESI" loading="lazy">
-              <div class="staff-info">
-                <strong>MINRESI</strong>
-                <span>Ministère de la Recherche Scientifique et de l'Innovation</span>
-              </div>
-            </article>
-
-            <article class="staff-card">
-              <img src="assets/people/sp.webp" alt="Secrétariat Permanent" loading="lazy">
-              <div class="staff-info">
-                <strong>Secrétariat Permanent</strong>
-                <span>Rapporteur du Comité</span>
-              </div>
-            </article>
-
-            <article class="staff-card">
-              <img src="assets/people/" alt="MINEPAT" loading="lazy">
-              <div class="staff-info">
-                <strong>MINEPAT</strong>
-                <span>Ministère de l'Économie, de la Planification et de l'Aménagement du Territoire</span>
-              </div>
-            </article>
-
-            <article class="staff-card">
-              <img src="assets/people/" alt="MINFI" loading="lazy">
-              <div class="staff-info">
-                <strong>MINFI</strong>
-                <span>Ministère des Finances</span>
-              </div>
-            </article>
-
-            <article class="staff-card">
-              <img src="assets/people/" alt="MINMIDT" loading="lazy">
-              <div class="staff-info">
-                <strong>MINMIDT</strong>
-                <span>Ministère des Mines, de l'Industrie et du Développement Technologique</span>
-              </div>
-            </article>
-
-            <article class="staff-card">
-              <img src="assets/people/" alt="MINPOSTEL" loading="lazy">
-              <div class="staff-info">
-                <strong>MINPOSTEL</strong>
-                <span>Ministère des Postes et Télécommunications</span>
-              </div>
-            </article>
-
-            <article class="staff-card">
-              <img src="assets/people/" alt="MINADER" loading="lazy">
-              <div class="staff-info">
-                <strong>MINADER</strong>
-                <span>Ministère de l'Agriculture et du Développement Rural</span>
-              </div>
-            </article>
-
-            <article class="staff-card">
-              <img src="assets/people/" alt="MINEE" loading="lazy">
-              <div class="staff-info">
-                <strong>MINEE</strong>
-                <span>Ministère de l'Eau et de l'Énergie</span>
-              </div>
-            </article>
-
+          <!-- =========================================================
+              TABLEAU — Membres titulaires
+              ========================================================= -->
+          <div class="comite-table-wrap">
+            <table class="comite-table">
+              <caption class="comite-table__caption">Membres titulaires</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="comite-table__num">N°</th>
+                  <th scope="col">Nom et prénom(s)</th>
+                  <th scope="col">Institution</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>01</td><td><strong>Pr NGOH NEWILAH Gérard</strong></td><td><span class="comite-tag">SPM</span> Services du Premier Ministre</td></tr>
+                <tr><td>02</td><td><strong>M. NKE Dominique</strong></td><td><span class="comite-tag">MINFI</span> Ministère des Finances</td></tr>
+                <tr><td>03</td><td><strong>Pr AKONO</strong></td><td><span class="comite-tag">MINESUP</span> Ministère de l'Enseignement Supérieur</td></tr>
+                <tr><td>04</td><td><strong>Pr TSOPMBENG NOUMBO Gaston</strong></td><td><span class="comite-tag">MINRESI</span> Ministère de la Recherche Scientifique et de l'Innovation</td></tr>
+                <tr><td>05</td><td><strong>M. MBARGA Francis Armand</strong></td><td><span class="comite-tag">MINADER</span> Ministère de l'Agriculture et du Développement Rural</td></tr>
+                <tr><td>06</td><td><strong>Dr MVENG SANDING Georges</strong></td><td><span class="comite-tag">MINEPIA</span> Ministère de l'Élevage, des Pêches et des Industries Animales</td></tr>
+                <tr><td>07</td><td><strong>M. ZRA KODJI NDEHOUM</strong></td><td><span class="comite-tag">MINPOSTEL</span> Ministère des Postes et Télécommunications</td></tr>
+                <tr><td>08</td><td><strong>Pr SOH FOTSING Bertin</strong></td><td><span class="comite-tag">MINEPAT</span> Ministère de l'Économie, de la Planification et de l'Aménagement du Territoire</td></tr>
+                <tr><td>09</td><td><strong>M. NGOUBE ESSAMA Léon</strong></td><td><span class="comite-tag">MINEE</span> Ministère de l'Eau et de l'Énergie</td></tr>
+                <tr><td>10</td><td><strong>M. KAMSU MELIPHE Elvis</strong></td><td><span class="comite-tag">MINMIDT</span> Ministère des Mines, de l'Industrie et du Développement Technologique</td></tr>
+                <tr><td>11</td><td><strong>M. CHENDJOU SOH Stevy Corneille</strong></td><td><span class="comite-tag">MINHDU</span> Ministère de l'Habitat et du Développement Urbain</td></tr>
+                <tr><td>12</td><td><strong>M. IBRAHIMA Saidou</strong></td><td><span class="comite-tag">CENEEMA</span> Centre National d'Études et d'Expérimentation du Machinisme Agricole</td></tr>
+                <tr><td>13</td><td><strong>M. BIDZOGO Bienvenue</strong></td><td><span class="comite-tag">CCIMA</span> Chambre de Commerce, d'Industrie, des Mines et de l'Artisanat</td></tr>
+                <tr><td>14</td><td><strong>M. ABADA ASSOMO Siméon</strong></td><td><span class="comite-tag">CAPEF</span> Chambre des Acteurs de la Pêche et de l'Économie Forestière</td></tr>
+                <tr><td>15</td><td><strong>Dr EHABE Eugene Ejolle</strong></td><td><span class="comite-tag">IRAD</span> Institut de Recherche Agricole pour le Développement</td></tr>
+                <tr><td>16</td><td><strong>Dr NGOUANET Chrétien</strong></td><td><span class="comite-tag">INC</span> Institut National de Cartographie</td></tr>
+                <tr><td>17</td><td><strong>Dr KANKEU Boniface</strong></td><td><span class="comite-tag">IRGM</span> Institut de Recherches Géologiques et Minières</td></tr>
+                <tr><td>18</td><td><strong>Dr TCHINDA TIABOU Alembert</strong></td><td><span class="comite-tag">IMPM</span> Institut de Recherches Médicales et d'Études des Plantes Médicinales</td></tr>
+                <tr><td>19</td><td><strong>Dr LIKIBY Boubakar</strong></td><td><span class="comite-tag">MIPROMALO</span> Mission de Promotion des Matériaux Locaux</td></tr>
+              </tbody>
+            </table>
           </div>
 
           <!-- ---------- Fonctionnement du Comité ---------- -->
@@ -373,9 +466,9 @@
           </ul>
 
           <!-- ---------- Lien vers l'organigramme ---------- -->
-          <div class="project-back">
+          <!-- <div class="project-back">
             <a class="text-link" href="organigramme.html">Voir l'organigramme complet du CNDT <span aria-hidden="true">→</span></a>
-          </div>
+          </div> -->
 
         </div>
       </section>

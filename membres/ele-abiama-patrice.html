@@ -6,7 +6,9 @@
   <meta name="description" content="Fiche de Dr ELE ABIAMA Patrice, Secrétaire Permanent du Comité National de Développement des Technologies.">
   <meta name="theme-color" content="#1f663f">
   <title>Dr ELE ABIAMA Patrice | CNDT Cameroun</title>
-  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="site.css">
   <script defer src="../app.js"></script>
 </head>
 <body>
@@ -14,7 +16,7 @@
 
   <header class="site-header">
     <div class="utility-bar">
-      <div class="container utility-inner">
+      <div class="utility-inner">
         <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
         <div class="utility-links">
           <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
@@ -26,8 +28,8 @@
 
     <div class="main-nav-wrap">
       <div class="main-nav">
-        <a class="brand" href="../index.html" aria-label="Accueil du CNDT">
-          <img src="../assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+        <a class="brand" href="index.html" aria-label="Accueil du CNDT">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT">
           <span class="brand-copy">
             <strong>Comité National de Développement des Technologies</strong>
             <small>La technologie au service du développement</small>
@@ -40,7 +42,7 @@
         </button>
 
         <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
-          <a href="../index.html">Accueil</a>
+          <a href="index.html">Accueil</a>
 
           <!-- =========================================================
               TRIGGER DU MEGA-MENU
@@ -59,9 +61,9 @@
           </button>
 
           <!-- <a href="index.html#secretariats">Secrétariats Permanents</a> -->
-          <a href="../actualites.html">Actualités</a>
-          <a href="../publication.html">Publications</a>
-          <a href="../contact.html">Contact</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="publication.html">Publications</a>
+          <a href="contact.html">Contact</a>
 
           <!-- =========================================================
               BARRE DE RECHERCHE
@@ -110,6 +112,25 @@
             ></div>
           </div> 
 
+          <ul class="nav-socials" aria-label="Nos réseaux sociaux">
+            <li>
+              <a href="https://www.facebook.com/cndtcameroun"
+                target="_blank" rel="noopener"
+                aria-label="Page Facebook du CNDT"
+                class="nav-social nav-social--facebook">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
+                target="_blank" rel="noopener"
+                aria-label="Chaîne YouTube du CNDT"
+                class="nav-social nav-social--youtube">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
           <!-- =========================================================
               MEGA-MENU — placé en fin de nav
               Positionné en absolute sous le header sur desktop
@@ -148,7 +169,7 @@
                     <!-- <h3 class="mega-menu__title">Institution</h3> -->
                     <ul class="mega-menu__list">
                       <li>
-                        <a href="../index.html#institution">
+                        <a href="index.html#institution">
                           <span>Mot du Secrétaire Permanent</span>
                         </a>
                       </li>
@@ -170,18 +191,18 @@
                     <!-- <h3 class="mega-menu__title">Coordinations</h3> -->
                     <ul class="mega-menu__list">
                       <li>
-                        <a href="coordinateur-technique.html">
-                          <span>Coordinateur technique</span>
+                        <a href="crmp.html">
+                          <span>Commission recherche et management des projets</span>
                         </a>
                       </li>
                       <li>
-                        <a href="coordinateur-operationnel.html">
-                          <span>Coordinateur opérationnel</span>
+                        <a href="caaf.html">
+                          <span>Commission des affaires administratives, financières et des engagements</span>
                         </a>
                       </li>
                       <li>
-                        <a href="coordinateur-support.html">
-                          <span>Coordinateur support</span>
+                        <a href="cdcrp.html">
+                          <span>Commission documentation, communication et relations publiques</span>
                         </a>
                       </li>
                     </ul>
@@ -191,6 +212,11 @@
                   <div class="mega-menu__col">
                     <!-- <h3 class="mega-menu__title">Ressources humaines</h3> -->
                     <ul class="mega-menu__list">
+                      <li>
+                        <a href="ct.html">
+                          <span>Commission technique</span>
+                        </a>
+                      </li>
                       <li>
                         <a href="personnel.html">
                           <span>Catalogue du personnel</span>
@@ -240,22 +266,25 @@
         <div class="profile-hero__body">
 
           <figure class="profile-hero__photo">
-            <img src="../assets/people/sp.webp" alt="Portrait de Dr ELE ABIAMA Patrice" width="480" height="640">
+            <img src="../assets/people/sp/1.jpeg" alt="Portrait de Dr ELE ABIAMA Patrice" width="480" height="640">
           </figure>
 
           <div class="profile-hero__info">
-            <p class="profile-hero__kicker">Secrétariat Permanent</p>
             <h1>Dr ELE ABIAMA Patrice</h1>
             <p class="profile-hero__role">Secrétaire Permanent du CNDT</p>
 
             <ul class="profile-hero__meta" aria-label="Informations clés">
               <li>
-                <span>Rattachement</span>
-                <strong>Secrétariat Permanent</strong>
+                <span>Grade</span>
+                <strong>Directeur de Recherche</strong>
               </li>
               <li>
-                <span>Grade</span>
-                <strong>Direction</strong>
+                <span>Spécialité</span>
+                <strong>Physique Nucléaire Appliquée</strong>
+              </li>
+              <li>
+                <span>Fonction</span>
+                <strong>Secrétaire Permanent du CNDT</strong>
               </li>
               <li>
                 <span>Depuis</span>
@@ -263,29 +292,32 @@
               </li>
             </ul>
 
-            <div class="profile-hero__actions">
-              <a class="button button-light" href="mailto:contact@cndtcameroun.cm">Contacter <span aria-hidden="true">→</span></a>
-              <a class="button button-outline" href="../assets/cv/ele-abiama-patrice.pdf" download>Télécharger le CV <span aria-hidden="true">↓</span></a>
-            </div>
-                        <!-- Réseaux sociaux & profils académiques -->
+            <!-- Réseaux sociaux & profils académiques -->
             <ul class="profile-socials" aria-label="Réseaux sociaux et profils académiques">
               <li>
-                <a href="https://www.facebook.com/cndtcameroun" target="_blank" rel="noopener"
-                   aria-label="Page Facebook du CNDT">
+                <a href="https://www.facebook.com/patrice.eleabiarna" target="_blank" rel="noopener"
+                   aria-label="Profil Facebook de Dr ELE ABIAMA Patrice">
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.87.24-1.46 1.49-1.46H16.7V4.46A21.6 21.6 0 0 0 14.36 4.3c-2.32 0-3.9 1.42-3.9 4.02v2.18H7.9v3h2.56V21h3.04Z"/>
+                    <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.77-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/>
                   </svg>
-                  <!-- <span>Facebook</span> -->
                 </a>
               </li>
 
               <li>
-                <a href="https://www.linkedin.com/in/ele-abiama-patrice" target="_blank" rel="noopener"
+                <a href="https://www.linkedin.com/in/patrice-ele-abiama-a1859085" target="_blank" rel="noopener"
                    aria-label="Profil LinkedIn de Dr ELE ABIAMA Patrice">
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M6.94 8.5H4.06V19.5h2.88V8.5ZM5.5 7.19a1.69 1.69 0 1 0 0-3.38 1.69 1.69 0 0 0 0 3.38ZM20 19.5v-6.02c0-3.2-1.71-4.69-3.99-4.69-1.84 0-2.66 1.01-3.12 1.72V8.5H10.1c.04.82 0 11 0 11h2.79v-6.14c0-.25.02-.5.09-.68.2-.5.66-1.02 1.43-1.02 1.01 0 1.41.77 1.41 1.89v5.95H20Z"/>
                   </svg>
-                  <!-- <span>LinkedIn</span> -->
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.researchgate.net/profile/Patrice-Ele-Abiarna" target="_blank" rel="noopener"
+                   aria-label="Profil ResearchGate de Dr ELE ABIAMA Patrice">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M19.6 2H4.4C3.07 2 2 3.07 2 4.4v15.2C2 20.93 3.07 22 4.4 22h15.2c1.33 0 2.4-1.07 2.4-2.4V4.4C22 3.07 20.93 2 19.6 2ZM9.75 12.54h-1.9V6.63h2.78c1.4 0 2.34.79 2.34 2.05 0 .95-.55 1.66-1.45 1.93l1.62 2.93h-2.04l-1.35-2.62v-.05H9.75v2.67Zm0-4.62v2.01h.72c.68 0 1.09-.38 1.09-.99 0-.62-.41-1.02-1.09-1.02h-.72Zm7.32 5.82c-1.31 0-2.36-.9-2.36-2.5v-1.3c0-1.6 1.05-2.5 2.36-2.5.68 0 1.24.25 1.61.71v-.52h1.72v6.06h-1.6l-.11-.56c-.36.45-.9.61-1.62.61Zm.4-1.42c.65 0 1.05-.42 1.05-1.12v-1.42c0-.71-.4-1.12-1.05-1.12-.64 0-1.03.41-1.03 1.12v1.42c0 .7.39 1.12 1.03 1.12Z"/>
+                  </svg>
                 </a>
               </li>
 
@@ -295,7 +327,6 @@
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm0 13.09L4.5 11.95 12 7.86l7.5 4.09L12 16.09ZM6 12.61v3.02c0 .68 2.69 2.37 6 2.37s6-1.69 6-2.37v-3.02l-6 3.27-6-3.27Z"/>
                   </svg>
-                  <!-- <span>Google Scholar</span> -->
                 </a>
               </li>
             </ul>
@@ -309,173 +340,95 @@
       <div class="container">
 
         <!-- =========================================================
-             LAYOUT : TOC collante + contenu
+             LAYOUT : contenu + sidebar
              ========================================================= -->
         <div class="profile-layout">
 
-          <!-- ---------- TOC ---------- -->
-          <aside class="project-toc" aria-label="Sommaire de la fiche">
-            <p class="project-toc__title">Sommaire</p>
-
-            <nav class="project-toc__nav">
-              <ol>
-                <li><a href="#biographie" class="is-active">Biographie</a></li>
-                <li><a href="#parcours">Parcours professionnel</a></li>
-                <li><a href="#attributions">Attributions</a></li>
-                <li><a href="#publications">Publications &amp; travaux</a></li>
-                <li><a href="#distinctions">Distinctions</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ol>
-            </nav>
-
-            <div class="project-toc__foot">
-              <a class="text-link" href="personnel.html">← Toute l'équipe</a>
-            </div>
-          </aside>
-
-          <!-- ---------- Contenu ---------- -->
+          <!-- ---------- Contenu principal ---------- -->
           <article class="project-content">
 
             <!-- ============ Biographie ============ -->
             <section id="biographie" class="project-section">
               <h2>Biographie</h2>
               <p class="lead">
-                Le <strong>Dr ELE ABIAMA Patrice</strong> est le Secrétaire Permanent du Comité
-                National de Développement des Technologies (CNDT). Il coordonne l'ensemble des
-                activités scientifiques, techniques et administratives de l'institution.
+                <strong>Dr Patrice ELE ABIAMA</strong>, Directeur de Recherche, est titulaire d'un
+                Doctorat/Ph.D en <strong>Physique Nucléaire Appliquée</strong>. Il dispose de plusieurs
+                publications dans des revues scientifiques et techniques de renommée internationale.
               </p>
               <p>
-                Titulaire d'un doctorat en sciences de l'ingénieur, il a consacré sa carrière à
-                la promotion de la recherche appliquée et au transfert de technologies vers le
-                tissu économique camerounais. Il pilote la mise en œuvre du plan d'action national
-                en matière de veille et de développement technologique.
+                Il enseigne la Physique et encadre de nombreux jeunes chercheurs et étudiants issus des
+                Universités d'État et des Institutions nationales de recherche. Sur le plan administratif,
+                le Dr ELE ABIAMA a occupé pendant plusieurs années des fonctions dans l'administration
+                centrale du <strong>MINRESI</strong>, notamment celles de Chargé d'Études Assistant et de
+                Chef de la Cellule de Suivi dudit Ministère.
               </p>
               <p>
-                Au sein du CNDT, il assure la liaison entre le Comité, les Secrétariats techniques
-                et les institutions partenaires (MINRESI, universités, instituts de recherche,
-                entreprises).
+                Actuellement <strong>Secrétaire Permanent du Comité National de Développement des
+                Technologies (CNDT)</strong>, il assure par ailleurs la <strong>Coordination Nationale du
+                Programme international AFRA</strong> sur la promotion des technologies nucléaires pour
+                le développement en Afrique.
               </p>
             </section>
 
-            <!-- ============ Parcours professionnel ============ -->
-            <section id="parcours" class="project-section">
-              <h2>Parcours professionnel</h2>
+            <!-- ============ Centres d'intérêts ============ -->
+            <section id="interets" class="project-section">
+              <h2>Centres d'intérêts</h2>
 
-              <ol class="profile-timeline">
-                <li>
-                  <span class="phase-dot"></span>
-                  <div>
-                    <strong>Secrétaire Permanent — CNDT</strong>
-                    <em>Depuis 2019 · Yaoundé, Cameroun</em>
-                    <p>Direction exécutive de l'institution, pilotage des Secrétariats techniques et coordination des partenariats.</p>
-                  </div>
-                </li>
-
-                <li>
-                  <span class="phase-dot"></span>
-                  <div>
-                    <strong>Directeur de recherche — MINRESI</strong>
-                    <em>2013 – 2019 · Yaoundé</em>
-                    <p>Coordination de programmes nationaux en technologies industrielles et énergétiques.</p>
-                  </div>
-                </li>
-
-                <li>
-                  <span class="phase-dot"></span>
-                  <div>
-                    <strong>Chercheur senior — IRGM</strong>
-                    <em>2006 – 2013 · Yaoundé</em>
-                    <p>Travaux de recherche sur les matériaux et procédés industriels adaptés au contexte camerounais.</p>
-                  </div>
-                </li>
-
-                <li>
-                  <span class="phase-dot"></span>
-                  <div>
-                    <strong>Enseignant-chercheur — Université de Yaoundé I</strong>
-                    <em>2002 – 2006 · Yaoundé</em>
-                    <p>Enseignement et encadrement d'étudiants en sciences de l'ingénieur.</p>
-                  </div>
-                </li>
-              </ol>
-            </section>
-
-            <!-- ============ Attributions ============ -->
-            <section id="attributions" class="project-section">
-              <h2>Attributions</h2>
-              <p>Dans le cadre de ses fonctions de Secrétaire Permanent, il assure notamment :</p>
-
-              <ul class="project-list">
-                <li>La direction opérationnelle et la représentation officielle du CNDT.</li>
-                <li>La coordination des travaux des cinq Secrétariats techniques.</li>
-                <li>L'élaboration et le suivi du budget annuel du Comité.</li>
-                <li>La préparation des sessions du Comité et la mise en œuvre de ses décisions.</li>
-                <li>La gestion des partenariats nationaux et internationaux.</li>
-                <li>La supervision de la politique de publication et de diffusion scientifique.</li>
+              <ul class="chip-list" aria-label="Domaines d'expertise et centres d'intérêts">
+                <li class="chip">Physique nucléaire</li>
+                <li class="chip">Physique nucléaire appliquée</li>
+                <li class="chip">Dosimétrie</li>
+                <li class="chip">Finance publique</li>
+                <li class="chip">Management</li>
               </ul>
-            </section>
-
-            <!-- ============ Publications & travaux ============ -->
-            <section id="publications" class="project-section">
-              <h2>Publications &amp; travaux</h2>
-              <p>Sélection de contributions scientifiques et techniques.</p>
-
-              <ul class="profile-publications">
-                <li>
-                  <strong>ELE ABIAMA P. (2024)</strong>
-                  <em>« Transfert de technologies et souveraineté industrielle au Cameroun »</em>
-                  <span>Revue Technomag — Numéro 34</span>
-                </li>
-                <li>
-                  <strong>ELE ABIAMA P. et al. (2022)</strong>
-                  <em>« Valorisation des matériaux locaux dans les procédés industriels »</em>
-                  <span>Actes du Colloque national sur l'innovation — Yaoundé</span>
-                </li>
-                <li>
-                  <strong>ELE ABIAMA P. (2020)</strong>
-                  <em>« Veille technologique et développement durable : le rôle du CNDT »</em>
-                  <span>Communication — Semaine de la recherche scientifique</span>
-                </li>
-              </ul>
-            </section>
-
-            <!-- ============ Distinctions ============ -->
-            <section id="distinctions" class="project-section">
-              <h2>Distinctions</h2>
-              <ul class="project-list">
-                <li>Chevalier de l'Ordre National de la Valeur (2022).</li>
-                <li>Prix de la Recherche Appliquée — MINRESI (2016).</li>
-                <li>Membre de la Société Camerounaise des Sciences de l'Ingénieur.</li>
-              </ul>
-            </section>
-
-            <!-- ============ Contact ============ -->
-            <section id="contact" class="project-section">
-              <h2>Contact</h2>
-              <p>Pour toute demande institutionnelle, utilisez les coordonnées ci-dessous.</p>
-
-              <div class="profile-contact">
-                <div class="profile-contact__item">
-                  <span class="profile-contact__label">Bureau</span>
-                  <strong>Secrétariat Permanent — CNDT</strong>
-                  <p>Centre administratif, Yaoundé — B.P. 1457, Cameroun</p>
-                </div>
-
-                <div class="profile-contact__item">
-                  <span class="profile-contact__label">Téléphone</span>
-                  <a href="tel:+237222222509">(+237) 222 22 25 09</a>
-                </div>
-
-                <div class="profile-contact__item">
-                  <span class="profile-contact__label">Email</span>
-                  <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
-                </div>
-              </div>
-
-              <a class="button button-outline profile-contact__btn" href="../organigramme.html">Voir l'organigramme <span aria-hidden="true">→</span></a>
             </section>
 
           </article>
+
+          <!-- ---------- SIDEBAR ---------- -->
+          <aside class="sidebar" aria-label="Actualités et publications du CNDT">
+            <section class="news-agenda" aria-labelledby="news-title">
+              <div class="sidebar-heading">
+                <h2 id="news-title">Actualités</h2>
+              </div>
+              <div class="agenda-list">
+                <a href="actualite/aiea70-2026.html">
+                  <time datetime="2026-09-14"><small>MAR</small><strong>14</strong><span>SEP<br>2026</span></time>
+                  <p>Le Cameroun à la 70ᵉ Conférence Générale de l'AIEA</p>
+                </a>
+                <a href="actualite/formation-finances-publiques-2026.html">
+                  <time datetime="2026-08-19"><small>MER</small><strong>19</strong><span>AOU<br>2026</span></time>
+                  <p>Atelier sur l'évolution du cadre légal et réglementaire de la gestion des finances publiques</p>
+                </a>
+                <a href="actualite/cndt-43e-session-comite.html">
+                  <time datetime="2026-07-09"><small>JEU</small><strong>09</strong><span>JUIL<br>2026</span></time>
+                  <p>CNDT : 43ᵉ session du Comité National de Développement des Technologies</p>
+                </a>
+
+                <a href="actualite/sia-minresi-2026.html">
+                  <time datetime="2026-06-09"><small>MAR</small><strong>09</strong><span>JUIN<br>2026</span></time>
+                  <p>Semaine de l'Intelligence Artificielle au MINRESI</p>
+                </a>
+
+                <a href="actualite/symposium-2026.html">
+                  <time datetime="2026-03-18"><small>MER</small><strong>18</strong><span>MAR<br>2026</span></time>
+                  <p>Symposium sur l'Intelligence Artificielle et la Souveraineté Numérique au Cameroun</p>
+                </a>
+              </div>
+              <a class="sidebar-more" href="../actualites.html">Toutes les actualités <span aria-hidden="true">→</span></a>
+            </section>
+
+            <section id="ressources" class="resource-module" aria-labelledby="resources-title">
+              <h2 id="resources-title">Publications &amp; médias</h2>
+              <nav aria-label="Publications et médias">
+                <a href="../publication.html#technomag"><span aria-hidden="true">›</span>Techno Mag</a>
+                <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww" target="_blank" rel="noopener"><span aria-hidden="true">›</span>Émissions TV</a>
+                <a href="../publication.html#phototheque"><span aria-hidden="true">›</span>Photothèque</a>
+                <a href="../publication.html#innovation"><span aria-hidden="true">›</span>Innovation</a>
+                <a href="../publication.html#rapports"><span aria-hidden="true">›</span>Rapports</a>
+              </nav>
+            </section>
+          </aside>
         </div>
 
         <!-- Retour -->
@@ -484,6 +437,74 @@
         </div>
 
       </div>
+    </section>
+
+        <section class="instituts">
+        <div class="block-heading">
+              <!-- <p>Le Secrétariat Permanent</p> -->
+              <h2 class="sp-title">Instituts sous tutelle du MINRESI</h2>
+        </div>
+
+        <!-- Conteneur du Carrousel Swiper -->
+        <div class="swiper instituts-carousel">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="https://www.cndtcameroun.cm/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/logo-cndt.webp" alt="CNDT" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="http://anrp.cm/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/instituts/anrp-1.jpg" alt="ANRP" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="http://irad.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/instituts/irad-1.jpg" alt="IRAD" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://impm-cm.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/instituts/impm.png" alt="IMPM" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="http://www.inc.ayoos.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/instituts/inc-1.jpg" alt="INC" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="http://www.mipromalo.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/instituts/mipromalo-1.jpg" alt="MIPROMALO" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="http://195.24.207.248/~minresi/index.php/2015/07/21/accueil_principal/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/instituts/cne-1.jpg" alt="CNE" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://irgm-cameroun.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <img src="assets/instituts/irgm-1.jpg" alt="IRGM" loading="lazy">
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Navigation & Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        
     </section>
   </main>
 
@@ -518,5 +539,7 @@
       <p>La technologie au service du développement</p>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 </html>

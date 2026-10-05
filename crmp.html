@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Commission Recherche et Management des Projets du CNDT — Recherche, maturation, information scientifique et prospective au service du développement technologique.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Commission Recherche &amp; Management des Projets | CNDT Cameroun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="site.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="utility-inner">
+        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+        <div class="utility-links">
+          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" lang="en" aria-label="English version">English</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="main-nav">
+        <a class="brand" href="index.html" aria-label="Accueil du CNDT">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT">
+          <span class="brand-copy">
+            <strong>Comité National de Développement des Technologies</strong>
+            <small>La technologie au service du développement</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+          <a class="active" href="index.html">Accueil</a>
+
+          <!-- =========================================================
+              TRIGGER DU MEGA-MENU
+              ========================================================= -->
+          <button
+            type="button"
+            class="primary-nav__trigger"
+            aria-expanded="false"
+            aria-controls="mega-organisation"
+            data-mega-trigger
+          >
+            <span>Secrétariats Permanents</span>
+            <svg class="primary-nav__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.4 9.2 12 14.8l5.6-5.6-1.4-1.4L12 12l-4.2-4.2z"/>
+            </svg>
+          </button>
+
+          <!-- <a href="index.html#secretariats">Secrétariats Permanents</a> -->
+          <a href="actualites.html">Actualités</a>
+          <a href="publication.html">Publications</a>
+          <a href="contact.html">Contact</a>
+
+          <!-- =========================================================
+              BARRE DE RECHERCHE
+              ========================================================= -->
+          <div class="nav-search" data-nav-search role="search">
+            <form class="nav-search__form" autocomplete="off" novalidate>
+              <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
+
+              <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+              </svg>
+
+              <input
+                id="nav-search-input"
+                class="nav-search__input"
+                type="search"
+                name="q"
+                placeholder="Rechercher…"
+                aria-autocomplete="list"
+                aria-controls="nav-search-results"
+                aria-expanded="false"
+                data-nav-search-input
+              >
+
+              <button
+                class="nav-search__clear"
+                type="button"
+                aria-label="Effacer la recherche"
+                data-nav-search-clear
+                hidden
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                </svg>
+              </button>
+            </form>
+
+            <!-- Résultats dropdown -->
+            <div
+              id="nav-search-results"
+              class="nav-search__results"
+              role="listbox"
+              aria-label="Résultats de recherche"
+              hidden
+              data-nav-search-results
+            ></div>
+          </div> 
+
+          <ul class="nav-socials" aria-label="Nos réseaux sociaux">
+            <li>
+              <a href="https://www.facebook.com/cndtcameroun"
+                target="_blank" rel="noopener"
+                aria-label="Page Facebook du CNDT"
+                class="nav-social nav-social--facebook">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
+                target="_blank" rel="noopener"
+                aria-label="Chaîne YouTube du CNDT"
+                class="nav-social nav-social--youtube">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!-- =========================================================
+              MEGA-MENU — placé en fin de nav
+              Positionné en absolute sous le header sur desktop
+              Devient accordéon inline sur mobile
+              ========================================================= -->
+          <div
+            id="mega-organisation"
+            class="mega-menu"
+            aria-hidden="true"
+            data-mega-menu
+          >
+            <div class="mega-menu__inner">
+              <div class="container">
+
+                <!-- En-tête du panneau -->
+                <div class="mega-menu__head">
+                  <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
+                  <button
+                    type="button"
+                    class="mega-menu__close"
+                    aria-label="Fermer le menu Organisation"
+                    data-mega-close
+                  >
+                    Fermer
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Grille des colonnes -->
+                <div class="mega-menu__grid">
+
+                  <!-- Colonne 1 — Institution -->
+                  <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Institution</h3> -->
+                    <ul class="mega-menu__list">
+                      <li>
+                        <a href="index.html#institution">
+                          <span>Mot du Secrétaire Permanent</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="comite.html">
+                          <span>Comité</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cabinet.html">
+                          <span>Cabinet du Secrétaire Permanent</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Colonne 2 — Coordinations -->
+                  <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Coordinations</h3> -->
+                    <ul class="mega-menu__list">
+                      <li>
+                        <a href="crmp.html">
+                          <span>Commission recherche et management des projets</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="caaf.html">
+                          <span>Commission des affaires administratives, financières et des engagements</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cdcrp.html">
+                          <span>Commission documentation, communication et relations publiques</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Colonne 3 — Ressources humaines -->
+                  <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Ressources humaines</h3> -->
+                    <ul class="mega-menu__list">
+                      <li>
+                        <a href="ct.html">
+                          <span>Commission technique</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="personnel.html">
+                          <span>Catalogue du personnel</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <!-- Pied du panneau -->
+                <!-- <div class="mega-menu__foot">
+                  <a class="mega-menu__cta" href="organigramme.html">
+                    Voir l'organigramme complet
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div> -->
+
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="container ecart home-grid">
+
+      <section class="inner-section">
+        <div class="container">
+
+          <!-- Fil d'Ariane -->
+          <nav class="breadcrumb" aria-label="Fil d'Ariane">
+            <a href="index.html">Accueil</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Recherche &amp; Management des Projets</span>
+          </nav>
+
+          <!-- ---------- Présentation générale ---------- -->
+          <div class="page-heading">
+            <div>
+              <h2>Commission Recherche &amp; Management des Projets</h2>
+            </div>
+          </div>
+
+          <div class="org-intro">
+            <p>
+              Placée sous l'autorité d'un <strong>Coordonnateur Exécutif Adjoint</strong>, la Commission
+              Recherche et Management des Projets assure le pilotage scientifique, technique et
+              opérationnel du Comité National de Développement des Technologies. Elle coordonne
+              l'ensemble des activités de recherche, le montage et le suivi des projets, ainsi que
+              l'élaboration de la stratégie de développement et de transfert des technologies.
+            </p>
+            <p style="margin-top:14px;">
+              À ce titre, elle encadre les travaux des Secrétariats techniques et des Commissions
+              Techniques du CNDT, et rend compte au Secrétaire Permanent de l'état d'avancement des
+              projets et de la performance des unités placées sous sa supervision.
+            </p>
+          </div>
+
+          <!-- =========================================================
+               ATTRIBUTIONS DE LA COMMISSION
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Ce dont la Commission est chargée</h2>
+            </div>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>Du suivi et de l'évaluation des activités des Secrétariats et des Commissions Techniques ;</li>
+            <li>Du suivi et de l'élaboration des rapports scientifiques en matière de Recherche et Développement (R&amp;D) au CNDT ;</li>
+            <li>Du choix des technologies intéressant le développement ;</li>
+            <li>De la coordination du montage des projets ;</li>
+            <li>De la planification annuelle des projets et des activités de Recherche et Développement (R&amp;D) ;</li>
+            <li>Du suivi de l'exécution des projets et des activités de Recherche et Développement (R&amp;D) ;</li>
+            <li>De l'élaboration et de la tenue des fiches de suivi individualisé des chercheurs ;</li>
+            <li>De la préparation et du suivi des dossiers d'évaluation des chercheurs ;</li>
+            <li>De l'élaboration et de la mise en œuvre de la stratégie de développement et de transfert des technologies.</li>
+          </ul>
+
+          <!-- =========================================================
+               II.1.1 — SECRÉTARIAT DE LA RECHERCHE
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Secrétariat de la Recherche</h2>
+            </div>
+          </div>
+
+          <div class="org-intro" style="margin-bottom:24px;">
+            <p>
+              Placé sous l'autorité d'un <strong>Chef de Secrétariat</strong>, le Secrétariat de la
+              Recherche est chargé de la planification annuelle des projets et des activités de
+              Recherche et Développement (R&amp;D), du suivi et de l'élaboration des rapports
+              scientifiques au Comité National de Développement des Technologies, ainsi que de la
+              préparation et du suivi des dossiers d'évaluation des chercheurs. Il anime également
+              la vie scientifique du CNDT.
+            </p>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>De la planification annuelle des projets et des activités de Recherche et Développement (R&amp;D) ;</li>
+            <li>Du suivi et de l'élaboration des rapports scientifiques en matière de R&amp;D au CNDT ;</li>
+            <li>De l'élaboration et de la tenue des fiches de suivi individualisé des chercheurs ;</li>
+            <li>De la préparation et du suivi des dossiers d'évaluation des chercheurs ;</li>
+            <li>De la planification annuelle des activités de recherche ;</li>
+            <li>De l'animation scientifique au CNDT.</li>
+          </ul>
+
+          <div class="org-chapter-grid" style="margin-top:26px;">
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir le Secrétariat de la Recherche">
+              <h3>Chef de Secrétariat de la Recherche</h3>
+              <p>Coordination générale, planification R&amp;D et animation scientifique du CNDT.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Premier Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint — 1</h3>
+              <p>Appui à la planification et au suivi des projets de recherche.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Deuxième Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint — 2</h3>
+              <p>Appui à l'élaboration des rapports scientifiques et aux fiches des chercheurs.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Troisième Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint — 3</h3>
+              <p>Appui aux dossiers d'évaluation des chercheurs et à l'animation scientifique.</p>
+            </a>
+
+          </div>
+
+          <!-- =========================================================
+               II.1.2 — SECRÉTARIAT DE LA MATURATION DES PROJETS
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Secrétariat de la Maturation des Projets</h2>
+            </div>
+          </div>
+
+          <div class="org-intro" style="margin-bottom:24px;">
+            <p>
+              Placé sous l'autorité d'un <strong>Chef de Secrétariat</strong>, le Secrétariat de la
+              Maturation des Projets est chargé de l'évaluation de la maturité des projets, de la
+              prospection et du montage des projets de Recherche et Développement (R&amp;D), de leur
+              consolidation et du suivi de leur exécution, ainsi que de l'évaluation statistique de
+              leur mise en œuvre.
+            </p>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>De l'évaluation de la maturité des projets des Secrétariats et des Commissions Techniques ;</li>
+            <li>De la prospection des activités et des projets de Recherche et Développement (R&amp;D) ;</li>
+            <li>De la planification annuelle des projets et des activités de R&amp;D ;</li>
+            <li>Du choix des technologies intéressant le développement ;</li>
+            <li>Du montage et de la consolidation des projets ;</li>
+            <li>Du suivi de l'exécution des projets et/ou des activités de R&amp;D ;</li>
+            <li>De l'évaluation statistique de la mise en œuvre des projets.</li>
+          </ul>
+
+          <div class="org-chapter-grid" style="margin-top:26px;">
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir le Secrétariat de la Maturation des Projets">
+              <h3>Chef de Secrétariat — Maturation des Projets</h3>
+              <p>Coordination générale, évaluation de maturité et suivi de l'exécution des projets.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Chef de Secrétariat Adjoint chargé du CDMT">
+              <h3>Chef de Secrétariat Adjoint — CDMT</h3>
+              <p>Élaboration du Cadre des Dépenses à Moyen Terme (CDMT) du CNDT.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Chef de Secrétariat Adjoint chargé des projets de transformations industrielles">
+              <h3>Chef de Secrétariat Adjoint — Transformations Industrielles</h3>
+              <p>Maturation des projets relevant des technologies et transformations industrielles.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Chef de Secrétariat Adjoint chargé des politiques scientifiques">
+              <h3>Chef de Secrétariat Adjoint — Politiques Scientifiques</h3>
+              <p>Maturation des projets relevant des politiques scientifiques et technologiques.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Chef de Secrétariat Adjoint chargé des biosciences">
+              <h3>Chef de Secrétariat Adjoint — Biosciences &amp; Technologies Agricoles</h3>
+              <p>Maturation des projets relevant des biosciences et technologies agricoles.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Chef de Secrétariat Adjoint chargé des TIC et de l'IA">
+              <h3>Chef de Secrétariat Adjoint — TIC &amp; IA</h3>
+              <p>Maturation des projets relevant des technologies numériques et de l'intelligence artificielle.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Chef de Secrétariat Adjoint chargé des mines, de l'environnement et des énergies renouvelables">
+              <h3>Chef de Secrétariat Adjoint — Mines, Environnement &amp; Énergies Renouvelables</h3>
+              <p>Maturation des projets relevant des mines, de l'environnement et des énergies renouvelables.</p>
+            </a>
+
+          </div>
+
+          <!-- =========================================================
+               II.1.3 — SECRÉTARIAT DE L'INFORMATION SCIENTIFIQUE ET TECHNIQUE
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Secrétariat de l'Information Scientifique &amp; Technique</h2>
+            </div>
+          </div>
+
+          <div class="org-intro" style="margin-bottom:24px;">
+            <p>
+              Placé sous l'autorité d'un <strong>Chef de Secrétariat</strong>, le Secrétariat de
+              l'Information Scientifique et Technique est chargé de regrouper l'ensemble des
+              informations produites par la recherche et nécessaires à l'activité scientifique comme
+              à l'industrie au Cameroun, de collecter et d'analyser les données scientifiques et
+              techniques du CNDT, de constituer une banque de données sur les inventions et résultats
+              de recherche, et de mettre en place un portail électronique sur le Système
+              d'Information Scientifique et Technique.
+            </p>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>De regrouper l'ensemble des informations produites par la recherche et nécessaires à l'activité scientifique comme à l'industrie au Cameroun ;</li>
+            <li>De collecter, de traiter et d'analyser les données scientifiques et techniques développées au CNDT ;</li>
+            <li>De constituer une banque de données sur les inventions, les découvertes et les résultats de recherche au CNDT ;</li>
+            <li>De mettre en place un portail électronique et une documentation sur le Système d'Information Scientifique et Technique au CNDT.</li>
+          </ul>
+
+          <div class="org-chapter-grid" style="margin-top:26px;">
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir le Secrétariat de l'Information Scientifique et Technique">
+              <h3>Chef de Secrétariat — Information S&amp;T</h3>
+              <p>Coordination générale, gestion du SIST et pilotage du portail électronique.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Premier Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint — 1</h3>
+              <p>Appui à la collecte et au traitement des données scientifiques et techniques.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Deuxième Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint — 2</h3>
+              <p>Appui à la constitution de la banque de données et à la documentation SIST.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Cadre Chargé d'Études Assistant">
+              <h3>Cadre Chargé d'Études Assistant</h3>
+              <p>Appui technique à l'analyse des données et à la mise en place du portail électronique.</p>
+            </a>
+
+          </div>
+
+          <!-- =========================================================
+               II.1.4 — SECRÉTARIAT DE LA PROSPECTIVE ET DES CONFÉRENCES
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Secrétariat de la Prospective &amp; des Conférences</h2>
+            </div>
+          </div>
+
+          <div class="org-intro" style="margin-bottom:24px;">
+            <p>
+              Placé sous l'autorité d'un <strong>Chef de Secrétariat</strong>, le Secrétariat de la
+              Prospective et des Conférences est chargé de l'identification des partenaires techniques
+              et financiers, de l'organisation des conférences et des ateliers de transfert
+              technologique, ainsi que de l'organisation des journées portes ouvertes, foires et
+              expositions des produits de la recherche du CNDT.
+            </p>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>De l'identification des partenaires techniques et financiers favorables à la mise en œuvre des activités du CNDT, en lien avec le Secrétariat de la Coopération et du Partenariat ;</li>
+            <li>De l'organisation des conférences intéressant les domaines technologiques du CNDT ;</li>
+            <li>De l'animation des ateliers de transfert des technologies intéressant les domaines technologiques du CNDT ;</li>
+            <li>De l'organisation des journées portes ouvertes, des foires et des expositions des produits de la recherche.</li>
+          </ul>
+
+          <div class="org-chapter-grid" style="margin-top:26px;">
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir le Secrétariat de la Prospective et des Conférences">
+              <h3>Chef de Secrétariat — Prospective &amp; Conférences</h3>
+              <p>Coordination générale, partenariats et organisation évènementielle.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Premier Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint — 1</h3>
+              <p>Appui à l'organisation des conférences et des ateliers de transfert.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Deuxième Chef de Secrétariat Adjoint">
+              <h3>Chef de Secrétariat Adjoint — 2</h3>
+              <p>Appui à l'organisation des foires, expositions et journées portes ouvertes.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la fiche du Cadre Chargé d'Études Assistant">
+              <h3>Cadre Chargé d'Études Assistant</h3>
+              <p>Appui à l'identification des partenaires techniques et financiers.</p>
+            </a>
+
+          </div>
+
+          <!-- =========================================================
+               II.1.5 — SECRÉTARIATS DES COMMISSIONS TECHNIQUES
+               ========================================================= -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Secrétariats des Commissions Techniques</h2>
+            </div>
+          </div>
+
+          <div class="org-intro" style="margin-bottom:24px;">
+            <p>
+              Les Secrétariats des Commissions Techniques constituent le cœur scientifique et
+              technologique du CNDT. Répartis en <strong>cinq domaines spécialisés</strong>, ils
+              assurent la veille technologique, l'inventaire des technologies locales, la conception
+              et la réalisation de prototypes, la préparation de contenus destinés à la diffusion et
+              la proposition de modules de formation et de thèmes de conférences.
+            </p>
+          </div>
+
+          <!-- Les 5 Commissions Techniques -->
+          <div class="org-chapter-grid">
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la Commission TIC et Intelligence Artificielle">
+              <h3>01 · TIC &amp; Intelligence Artificielle</h3>
+              <p>Technologies de l'information, de la communication et intelligence artificielle.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la Commission Technologies et Transformations Industrielles">
+              <h3>02 · Technologies &amp; Transformations Industrielles</h3>
+              <p>Procédés industriels, matériaux et valorisation locale.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la Commission Biosciences et Technologies Agricoles">
+              <h3>03 · Biosciences &amp; Technologies Agricoles</h3>
+              <p>Biotechnologies, agro-industrie et sécurité alimentaire durable.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la Commission Énergie, Mines et Environnement">
+              <h3>04 · Énergie, Mines &amp; Environnement</h3>
+              <p>Énergies renouvelables, ressources minières et gestion environnementale.</p>
+            </a>
+
+            <a class="org-chapter-card" href="#"
+               aria-label="Voir la Commission Politiques Scientifiques et Technologiques">
+              <h3>05 · Politiques Scientifiques &amp; Technologiques</h3>
+              <p>Analyses prospectives, aide à la décision et stratégie nationale S&amp;T.</p>
+            </a>
+
+          </div>
+
+          <!-- Missions communes aux Secrétariats Techniques -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Missions des Secrétariats Techniques</h2>
+            </div>
+          </div>
+
+          <ul class="project-list" style="columns:2; column-gap:34px;">
+            <li>Faire la veille technologique ;</li>
+            <li>Collecter et traiter l'information technologique ;</li>
+            <li>Inventorier les technologies locales pertinentes pour le développement ;</li>
+            <li>Concevoir et réaliser des prototypes technologiques ;</li>
+            <li>Mener des études de conception et d'adaptation des technologies ;</li>
+            <li>Mener des travaux de recherche ;</li>
+            <li>Préparer les contenus de l'information technologique destinée à la diffusion ;</li>
+            <li>Proposer des modules de formation ;</li>
+            <li>Proposer des thèmes de conférences organisées par le CNDT ;</li>
+            <li>Réaliser tous les autres travaux confiés par le Secrétaire Permanent.</li>
+          </ul>
+
+          <!-- Composition type -->
+          <div class="page-heading" style="margin-top:56px;">
+            <div>
+              <h2>Composition type d'un Secrétariat Technique</h2>
+            </div>
+          </div>
+
+          <ol class="chapter-path" aria-label="Composition d'un Secrétariat Technique">
+            <li>
+              <span class="chapter-path__dot" aria-hidden="true"></span>
+              <div>
+                <strong>1 Chef de Secrétariat</strong>
+                <em>Animation, programmation, suivi et évaluation de l'ensemble des activités du Secrétariat</em>
+              </div>
+            </li>
+            <li>
+              <span class="chapter-path__dot" aria-hidden="true"></span>
+              <div>
+                <strong>1 ou plusieurs Chefs de Secrétariat Adjoints</strong>
+                <em>Appui à la coordination thématique et au suivi des travaux</em>
+              </div>
+            </li>
+            <li>
+              <span class="chapter-path__dot" aria-hidden="true"></span>
+              <div>
+                <strong>Membres-Chercheurs ou Membres-Experts</strong>
+                <em>Mobilisés selon les besoins thématiques du Secrétariat</em>
+              </div>
+            </li>
+            <li>
+              <span class="chapter-path__dot" aria-hidden="true"></span>
+              <div>
+                <strong>Personnel d'Appui</strong>
+                <em>Support administratif et technique aux activités du Secrétariat</em>
+              </div>
+            </li>
+          </ol>
+
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SIDEBAR
+           ========================================================= -->
+      <aside class="sidebar" aria-label="Actualités et publications du CNDT">
+        <section class="news-agenda" aria-labelledby="news-title">
+          <div class="sidebar-heading">
+            <h2 id="news-title">Actualités du CNDT</h2>
+          </div>
+          <div class="agenda-list">
+            <a href="actualites.html#per-numerique">
+              <time datetime="2026-09-15"><small>MAR</small><strong>15</strong><span>SEP<br>2026</span></time>
+              <p>Le Cameroun à la 70ᵉ Conférence Générale de l'AIEA</p>
+            </a>
+            <a href="actualites.html#sia-2026">
+              <time datetime="2026-06-15"><small>LUN</small><strong>15</strong><span>JUN<br>2026</span></time>
+              <p>Première édition de la Semaine de l'Intelligence Artificielle au MINRESI</p>
+            </a>
+            <a href="actualites.html#souverainete-numerique">
+              <time datetime="2026-05-25"><small>LUN</small><strong>25</strong><span>MAI<br>2026</span></time>
+              <p>Intelligence artificielle et souveraineté numérique : chercheurs et experts en dialogue</p>
+            </a>
+            <a href="actualites.html#propriete-intellectuelle">
+              <time datetime="2026-03-18"><small>MER</small><strong>18</strong><span>MAR<br>2026</span></time>
+              <p>Renforcement des capacités en propriété intellectuelle et import-substitution</p>
+            </a>
+            <a href="actualites.html#per-numerique">
+              <time datetime="2026-09-04"><small>VEN</small><strong>04</strong><span>SEP<br>2026</span></time>
+              <p>Rétrocession de la plateforme énergétique rurale numérique à la Commune de Bayangam</p>
+            </a>
+          </div>
+          <a class="sidebar-more" href="actualites.html">Toutes les actualités <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section id="ressources" class="resource-module" aria-labelledby="resources-title">
+          <h2 id="resources-title">Publications &amp; médias</h2>
+          <nav aria-label="Publications et médias">
+            <a href="publication.html#technomag"><span aria-hidden="true">›</span> Technomag</a>
+            <a href="publication.html#rapports"><span aria-hidden="true">›</span> Rapports et actes scientifiques</a>
+            <a href="publication.html#documents"><span aria-hidden="true">›</span> Documents techniques</a>
+            <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww" target="_blank" rel="noopener"><span aria-hidden="true">›</span> Émissions TV</a>
+            <a href="publication.html#phototheque"><span aria-hidden="true">›</span> Photothèque</a>
+          </nav>
+        </section>
+      </aside>
+
+    </section>
+
+    <!-- Carrousel partenaires -->
+    <section class="instituts">
+      <div class="block-heading">
+        <h2 class="sp-title">Instituts et Partenaires</h2>
+      </div>
+
+      <div class="swiper instituts-carousel">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <a href="http://anrp.cm/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/anrp-1.jpg" alt="ANRP" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://irad.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/irad-1.jpg" alt="IRAD" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://impm-cm.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/impm.png" alt="IMPM" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.inc.ayoos.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/inc-1.jpg" alt="INC" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://www.mipromalo.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/mipromalo-1.jpg" alt="MIPROMALO" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="http://195.24.207.248/~minresi/index.php/2015/07/21/accueil_principal/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/cne-1.jpg" alt="CNE" loading="lazy">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="https://irgm-cameroun.org/" target="_blank" rel="noopener noreferrer" class="partner-card">
+              <img src="assets/instituts/irgm-1.jpg" alt="IRGM" loading="lazy">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+        <p>Comité National de Développement des Technologies</p>
+      </div>
+      <div>
+        <h2>Coordonnées</h2>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+      </div>
+      <div>
+        <h2>Accès rapide</h2>
+        <a href="index.html#institution">Présentation</a>
+        <a href="index.html#secretariats">Secrétariats</a>
+        <a href="organigramme.html">Organigramme</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="publication.html">Publications</a>
+      </div>
+      <div>
+        <h2>Institution de tutelle</h2>
+        <p>Ministère de la Recherche Scientifique et de l'Innovation</p>
+        <a class="footer-external" href="https://minresgov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+      <p>La technologie au service du développement</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

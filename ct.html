@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Commission Support du CNDT — Ressources Humaines, Coopération, Affaires Juridiques, Administration, Finances et CATI.">
+  <meta name="description" content="Commission Technique du CNDT — Cinq Secrétariats techniques couvrant les domaines scientifiques prioritaires du Cameroun.">
   <meta name="theme-color" content="#1f663f">
-  <title>Commission Support | CNDT Cameroun</title>
+  <title>Commission Technique | CNDT Cameroun</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="site.css">
   <script defer src="app.js"></script>
@@ -15,7 +15,7 @@
 
   <header class="site-header">
     <div class="utility-bar">
-      <div class="container utility-inner">
+      <div class="utility-inner">
         <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
         <div class="utility-links">
           <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
@@ -28,7 +28,7 @@
     <div class="main-nav-wrap">
       <div class="main-nav">
         <a class="brand" href="index.html" aria-label="Accueil du CNDT">
-          <img src="assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT">
           <span class="brand-copy">
             <strong>Comité National de Développement des Technologies</strong>
             <small>La technologie au service du développement</small>
@@ -41,9 +41,11 @@
         </button>
 
         <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
-          <a href="index.html">Accueil</a>
+          <a class="active" href="index.html">Accueil</a>
 
-          <!-- Trigger mega-menu -->
+          <!-- =========================================================
+              TRIGGER DU MEGA-MENU
+              ========================================================= -->
           <button
             type="button"
             class="primary-nav__trigger"
@@ -57,11 +59,14 @@
             </svg>
           </button>
 
+          <!-- <a href="index.html#secretariats">Secrétariats Permanents</a> -->
           <a href="actualites.html">Actualités</a>
           <a href="publication.html">Publications</a>
           <a href="contact.html">Contact</a>
 
-          <!-- Barre de recherche -->
+          <!-- =========================================================
+              BARRE DE RECHERCHE
+              ========================================================= -->
           <div class="nav-search" data-nav-search role="search">
             <form class="nav-search__form" autocomplete="off" novalidate>
               <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
@@ -95,6 +100,7 @@
               </button>
             </form>
 
+            <!-- Résultats dropdown -->
             <div
               id="nav-search-results"
               class="nav-search__results"
@@ -103,9 +109,32 @@
               hidden
               data-nav-search-results
             ></div>
-          </div>
+          </div> 
 
-          <!-- Mega-menu -->
+          <ul class="nav-socials" aria-label="Nos réseaux sociaux">
+            <li>
+              <a href="https://www.facebook.com/cndtcameroun"
+                target="_blank" rel="noopener"
+                aria-label="Page Facebook du CNDT"
+                class="nav-social nav-social--facebook">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
+                target="_blank" rel="noopener"
+                aria-label="Chaîne YouTube du CNDT"
+                class="nav-social nav-social--youtube">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!-- =========================================================
+              MEGA-MENU — placé en fin de nav
+              Positionné en absolute sous le header sur desktop
+              Devient accordéon inline sur mobile
+              ========================================================= -->
           <div
             id="mega-organisation"
             class="mega-menu"
@@ -115,6 +144,7 @@
             <div class="mega-menu__inner">
               <div class="container">
 
+                <!-- En-tête du panneau -->
                 <div class="mega-menu__head">
                   <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
                   <button
@@ -130,31 +160,79 @@
                   </button>
                 </div>
 
+                <!-- Grille des colonnes -->
                 <div class="mega-menu__grid">
 
+                  <!-- Colonne 1 — Institution -->
                   <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Institution</h3> -->
                     <ul class="mega-menu__list">
-                      <li><a href="index.html#institution"><span>Mot du Secrétaire Permanent</span></a></li>
-                      <li><a href="comite.html"><span>Comité</span></a></li>
-                      <li><a href="cabinet.html"><span>Cabinet du Secrétaire Permanent</span></a></li>
+                      <li>
+                        <a href="index.html#institution">
+                          <span>Mot du Secrétaire Permanent</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="comite.html">
+                          <span>Comité</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cabinet.html">
+                          <span>Cabinet du Secrétaire Permanent</span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
 
+                  <!-- Colonne 2 — Coordinations -->
                   <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Coordinations</h3> -->
                     <ul class="mega-menu__list">
-                      <li><a href="coordinateur-technique.html"><span>Coordinateur technique</span></a></li>
-                      <li><a href="coordinateur-operationnel.html"><span>Coordinateur opérationnel</span></a></li>
-                      <li><a href="coordinateur-support.html"><span>Coordinateur support</span></a></li>
+                      <li>
+                        <a href="crmp.html">
+                          <span>Commission recherche et management des projets</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="caaf.html">
+                          <span>Commission des affaires administratives, financières et des engagements</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cdcrp.html">
+                          <span>Commission documentation, communication et relations publiques</span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
 
+                  <!-- Colonne 3 — Ressources humaines -->
                   <div class="mega-menu__col">
+                    <!-- <h3 class="mega-menu__title">Ressources humaines</h3> -->
                     <ul class="mega-menu__list">
-                      <li><a href="personnel.html"><span>Catalogue du personnel</span></a></li>
+                      <li>
+                        <a href="ct.html">
+                          <span>Commission technique</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="personnel.html">
+                          <span>Catalogue du personnel</span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
 
                 </div>
+
+                <!-- Pied du panneau -->
+                <!-- <div class="mega-menu__foot">
+                  <a class="mega-menu__cta" href="organigramme.html">
+                    Voir l'organigramme complet
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div> -->
 
               </div>
             </div>
@@ -171,130 +249,82 @@
       <section class="inner-section">
         <div class="container">
 
-          <!-- ---------- Présentation de la Commission Support ---------- -->
+          <!-- ---------- Présentation de la Commission Technique ---------- -->
           <div class="page-heading">
             <div>
-              <p class="page-kicker">Présentation générale</p>
-              <h2>La Commission Support en bref</h2>
+              <h2>Présentation générale</h2>
             </div>
           </div>
 
           <div class="org-intro">
             <p>
-              La <strong>Commission Support</strong> du CNDT regroupe les entités chargées de la gestion
-              administrative, financière, juridique et des ressources humaines du Comité. Elle assure
-              le bon fonctionnement interne de l'institution, la mobilisation des ressources, la
-              préparation et le suivi de l'exécution du budget, ainsi que la gestion des partenariats
-              et de la coopération au bénéfice de l'ensemble des activités du CNDT.
+              La <strong>Commission Technique</strong> regroupe l'ensemble des Secrétariats techniques
+              du CNDT. Elle constitue le cœur scientifique et technologique du Comité et intervient
+              dans cinq domaines prioritaires pour le développement du Cameroun : le numérique et
+              l'intelligence artificielle, les transformations industrielles, les biosciences et
+              technologies agricoles, l'énergie, les mines et l'environnement, ainsi que les politiques
+              scientifiques et technologiques.
             </p>
             <p style="margin-top:14px;">
-              Elle est structurée en <strong>deux Commissions spécialisées</strong>, chacune placée sous
-              l'autorité d'un Coordonnateur Exécutif Adjoint et appuyée par plusieurs Secrétariats
-              techniques. Elle constitue le socle administratif et financier indispensable à la mise en
-              œuvre de la mission scientifique du Comité.
+              Chaque Secrétariat technique assure la veille technologique, l'inventaire des technologies
+              locales pertinentes, la conception et la réalisation de prototypes, ainsi que la préparation
+              des contenus de diffusion et des modules de formation. Les Secrétariats techniques sont
+              placés sous la supervision du Coordonnateur Exécutif Adjoint de la Commission Recherche
+              et Management des Projets et sous la coordination générale du Secrétariat Permanent.
             </p>
           </div>
 
-          <!-- =========================================================
-               COMMISSION 1 — RESSOURCES HUMAINES, COOPÉRATION & AFFAIRES JURIDIQUES
-               ========================================================= -->
+          <!-- ---------- Grille des 5 Commissions Techniques ---------- -->
           <div class="page-heading" style="margin-top:56px;">
             <div>
-              <p class="page-kicker">Première Commission</p>
-              <h2>Ressources Humaines, Coopération &amp; Affaires Juridiques</h2>
+              <h2>Les cinq Commissions Techniques</h2>
             </div>
-          </div>
-
-          <div class="org-intro" style="margin-bottom:24px;">
-            <p>
-              Cette Commission est chargée de la mise en œuvre de la stratégie de coopération et de
-              partenariat, du suivi de la coopération bilatérale et multilatérale, de la gestion
-              prévisionnelle des effectifs, des plans de formation, ainsi que de la défense des
-              intérêts juridiques du CNDT.
-            </p>
           </div>
 
           <div class="org-chapter-grid">
 
-            <!-- ---------- Secrétariat de la Coopération et du Partenariat ---------- -->
-            <a class="org-chapter-card" href="support/cooperation-partenariat.html"
-               aria-label="Voir le Secrétariat de la Coopération et du Partenariat">
-              <h3>Secrétariat de la Coopération &amp; du Partenariat</h3>
-              <p>Stratégie de coopération, conventions, accords et recherche de financements.</p>
+            <!-- ---------- 01 · TIC & IA ---------- -->
+            <a class="org-chapter-card" href="coordinateur_technique/tic-ia.html"
+               aria-label="Voir la Commission TIC et Intelligence Artificielle">
+              <h3>Technologies de l'Information et de la Communication &amp; Intelligence Artificielle</h3>
+              <p>Numérique, réseaux, données, cybersécurité et intelligence artificielle.</p>
             </a>
 
-            <!-- ---------- Secrétariat des Ressources Humaines ---------- -->
-            <a class="org-chapter-card" href="support/ressources-humaines.html"
-               aria-label="Voir le Secrétariat des Ressources Humaines">
-              <h3>Secrétariat des Ressources Humaines</h3>
-              <p>Gestion prévisionnelle des effectifs, formation, discipline et stagiaires.</p>
+            <!-- ---------- 02 · Transformations industrielles ---------- -->
+            <a class="org-chapter-card" href="coordinateur_technique/transformations.html"
+               aria-label="Voir la Commission Technologies et Transformations Industrielles">
+              <h3>Technologies et Transformations Industrielles</h3>
+              <p>Procédés industriels, matériaux, fabrication et valorisation locale.</p>
             </a>
 
-            <!-- ---------- Secrétariat Juridique et du Contentieux ---------- -->
-            <a class="org-chapter-card" href="support/juridique-contentieux.html"
-               aria-label="Voir le Secrétariat Juridique et du Contentieux">
-              <h3>Secrétariat Juridique &amp; du Contentieux</h3>
-              <p>Conseil juridique, défense des intérêts du CNDT et suivi des contentieux.</p>
+            <!-- ---------- 03 · Biosciences ---------- -->
+            <a class="org-chapter-card" href="coordinateur_technique/biosciences.html"
+               aria-label="Voir la Commission Biosciences et Technologies Agricoles">
+              <h3>Biosciences et Technologies Agricoles</h3>
+              <p>Biotechnologies, agro-industrie et sécurité alimentaire durable.</p>
             </a>
 
-          </div>
-
-          <!-- =========================================================
-               COMMISSION 2 — AFFAIRES ADMINISTRATIVES, FINANCIÈRES & ENGAGEMENTS
-               ========================================================= -->
-          <div class="page-heading" style="margin-top:56px;">
-            <div>
-              <p class="page-kicker">Deuxième Commission</p>
-              <h2>Affaires Administratives, Financières &amp; des Engagements</h2>
-            </div>
-          </div>
-
-          <div class="org-intro" style="margin-bottom:24px;">
-            <p>
-              Cette Commission est chargée de la préparation, du suivi et du contrôle de l'exécution du
-              budget, de la tenue de la comptabilité budgétaire, générale et analytique, de la
-              mobilisation des ressources financières, ainsi que de la préparation et de la mise en
-              œuvre des engagements. Elle anime également le Centre d'Appui à la Technologie et à
-              l'Innovation (CATI) du CNDT.
-            </p>
-          </div>
-
-          <div class="org-chapter-grid">
-
-            <!-- ---------- Secrétariat chargé de l'Administration Générale ---------- -->
-            <a class="org-chapter-card" href="support/affaires-admin-financieres/administration-generale.html"
-               aria-label="Voir le Secrétariat chargé de l'Administration Générale">
-              <h3>Secrétariat chargé de l'Administration Générale</h3>
-              <p>Gestion administrative, rapports d'activités et comptes rendus institutionnels.</p>
+            <!-- ---------- 04 · Énergie, Mines & Environnement ---------- -->
+            <a class="org-chapter-card" href="coordinateur_technique/energie-mines.html"
+               aria-label="Voir la Commission Technologies de l'Énergie, des Mines et de l'Environnement">
+              <h3>Technologies de l'Énergie, des Mines et de l'Environnement</h3>
+              <p>Énergies renouvelables, ressources minières et gestion environnementale.</p>
             </a>
 
-            <!-- ---------- Secrétariat des Affaires Financières et des Engagements ---------- -->
-            <a class="org-chapter-card" href="support/affaires-admin-financieres/affaires-financieres.html"
-               aria-label="Voir le Secrétariat des Affaires Financières et des Engagements">
-              <h3>Secrétariat des Affaires Financières &amp; des Engagements</h3>
-              <p>États financiers, engagements, liquidations et ordonnancements des dépenses.</p>
-            </a>
-
-            <!-- ---------- Secrétariat Préparation et Suivi de l'Exécution du Budget ---------- -->
-            <a class="org-chapter-card" href="support/affaires-admin-financieres/preparation-budget.html"
-               aria-label="Voir le Secrétariat de Préparation et de Suivi de l'Exécution du Budget">
-              <h3>Secrétariat Préparation &amp; Suivi de l'Exécution du Budget</h3>
-              <p>Préparation du budget, suivi des disponibilités et comptes d'emplois.</p>
-            </a>
-
-            <!-- ---------- Secrétariat en charge du CATI ---------- -->
-            <a class="org-chapter-card" href="support/affaires-admin-financieres/cati.html"
-               aria-label="Voir le Secrétariat en charge du Centre d'Appui à la Technologie et à l'Innovation">
-              <h3>Secrétariat en charge du CATI</h3>
-              <p>Centre d'Appui à la Technologie et à l'Innovation — propriété intellectuelle et OMPI.</p>
+            <!-- ---------- 05 · Politiques S&T ---------- -->
+            <a class="org-chapter-card" href="coordinateur_technique/politiques.html"
+               aria-label="Voir la Commission Politiques Scientifiques et Technologiques">
+              <h3>Politiques Scientifiques et Technologiques</h3>
+              <p>Analyses prospectives, aide à la décision et stratégie nationale S&amp;T.</p>
             </a>
 
           </div>
+
         </div>
       </section>
 
       <!-- =========================================================
-           SIDEBAR (identique aux autres pages)
+           SIDEBAR (identique à cabinet.html)
            ========================================================= -->
       <aside class="sidebar" aria-label="Actualités et publications du CNDT">
         <section class="news-agenda" aria-labelledby="news-title">

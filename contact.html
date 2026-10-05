@@ -14,7 +14,7 @@
 
   <header class="site-header">
     <div class="utility-bar">
-      <div class="container utility-inner">
+      <div class="utility-inner">
         <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
         <div class="utility-links">
           <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
@@ -27,7 +27,7 @@
     <div class="main-nav-wrap">
       <div class="main-nav">
         <a class="brand" href="index.html" aria-label="Accueil du CNDT">
-          <img src="assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT">
           <span class="brand-copy">
             <strong>Comité National de Développement des Technologies</strong>
             <small>La technologie au service du développement</small>
@@ -40,7 +40,7 @@
         </button>
 
         <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
-          <a href="index.html">Accueil</a>
+          <a class="active" href="index.html">Accueil</a>
 
           <!-- =========================================================
               TRIGGER DU MEGA-MENU
@@ -61,7 +61,7 @@
           <!-- <a href="index.html#secretariats">Secrétariats Permanents</a> -->
           <a href="actualites.html">Actualités</a>
           <a href="publication.html">Publications</a>
-          <a class="active" href="contact.html">Contact</a>
+          <a href="contact.html">Contact</a>
 
           <!-- =========================================================
               BARRE DE RECHERCHE
@@ -109,6 +109,25 @@
               data-nav-search-results
             ></div>
           </div> 
+
+          <ul class="nav-socials" aria-label="Nos réseaux sociaux">
+            <li>
+              <a href="https://www.facebook.com/cndtcameroun"
+                target="_blank" rel="noopener"
+                aria-label="Page Facebook du CNDT"
+                class="nav-social nav-social--facebook">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
+                target="_blank" rel="noopener"
+                aria-label="Chaîne YouTube du CNDT"
+                class="nav-social nav-social--youtube">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
 
           <!-- =========================================================
               MEGA-MENU — placé en fin de nav
@@ -170,18 +189,18 @@
                     <!-- <h3 class="mega-menu__title">Coordinations</h3> -->
                     <ul class="mega-menu__list">
                       <li>
-                        <a href="coordinateur-technique.html">
-                          <span>Coordinateur technique</span>
+                        <a href="crmp.html">
+                          <span>Commission recherche et management des projets</span>
                         </a>
                       </li>
                       <li>
-                        <a href="coordinateur-operationnel.html">
-                          <span>Coordinateur opérationnel</span>
+                        <a href="caaf.html">
+                          <span>Commission des affaires administratives, financières et des engagements</span>
                         </a>
                       </li>
                       <li>
-                        <a href="coordinateur-support.html">
-                          <span>Coordinateur support</span>
+                        <a href="cdcrp.html">
+                          <span>Commission documentation, communication et relations publiques</span>
                         </a>
                       </li>
                     </ul>
@@ -191,6 +210,11 @@
                   <div class="mega-menu__col">
                     <!-- <h3 class="mega-menu__title">Ressources humaines</h3> -->
                     <ul class="mega-menu__list">
+                      <li>
+                        <a href="ct.html">
+                          <span>Commission technique</span>
+                        </a>
+                      </li>
                       <li>
                         <a href="personnel.html">
                           <span>Catalogue du personnel</span>
