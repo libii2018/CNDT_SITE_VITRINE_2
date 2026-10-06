@@ -5511,3 +5511,618 @@ body.mega-modal-open {
   width: 100%;
   overflow: hidden;
 }
+
+/* =========================================================
+   TABLEAU DU COMITÉ — Responsive
+   ========================================================= */
+
+/* ---------- Base ---------- */
+.comite-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.comite-table__caption {
+  text-align: left;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px 16px;
+  background: var(--green-900, #15472f);
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.comite-table thead th {
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--green-50, #f3f7f4);
+  color: var(--green-900, #15472f);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid var(--line, #dce4de);
+}
+
+.comite-table tbody tr {
+  border-bottom: 1px solid var(--line, #dce4de);
+  transition: background 160ms ease;
+}
+
+.comite-table tbody tr:hover {
+  background: var(--green-50, #f3f7f4);
+}
+
+.comite-table tbody td {
+  padding: 12px 16px;
+  vertical-align: top;
+  line-height: 1.5;
+  color: var(--ink, #202923);
+}
+
+.comite-table__num {
+  width: 60px;
+  text-align: center;
+  color: var(--gold, #c7a65d);
+  font-weight: 700;
+}
+
+/* Petit badge institution */
+.comite-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-right: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--green-100, #e3eee7);
+  color: var(--green-800, #1d5a3b);
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   MOBILE — Transformation en cartes empilées
+   ========================================================= */
+@media (max-width: 700px) {
+
+  .comite-table {
+    display: block;
+    width: 100%;
+  }
+
+  /* On masque l'en-tête desktop */
+  .comite-table thead {
+    display: none;
+  }
+
+  /* Chaque ligne devient une carte */
+  .comite-table tbody,
+  .comite-table tbody tr,
+  .comite-table tbody td {
+    display: block;
+    width: 100%;
+  }
+
+  .comite-table tbody tr {
+    position: relative;
+    padding: 16px 16px 16px 52px;   /* place pour le numéro à gauche */
+    margin-bottom: 12px;
+    border: 1px solid var(--line, #dce4de);
+    border-left: 4px solid var(--green-600, #3b8059);
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(13, 46, 32, 0.05);
+  }
+
+  .comite-table tbody tr:hover {
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(13, 46, 32, 0.09);
+  }
+
+  /* Numéro : pastille en haut à gauche de la carte */
+  .comite-table tbody td.comite-table__num,
+  .comite-table tbody td:first-child {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    width: auto;
+    padding: 0;
+    font-size: 0.8rem;
+    color: var(--gold, #c7a65d);
+    font-weight: 700;
+    text-align: left;
+  }
+
+  /* Nom (2ᵉ cellule) : affiché en évidence */
+  .comite-table tbody td:nth-child(2) {
+    padding: 0 0 8px 0;
+    font-size: 0.95rem;
+    color: var(--green-950, #0d2e20);
+  }
+
+  .comite-table tbody td:nth-child(2) strong {
+    display: block;
+    font-weight: 700;
+  }
+
+  /* Institution (3ᵉ cellule) : passe en sous-titre */
+  .comite-table tbody td:nth-child(3) {
+    padding: 0;
+    font-size: 0.82rem;
+    color: var(--muted, #667069);
+    line-height: 1.45;
+  }
+
+  /* Étiquette institution : plus compacte */
+  .comite-tag {
+    margin-bottom: 4px;
+    padding: 2px 6px;
+    font-size: 0.68rem;
+  }
+
+  /* Décale l'institution sur une nouvelle ligne si nécessaire */
+  .comite-table tbody td:nth-child(3) .comite-tag {
+    display: inline-block;
+    margin-right: 6px;
+  }
+}
+
+/* =========================================================
+   TRÈS PETITS ÉCRANS (< 380 px)
+   ========================================================= */
+@media (max-width: 380px) {
+  .comite-table tbody tr {
+    padding: 14px 12px 14px 46px;
+  }
+  .comite-table tbody td:nth-child(2) {
+    font-size: 0.88rem;
+  }
+  .comite-table tbody td:nth-child(3) {
+    font-size: 0.76rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   CORRECTIF MOBILE — Anti-débordement horizontal
+   ========================================================= */
+
+/* ---------- Garde-fou global ---------- */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Tous les éléments doivent respecter la largeur du parent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Empêche les mots longs / URL de déborder */
+p,
+h1, h2, h3, h4,
+li,
+a,
+td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Les images ne doivent jamais dépasser */
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   CORRECTIFS SPÉCIFIQUES — Page Comité
+   ========================================================= */
+
+/* ---------- Utility bar & navbar : respecter le container ---------- */
+.utility-inner,
+.main-nav {
+  max-width: var(--container);
+  width: var(--container);
+  margin-inline: auto;
+}
+
+/* ---------- Liste à 2 colonnes → 1 colonne sur mobile ---------- */
+@media (max-width: 700px) {
+  .project-list[style*="columns"] {
+    columns: 1 !important;
+  }
+  .project-list {
+    columns: 1 !important;
+    padding-left: 18px;
+  }
+}
+
+/* ---------- Cartes Secrétaire : colonne fixe → flexible ---------- */
+@media (max-width: 640px) {
+  .secretary-card {
+    grid-template-columns: 1fr !important;
+    padding: 16px !important;
+    gap: 16px !important;
+  }
+  .secretary-card figure {
+    max-width: 180px;
+    margin-inline: auto;
+  }
+  .secretary-card figure img {
+    height: auto !important;
+    aspect-ratio: 4 / 4.6;
+  }
+  .secretary-card figcaption {
+    text-align: center;
+  }
+  .secretary-copy {
+    padding: 0 !important;
+  }
+}
+
+/* ---------- Grille principale : 2 col → 1 col ---------- */
+@media (max-width: 840px) {
+  .home-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .sidebar {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- Tableau : empêche le débordement ---------- */
+.comite-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Sur mobile, on retire le min-width : le tableau s'adapte */
+@media (max-width: 700px) {
+  .comite-table {
+    min-width: 0 !important;
+  }
+}
+
+/* ---------- Section instituts & carrousel ---------- */
+.instituts {
+  max-width: 100%;
+  padding-inline: 1rem;
+}
+
+.swiper.instituts-carousel {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* ---------- Report list (textes de référence) ---------- */
+.report-item {
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+}
+@media (max-width: 640px) {
+  .report-item {
+    grid-template-columns: 46px minmax(0, 1fr);
+  }
+  .report-link {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 8px;
+  }
+}
+
+/* ---------- Chapter path (fonctionnement) ---------- */
+.chapter-path li {
+  padding-left: 28px;
+}
+.chapter-path strong,
+.chapter-path em {
+  overflow-wrap: break-word;
+}
+
+/* ---------- Fix du `.container` pour tous les enfants ---------- */
+.container {
+  max-width: 100%;
+}
+
+
+
+/* =========================================================
+   PROFIL — Photo agrandie et centrée
+   ========================================================= */
+
+/* 1. Le hero passe en disposition verticale centrée */
+.profile-hero__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+/* 2. Photo : taille augmentée + centrée */
+.profile-hero__photo {
+  margin: 0 auto;
+  width: min(360px, 80%);
+}
+
+.profile-hero__photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 22%;
+  border-radius: 6px;
+  border: 4px solid var(--gold);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* 3. Bloc texte centré */
+.profile-hero__info {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.profile-hero__info h1 {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.profile-hero__role {
+  text-align: center;
+}
+
+/* 4. Métadonnées : centrées horizontalement */
+.profile-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 44px;
+  text-align: center;
+}
+
+.profile-hero__meta li {
+  min-width: 130px;
+  align-items: center;
+  text-align: center;
+}
+
+/* 5. Réseaux sociaux : centrés */
+.profile-socials {
+  justify-content: center;
+}
+
+
+/* =========================================================
+   TABLEAU — Attachés de Recherche (responsive)
+   ========================================================= */
+
+/* ---------- Conteneur (scroll horizontal si nécessaire) ---------- */
+.staff-recherche-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 18px;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(13, 46, 32, 0.06);
+}
+
+/* ---------- Tableau ---------- */
+.staff-recherche-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: 0.88rem;
+}
+
+.staff-recherche-table__caption {
+  padding: 14px 18px;
+  text-align: left;
+  background: var(--green-800);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.staff-recherche-table thead th {
+  padding: 12px 16px;
+  text-align: left;
+  background: var(--green-50);
+  color: var(--green-900);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--green-600);
+  white-space: nowrap;
+}
+
+.staff-recherche-table__num {
+  width: 50px;
+  text-align: center !important;
+}
+
+.staff-recherche-table tbody tr {
+  border-bottom: 1px solid var(--line);
+  transition: background-color 160ms ease;
+}
+
+.staff-recherche-table tbody tr:nth-child(even) {
+  background: #fafcfb;
+}
+
+.staff-recherche-table tbody tr:hover {
+  background: var(--green-50);
+}
+
+.staff-recherche-table tbody td {
+  padding: 12px 16px;
+  vertical-align: top;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.staff-recherche-table tbody td:first-child {
+  width: 50px;
+  text-align: center;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.staff-recherche-table tbody td strong {
+  color: var(--green-950);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Étiquette du grade */
+.staff-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  background: var(--green-100);
+  color: var(--green-800);
+  border-radius: 3px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MOBILE — Transformation en cartes empilées (< 700 px)
+   ========================================================= */
+@media (max-width: 700px) {
+
+  .staff-recherche-wrap {
+    overflow-x: visible;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .staff-recherche-table {
+    display: block;
+    min-width: 0;
+    background: transparent;
+  }
+
+  .staff-recherche-table__caption {
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 10px;
+  }
+
+  /* Masquer l'en-tête desktop */
+  .staff-recherche-table thead {
+    display: none;
+  }
+
+  .staff-recherche-table tbody {
+    display: block;
+  }
+
+  .staff-recherche-table tbody tr {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    padding: 14px 16px 14px 52px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green-600);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(13, 46, 32, 0.05);
+  }
+
+  .staff-recherche-table tbody tr:nth-child(even) {
+    background: var(--white);
+  }
+
+  .staff-recherche-table tbody tr:hover {
+    box-shadow: 0 6px 18px rgba(13, 46, 32, 0.09);
+  }
+
+  .staff-recherche-table tbody td {
+    display: block;
+    padding: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  /* Numéro — pastille dorée en haut à gauche */
+  .staff-recherche-table tbody td:first-child {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: auto;
+    padding: 0;
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* Nom — mis en avant */
+  .staff-recherche-table tbody td:nth-child(2) {
+    margin-bottom: 6px;
+  }
+
+  .staff-recherche-table tbody td:nth-child(2) strong {
+    font-size: 0.95rem;
+    color: var(--green-950);
+  }
+
+  /* Grade — petite pastille verte */
+  .staff-recherche-table tbody td:nth-child(3) {
+    margin-bottom: 6px;
+  }
+
+  /* Diplôme */
+  .staff-recherche-table tbody td:nth-child(4) {
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+}
+
+/* ---------- Très petits écrans ---------- */
+@media (max-width: 400px) {
+  .staff-recherche-table tbody tr {
+    padding: 12px 12px 12px 44px;
+  }
+  .staff-recherche-table tbody td:first-child {
+    top: 12px;
+    left: 12px;
+  }
+  .staff-recherche-table tbody td:nth-child(2) strong {
+    font-size: 0.88rem;
+  }
+  .staff-recherche-table tbody td:nth-child(4) {
+    font-size: 0.72rem;
+  }
+}
