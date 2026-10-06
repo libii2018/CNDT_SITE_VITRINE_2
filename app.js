@@ -1075,6 +1075,12 @@ if (megaTrigger && megaMenu) {
     closeMega();
   });
 
+  // Fermeture au clic sur le fond (backdrop) — mobile uniquement
+  megaMenu.addEventListener('click', (e) => {
+    if (!isMobile()) return;
+    if (e.target === megaMenu) closeMega();
+  });
+
   // Clic sur un lien du mega-menu → ferme le panneau
   megaMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
