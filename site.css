@@ -74,8 +74,8 @@ button {
 }
 
 .container {
-  width: var(--container);
-  margin-inline: auto;
+  width: var(--container) !important;
+  margin-inline: auto !important;
 }
 
 .skip-link {
@@ -5741,9 +5741,10 @@ iframe {
 /* ---------- Utility bar & navbar : respecter le container ---------- */
 .utility-inner,
 .main-nav {
-  max-width: var(--container);
+  /* max-width: var(--container);
   width: var(--container);
-  margin-inline: auto;
+  margin: 20px auto; */
+  /* margin-inline: auto; */
 }
 
 /* ---------- Liste à 2 colonnes → 1 colonne sur mobile ---------- */
@@ -5842,9 +5843,9 @@ iframe {
 }
 
 /* ---------- Fix du `.container` pour tous les enfants ---------- */
-.container {
+/* .container {
   max-width: 100%;
-}
+} */
 
 
 
