@@ -1,66 +1,74 @@
-📁 projet-cndt/
+# Structure du projet — Vitrine CNDT
+
+Site statique (HTML/CSS/JS purs, aucun build). Déploiement : copier le dossier tel quel.
+
+## Arborescence
+
+```
+vitrine CNDT/
 │
-├── 📄 organigramme.html                   
-├── 📄 index.html
-├── 📄 actualites.html
-├── 📄 publication.html
-├── 📄 personnel.html
-├── 📄 site.css
-├── 📄 app.js
+├── index.html              Accueil (hero, carrousels, instituts)
+├── organigramme.html       Organigramme (rendu JS depuis organisation-data.js)
+├── comite.html             Comité du CNDT
+├── cabinet.html            Chapitre I — Cabinet du Secrétaire Permanent
+├── crmp.html               Commission Recherche & Management des Projets
+├── cdcrp.html              Commission Documentation, Communication & Relations Publiques
+├── rhcaj.html              Commission RH, Coopération & Affaires Juridiques
+├── caaf.html               Commission des Affaires Administratives & Financières
+├── ct.html                 Commission Technique (5 secrétariats techniques)
+├── personnel.html          Catalogue du personnel
+├── actualites.html         Liste des actualités
+├── publication.html        Publications et médias
+├── galerie.html            Galerie photo (albums + lightbox)
+├── contact.html            Contact (formulaire démo)
 │
-├── 📁 organisation/                       
-│   │
-│   ├── 📄 cabinet.html                    ← Chapitre I (vue d'ensemble)
-│   ├── 📄 commission-operationnelle.html  ← Chapitre II (vue d'ensemble)
-│   ├── 📄 commission-support.html         ← Chapitre III (vue d'ensemble)
-│   │
-│   ├── 📁 cabinet/                        ← Cellules du Cabinet
-│   │   ├── secretariat-sp.html            (I.1)
-│   │   ├── audit-interne.html             (I.2)
-│   │   ├── cellule-informatique.html      (I.3)
-│   │   ├── comptabilite-matieres.html     (I.4)
-│   │   ├── cellule-traduction.html        (I.5)
-│   │   ├── action-sociale.html            (I.6)
-│   │   └── vulgarisation-transfert.html   (I.7)
-│   │
-│   ├── 📁 recherche-projets/              ← Commission Recherche (II.1)
-│   │   ├── secretariat-recherche.html         (II.1.1)
-│   │   ├── maturation-projets.html            (II.1.2)
-│   │   ├── information-scientifique.html      (II.1.3)
-│   │   ├── prospective-conferences.html       (II.1.4)
-│   │   └── commissions-techniques/            (II.1.5)
-│   │       ├── 01-tic-ia.html
-│   │       ├── 02-transformations.html
-│   │       ├── 03-biosciences.html
-│   │       ├── 04-energie-mines.html
-│   │       └── 05-politiques.html
-│   │
-│   ├── 📁 documentation-communication/    ← Commission Doc-Comm-RP (II.3)
-│   │   ├── documentation-archives.html        (II.3.1)
-│   │   ├── communication.html                 (II.3.2)
-│   │   └── relations-publiques.html           (II.3.3)
-│   │
-│   └── 📁 support/                        ← Commission Support (III)
-│       ├── rh-cooperation-juridique/          (III.1)
-│       │   ├── cooperation-partenariat.html   (III.1.1)
-│       │   ├── ressources-humaines.html       (III.1.2)
-│       │   └── juridique-contentieux.html     (III.1.3)
-│       │
-│       └── affaires-admin-financieres/        (III.2)
-│           ├── administration-generale.html   (III.2.1)
-│           ├── affaires-financieres.html      (III.2.2)
-│           ├── preparation-budget.html        (III.2.3)
-│           └── cati.html                      (III.2.4)
+├── membres/                Fiches individuelles du personnel (13)
+├── actualite/              Articles d'actualité (7)
+├── projets/                Fiches projets (1)
 │
-├── 📁 membres/                            ← Fiches individuelles du personnel
-│   └── …
+├── site.css                Feuille de style unique
+├── app.js                  Toute l'interactivité (voir ci-dessous)
+├── organisation-data.js    Structure organisationnelle (source de vérité)
+├── structure.md            Ce fichier
 │
-├── 📁 projets/                            ← Fiches projets
-│   └── …
-│
-└── 📁 assets/
-    ├── 📁 rapports/
-    ├── 📁 people/
-    ├── 📁 cv/
-    ├── 📁 organigramme/                   ← 🆕 photos par unité (si besoin)
-    └── …
+└── assets/                 Images, polices URWGothic embarquées
+```
+
+## Header / Footer mutualisés
+
+Chaque page ne contient que des placeholders — le HTML réel est injecté
+par `app.js` (section 0) :
+
+```html
+<header class="site-header" data-site-header data-root=""></header>
+...
+<footer id="contact" class="site-footer" data-site-footer data-root=""></footer>
+```
+
+- `data-root` : `""` à la racine, `"../"` dans un sous-dossier (membres/,
+  actualite/, projets/).
+- Le lien actif de la navbar est déduit automatiquement du nom de fichier.
+- Pour modifier le menu, le mega-menu ou le pied de page : éditer
+  uniquement les templates de la section 0 de `app.js`, plus besoin de
+  toucher les 34 pages.
+
+## organisation-data.js
+
+Source unique de la structure hiérarchique (chapitres I / II / III).
+Consommée par `app.js` (section 7) pour rendre l'arbre de
+`organigramme.html`, et servant de référence aux ancres
+(`#cabinet`, `#commission-support`, `#tech-01`…).
+
+## Convention de nommage
+
+- Dossier des articles : `actualite/` (article individuel),
+  page liste : `actualites.html`.
+- Chaque nouveau fichier doit porter l'extension et des accents
+  dans les slugs évités (ex. `crmp.html`, `cdcrp.html`).
+
+## Dépendances CDN
+
+- Swiper 11 (carrousel des instituts) — pages qui contiennent `.instituts-carousel`
+- Font Awesome 6.4 (icônes réseaux sociaux) — ré-injecté par `app.js` si absent
+
+Les polices (URWGothic) sont locales dans `assets/`.

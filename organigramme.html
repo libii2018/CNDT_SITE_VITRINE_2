@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Organigramme du CNDT — Cabinet du Secrétaire Permanent, Commission Opérationnelle et Commission Support du Comité National de Développement des Technologies du Cameroun.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Organigramme | CNDT Cameroun</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="organisation-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header" data-site-header data-root=""></header>
+
+  <main id="contenu">
+
+    <section class="container ecart home-grid">
+
+      <section class="inner-section">
+        <div class="container">
+
+          <!-- ---------- Titre de page ---------- -->
+          <div class="page-heading">
+            <div>
+              <h2>Organigramme du CNDT</h2>
+              <p>Structure du Secrétariat Permanent en trois chapitres&nbsp;: le Cabinet du Secrétaire Permanent, la Commission Opérationnelle et la Commission Support.</p>
+            </div>
+          </div>
+
+          <div class="org-intro">
+            <p>
+              Le <strong>Comité National de Développement des Technologies</strong> est organisé autour du
+              Secrétaire Permanent et de trois chapitres opérationnels. Chaque commission dispose d'une
+              page dédiée&nbsp;; les unités rattachées y sont détaillées. Cliquez sur un élément pour
+              explorer la structure.
+            </p>
+          </div>
+
+          <!-- ---------- Arbre rendu depuis organisation-data.js ---------- -->
+          <div data-org-tree>
+            <noscript>
+              <p>L'organigramme interactif nécessite JavaScript. Consultez les pages
+              <a href="cabinet.html">Cabinet du Secrétaire Permanent</a>,
+              <a href="crmp.html">Commission Recherche &amp; Management des Projets</a>,
+              <a href="cdcrp.html">Documentation, Communication &amp; Relations Publiques</a>,
+              <a href="rhcaj.html">RH, Coopération &amp; Affaires Juridiques</a> et
+              <a href="caaf.html">Affaires Administratives &amp; Financières</a>.</p>
+            </noscript>
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer id="contact" class="site-footer" data-site-footer data-root=""></footer>
+</body>
+</html>

@@ -1,3 +1,317 @@
+/* =========================================================
+   0. INJECTION HEADER / FOOTER — source unique
+   ---------------------------------------------------------
+   Chaque page contient uniquement :
+     <header class="site-header" data-site-header data-root=""></header>
+     <footer id="contact" class="site-footer" data-site-footer data-root=""></footer>
+   data-root = "" à la racine, "../" dans un sous-dossier.
+   Ce bloc s'exécute avant tout le reste (defer → DOM déjà parsé).
+   ========================================================= */
+window.CNDT_SITE = { root: '' };
+
+(() => {
+  const header = document.querySelector('[data-site-header]');
+  const footer = document.querySelector('[data-site-footer]');
+  if (!header && !footer) return;
+
+  window.CNDT_SITE.root = (header || footer).dataset.root || '';
+
+  /* ---------- Template du header ---------- */
+  if (header) {
+    header.outerHTML = `
+<header class="site-header">
+  <div class="utility-bar">
+    <div class="utility-inner">
+      <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+      <div class="utility-links">
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+        <span aria-hidden="true">|</span>
+        <a href="#" lang="en" aria-label="English version">English</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-nav-wrap">
+    <div class="main-nav">
+      <a class="brand" href="${window.CNDT_SITE.root}index.html" aria-label="Accueil du CNDT">
+        <img src="${window.CNDT_SITE.root}assets/logo-cndt.webp" alt="Logo du CNDT">
+        <span class="brand-copy">
+          <strong>Comité National de Développement des Technologies</strong>
+          <small>La technologie au service du développement</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Menu</span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+        <a href="${window.CNDT_SITE.root}index.html">Accueil</a>
+
+        <button
+          type="button"
+          class="primary-nav__trigger"
+          aria-expanded="false"
+          aria-controls="mega-organisation"
+          data-mega-trigger
+        >
+          <span>Secrétariats Permanents</span>
+          <svg class="primary-nav__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.4 9.2 12 14.8l5.6-5.6-1.4-1.4L12 12l-4.2-4.2z"/>
+          </svg>
+        </button>
+
+        <a href="${window.CNDT_SITE.root}actualites.html">Actualités</a>
+        <a href="${window.CNDT_SITE.root}publication.html">Publications</a>
+        <a href="${window.CNDT_SITE.root}contact.html">Contact</a>
+
+        <div class="nav-search" data-nav-search role="search">
+          <form class="nav-search__form" autocomplete="off" novalidate>
+            <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
+
+            <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+            </svg>
+
+            <input
+              id="nav-search-input"
+              class="nav-search__input"
+              type="search"
+              name="q"
+              placeholder="Rechercher…"
+              aria-autocomplete="list"
+              aria-controls="nav-search-results"
+              aria-expanded="false"
+              data-nav-search-input
+            >
+
+            <button
+              class="nav-search__clear"
+              type="button"
+              aria-label="Effacer la recherche"
+              data-nav-search-clear
+              hidden
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+              </svg>
+            </button>
+          </form>
+
+          <div
+            id="nav-search-results"
+            class="nav-search__results"
+            role="listbox"
+            aria-label="Résultats de recherche"
+            hidden
+            data-nav-search-results
+          ></div>
+        </div>
+
+        <ul class="nav-socials" aria-label="Nos réseaux sociaux">
+          <li>
+            <a href="https://www.facebook.com/cndtcameroun"
+              target="_blank" rel="noopener"
+              aria-label="Page Facebook du CNDT"
+              class="nav-social nav-social--facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
+              target="_blank" rel="noopener"
+              aria-label="Chaîne YouTube du CNDT"
+              class="nav-social nav-social--youtube">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+
+        <div
+          id="mega-organisation"
+          class="mega-menu"
+          aria-hidden="true"
+          data-mega-menu
+        >
+          <div class="mega-menu__inner">
+            <div class="container">
+
+              <div class="mega-menu__head">
+                <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
+                <button
+                  type="button"
+                  class="mega-menu__close"
+                  aria-label="Fermer le menu Organisation"
+                  data-mega-close
+                >
+                  Fermer
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="mega-menu__grid">
+
+                <div class="mega-menu__col">
+                  <ul class="mega-menu__list">
+                    <li>
+                      <a href="${window.CNDT_SITE.root}index.html#institution">
+                        <span>Mot du Secrétaire Permanent</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${window.CNDT_SITE.root}comite.html">
+                        <span>Comité</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${window.CNDT_SITE.root}cabinet.html">
+                        <span>Cabinet du Secrétaire Permanent</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mega-menu__col">
+                  <ul class="mega-menu__list">
+                    <li>
+                      <a href="${window.CNDT_SITE.root}crmp.html">
+                        <span>Commission recherche et management des projets</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${window.CNDT_SITE.root}caaf.html">
+                        <span>Commission des affaires administratives, financières et des engagements</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${window.CNDT_SITE.root}cdcrp.html">
+                        <span>Commission documentation, communication et relations publiques</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mega-menu__col">
+                  <ul class="mega-menu__list">
+                    <li>
+                      <a href="${window.CNDT_SITE.root}rhcaj.html">
+                        <span>Commission des ressources humaines, de la coopération et des affaires juridiques</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${window.CNDT_SITE.root}ct.html">
+                        <span>Commission technique</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${window.CNDT_SITE.root}personnel.html">
+                        <span>Catalogue du personnel</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${window.CNDT_SITE.root}galerie.html">
+                        <span>Galerie photo</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <div class="mega-menu__foot">
+                <a class="mega-menu__cta" href="${window.CNDT_SITE.root}organigramme.html">
+                  Voir l'organigramme complet
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>`;
+
+    // Lien actif de la navbar (selon le fichier courant)
+    const page = (location.pathname.split('/').pop() || 'index.html');
+    document.querySelectorAll('.primary-nav > a').forEach((link) => {
+      const target = (link.getAttribute('href') || '').split('/').pop();
+      if (target === page) link.classList.add('active');
+    });
+
+    // Pages organisation -> déclencheur « Secrétariats Permanents » actif
+    const ORG_PAGES = ['organigramme.html', 'comite.html', 'cabinet.html', 'crmp.html',
+                       'cdcrp.html', 'rhcaj.html', 'caaf.html', 'ct.html', 'personnel.html'];
+    if (ORG_PAGES.includes(page)) {
+      document.querySelector('.primary-nav__trigger')?.classList.add('active');
+    }
+  }
+
+  /* ---------- Template du footer ---------- */
+  if (footer) {
+    footer.outerHTML = `
+<footer id="contact" class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="${window.CNDT_SITE.root}assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+      <p>Comité National de Développement des Technologies</p>
+    </div>
+    <div>
+      <h2>Coordonnées</h2>
+      <address>Centre administratif, Yaoundé<br>B.P. 1457 Yaoundé</address>
+      <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+      <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+
+      <ul class="footer-socials" aria-label="Nos réseaux sociaux">
+        <li>
+          <a href="https://www.facebook.com/cndtcameroun"
+            target="_blank" rel="noopener"
+            aria-label="Page Facebook du CNDT"
+            class="footer-social footer-social--facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            <span>Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
+            target="_blank" rel="noopener"
+            aria-label="Chaîne YouTube du CNDT"
+            class="footer-social footer-social--youtube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            <span>YouTube</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>Accès rapide</h2>
+      <a href="${window.CNDT_SITE.root}index.html#institution">Présentation</a>
+      <a href="${window.CNDT_SITE.root}organigramme.html">Organigramme</a>
+      <a href="${window.CNDT_SITE.root}contact.html">Contact</a>
+      <div>
+        <a href="${window.CNDT_SITE.root}actualites.html">Actualités</a>
+        <a href="${window.CNDT_SITE.root}publication.html">Publications</a>
+      </div>
+    </div>
+    <div>
+      <h2>Institution de tutelle</h2>
+      <p>Ministère de la Recherche Scientifique et l’Innovation</p>
+      <a class="footer-external" href="https://minresi.gov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+    <p>La technologie au service du développement</p>
+  </div>
+</footer>`;
+  }
+})();
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =========================================================
@@ -35,52 +349,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth > 860) closePrimaryMenu();
     });
   }
-
-  // Menu Navigation Dropdown (.nav__links--container)
-  const openNav = document.querySelector('.open-menu');
-  const closeNav = document.querySelector('.close-menu');
-  const navMenu = document.querySelector('.nav__links--container');
-  const background = document.querySelector('.background');
-  const mediaSize = 992;
-
-  function toggleNavMenu() {
-    if (navMenu) navMenu.classList.toggle('open');
-    if (background) background.classList.toggle('active');
-  }
-
-  if (openNav) openNav.addEventListener('click', toggleNavMenu);
-  if (closeNav) closeNav.addEventListener('click', toggleNavMenu);
-  if (background) background.addEventListener('click', toggleNavMenu);
-
-  function collapseDropdownMenu() {
-    if (!navMenu) return;
-    const activeMenu = navMenu.querySelector('.dropdown__menu--branch.active .dropdown__menu');
-    const activeBranch = navMenu.querySelector('.dropdown__menu--branch.active');
-
-    if (activeMenu) activeMenu.removeAttribute('style');
-    if (activeBranch) activeBranch.classList.remove('active');
-  }
-
-  if (navMenu) {
-    navMenu.addEventListener('click', (event) => {
-      if (event.target.hasAttribute('data-toggle') && window.innerWidth < mediaSize) {
-        event.preventDefault();
-        const dropdownMenuBranch = event.target.parentElement;
-
-        if (dropdownMenuBranch && dropdownMenuBranch.classList.contains('active')) {
-          collapseDropdownMenu();
-        } else if (dropdownMenuBranch) {
-          collapseDropdownMenu();
-          dropdownMenuBranch.classList.add('active');
-          const dropdownMenu = dropdownMenuBranch.querySelector('.dropdown__menu');
-          if (dropdownMenu) {
-            dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + 'px';
-          }
-        }
-      }
-    });
-  }
-
 
   /* =========================================================
      2. CARROUSEL HERO PRINCIPAL (.hero)
@@ -174,70 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* =========================================================
-     3. CARROUSEL SECONDAIRE (.carousel-slide)
-     ========================================================= */
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dots = document.querySelectorAll('.dot');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-
-  if (slides.length > 0) {
-    let currentIndex = 0;
-    let timer = null;
-
-    function gotoSlide(index) {
-      if (index >= slides.length) currentIndex = 0;
-      else if (index < 0) currentIndex = slides.length - 1;
-      else currentIndex = index;
-
-      slides.forEach((slide, i) => slide.classList.toggle('active', i === currentIndex));
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-    }
-
-    function stopAutoplay() {
-      if (timer) clearInterval(timer);
-      timer = null;
-    }
-
-    function autoPlay() {
-      stopAutoplay();
-      if (!reducedMotion && slides.length > 1) {
-        timer = setInterval(() => gotoSlide(currentIndex + 1), 5000);
-      }
-    }
-
-    function resetTimer() {
-      stopAutoplay();
-      autoPlay();
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        gotoSlide(currentIndex + 1);
-        resetTimer();
-      });
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        gotoSlide(currentIndex - 1);
-        resetTimer();
-      });
-    }
-
-    dots.forEach((dot) => {
-      dot.addEventListener('click', (e) => {
-        const slideIndex = parseInt(e.target.dataset.slide, 10);
-        if (!isNaN(slideIndex)) {
-          gotoSlide(slideIndex);
-          resetTimer();
-        }
-      });
-    });
-
-    autoPlay();
-  }
 
 
   /* =========================================================
@@ -326,326 +530,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================
-     7. ORGANIGRAMME INTERACTIF (D3 OrgChart + Liens + PDF)
+     7. ORGANIGRAMME — rendu depuis window.CNDT_ORG
+     =========================================================
+     Alimenté par organisation-data.js (structure réelle du site).
+     Rendu si la page contient [data-org-tree].
      ========================================================= */
-  const chartContainer = document.querySelector('.chart-container');
+  (() => {
+    const mount = document.querySelector('[data-org-tree]');
+    if (!mount || !window.CNDT_ORG) return;
 
-  if (chartContainer && typeof d3 !== 'undefined' && typeof d3.OrgChart !== 'undefined') {
-    
-    // 1. Données avec attribut 'url' sur chaque nœud
-    const data = [
-      {
-        id: "1",
-        parentId: "",
-        name: "Présidence et membres du Comité",
-        position: "Ministre du MINERESI",
-        description: "",
-        image: "assets/people/ministre.jpg",
-        color: "#0f2f1b",
-        url: "#"
-      },
-      {
-        id: "2",
-        parentId: "1",
-        name: "Dr ELE ABIAMA Patrice",
-        position: "Secrétaire Permanent du CNDT",
-        description: "",
-        image: "assets/people/sp.webp",
-        color: "#1a5c38",
-        url: "secretariat-permanent.html"
-      },
-      {
-        id: "3",
-        parentId: "2", 
-        name: "Dr TSUANYO David",
-        position: "Coordonnateur exécutif adjoint",
-        description: "Coordination exécutive",
-        image: "assets/people/tsuanyo.webp",
-        color: "#fcd116",
-        url: "coordination.html#tsuanyo"
-      },
-      {
-        id: "4",
-        parentId: "2",
-        name: "BILOUNGA Marie Sandrine",
-        position: "Coordonnatrice exécutive adjointe",
-        description: "Coordination exécutive",
-        image: "assets/people/bilounga.webp",
-        color: "#fcd116",
-        url: "coordination.html#bilounga"
-      },
-      {
-        id: "5",
-        parentId: "2",
-        name: "ISAOURA Bénite",
-        position: "Coordonnatrice exécutive adjointe",
-        description: "Coordination exécutive",
-        image: "assets/people/isaoura.webp",
-        color: "#fcd116",
-        url: "coordination.html#isaoura"
-      },
-      {
-        id: "6",
-        parentId: "3",
-        name: "Secrétariat 01",
-        position: "TIC et IA",
-        description: "Technologies de l’information, communication et intelligence artificielle",
-        color: "#2e7d32",
-        url: "#secretariat-1"
-      },
-      {
-        id: "7",
-        parentId: "4",
-        name: "Secrétariat 02",
-        position: "Transformations industrielles",
-        description: "Technologies et transformations industrielles",
-        color: "#2e7d32",
-        url: "#secretariat-2"
-      },
-      {
-        id: "8",
-        parentId: "4",
-        name: "Secrétariat 03",
-        position: "Énergie, mines, environnement",
-        description: "Technologies de l’énergie, des mines et de l’environnement",
-        color: "#2e7d32",
-        url: "#secretariat-3"
-      },
-      {
-        id: "9",
-        parentId: "5",
-        name: "Secrétariat 04",
-        position: "Biosciences",
-        description: "Biosciences et technologies agricoles",
-        color: "#2e7d32",
-        url: "#secretariat-4"
-      },
-      {
-        id: "10",
-        parentId: "5",
-        name: "Secrétariat 05",
-        position: "Politiques S&T",
-        description: "Politiques scientifiques et technologiques",
-        color: "#2e7d32",
-        url: "#secretariat-5"
-      }
-    ];
+    const root = window.CNDT_SITE.root;
+    const esc = (str) =>
+      String(str).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-    // 2. Initialisation de l'Organigramme avec le thème sombre
-    window.chart = new d3.OrgChart()
-      .container('.chart-container')
-      .data(data)
-      .nodeHeight(() => 140)
-      .nodeWidth(() => 280)
-      .childrenMargin(() => 60)
-      .siblingsMargin(() => 40)
-      .compact(false)
-      .nodeContent(function (d) {
-        const color = d.data.color;
-        const targetUrl = d.data.url || '#';
-        
-        // Gestion dynamique de l'image
-        const imageHtml = d.data.image && d.data.image.trim() !== ""
-          ? `<img src="${d.data.image}" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0; flex-shrink: 0;" alt="Profile"/>`
-          : ``;
+    /* ---------- Une unité (lien ou libellé) ---------- */
+    const unitItem = (unit) => {
+      const label = `<strong>${esc(unit.label)}</strong>`;
+      const code = unit.code ? `<span class="org-tree__code">${esc(unit.code)}</span>` : '';
+      const body = unit.url
+        ? `<a href="${root}${esc(unit.url)}">${code}${label}</a>`
+        : `<p>${code}${label}</p>`;
 
+      if (unit.children && unit.children.length) {
         return `
-          <div style="font-family: 'Inter', system-ui, sans-serif; background-color: #ffffff; border-top: 5px solid ${color}; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.35); width: ${d.width}px; height: ${d.height}px; padding: 12px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
-            
-            <div style="display: flex; align-items: center; gap: 12px;">
-              ${imageHtml}
-              <div style="flex: 1; overflow: hidden;">
-                <div style="color: ${color}; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">${d.data.position}</div>
-                <div style="color: #0f172a; font-size: 13px; font-weight: 800; line-height: 1.2; margin-bottom: 3px;">${d.data.name}</div>
-                <div style="color: #475467; font-size: 11px; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${d.data.description}</div>
-              </div>
-            </div>
-
-            <!-- Lien vers le profil / la page dédiée -->
-            <div style="display: flex; justify-content: flex-end; border-top: 1px solid #f1f5f9; padding-top: 6px;">
-              <a href="${targetUrl}" onclick="event.stopPropagation();" style="font-size: 11px; font-weight: 700; color: ${color}; text-decoration: none; display: flex; align-items: center; gap: 4px;">
-                En savoir plus ➔
-              </a>
-            </div>
-
-            <!-- Badge du nombre de subordonnés -->
-            ${d.data._directSubordinates > 0 ? `
-              <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 2px 8px; font-size: 10px; font-weight: bold; color: #0f172a; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
-                ${d.data._directSubordinates} ▾
-              </div>
-            ` : ""}
-          </div>
-        `;
-      })
-      // 🟢 Couleur des lignes de liaison adaptées au fond sombre
-      .linkUpdate(function (d, i, arr) {
-        d3.select(this)
-          .attr("stroke", "#22c55e")      // Vert émeraude lumineux pour être très lisible
-          .attr("stroke-width", 2)
-          .attr("stroke-opacity", 0.7);
-      })
-      .render();
-
-    window.chart.expandAll();
-    window.chart.fit();
-
-    // 3. Actions des boutons Zoom / Out / Fit
-    document.querySelector('[data-chart-action="zoom-in"]')?.addEventListener('click', () => window.chart?.zoomIn());
-    document.querySelector('[data-chart-action="zoom-out"]')?.addEventListener('click', () => window.chart?.zoomOut());
-    document.querySelector('[data-chart-action="fit"]')?.addEventListener('click', () => window.chart?.fit());
-
-
-    // document.querySelector('[data-chart-action="export-pdf"]')?.addEventListener('click', () => {
-    //   if (!window.chart) return;
-
-    //   // Exporter directement au format PNG puis convertir en PDF
-    //   window.chart.exportImg({
-    //     full: true,
-    //     scale: 2, // Améliore la résolution du rendu
-    //     onLoad: (base64) => {
-    //       if (window.jspdf && window.jspdf.jsPDF) {
-    //         const { jsPDF } = window.jspdf;
-    //         const pdf = new jsPDF('l', 'mm', 'a4');
-    //         const pdfWidth = pdf.internal.pageSize.getWidth();
-    //         const pdfHeight = pdf.internal.pageSize.getHeight();
-            
-    //         pdf.addImage(base64, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    //         pdf.save('organigramme-cndt.pdf');
-    //       } else {
-    //         // Fallback si jsPDF n'est pas disponible : télécharge directement l'image PNG
-    //         const link = document.createElement('a');
-    //         link.download = 'organigramme-cndt.png';
-    //         link.href = base64;
-    //         link.click();
-    //       }
-    //     }
-    //   });
-    // });
-  }
-
-  /* =========================================================
-   11. ORGANIGRAMME — rendu automatique des pages organisation
-   ========================================================= */
-  const renderOrgPage = () => {
-    const currentId = document.body.dataset.orgCurrent;
-    if (!currentId || !window.CNDT_ORG) return;
-
-    // Aplatir l'arbre pour retrouver chaque nœud + son chemin
-    const flat = [];
-    const walk = (node, parents = []) => {
-      const path = [...parents, node];
-      flat.push({ node, path });
-      (node.children || []).forEach((child) => walk(child, path));
-    };
-    window.CNDT_ORG.chapters.forEach((ch) => {
-      walk(ch, [window.CNDT_ORG.root]);
-      (ch.units || []).forEach((u) => walk(u, [window.CNDT_ORG.root, ch]));
-    });
-
-    const found = flat.find((item) => item.node.id === currentId);
-    if (!found) return;
-    const { node, path } = found;
-
-    /* ---------- Breadcrumb ---------- */
-    const bc = document.querySelector('[data-org-breadcrumb]');
-    if (bc) {
-      bc.innerHTML = path
-        .map((n, i) => {
-          const isLast = i === path.length - 1;
-          const label = n.label || n.code || '';
-          return isLast
-            ? `<span aria-current="page">${label}</span>`
-            : `<a href="${n.url}">${label}</a><span aria-hidden="true">›</span>`;
-        })
-        .join('');
-    }
-
-    /* ---------- Sidebar : 3 chapitres + unités du chapitre courant ---------- */
-    const sb = document.querySelector('[data-org-sidebar]');
-    if (sb) {
-      const chapter = path.find((p) => p.code && /^[IVX]+$/.test(p.code));
-
-      sb.innerHTML = `
-        <p class="project-toc__title">Organisation</p>
-        <nav class="project-toc__nav">
-          <ol>
-            ${window.CNDT_ORG.chapters
-              .map((ch) => {
-                const isCurrentChapter = chapter && chapter.id === ch.id;
-                const unitList = (ch.units || [])
-                  .map((u) => {
-                    if (u.children && u.children.length) {
-                      return `
-                        <li>
-                          <a href="${u.url || '#'}">${u.label}</a>
-                          <ol>
-                            ${u.children
-                              .map((c) =>
-                                c.children && c.children.length
-                                  ? `<li>
-                                      <a href="${c.url || '#'}">${c.label}</a>
-                                      <ol>
-                                        ${c.children
-                                          .map((cc) =>
-                                            `<li><a href="${cc.url}">${cc.label}</a></li>`
-                                          )
-                                          .join('')}
-                                      </ol>
-                                    </li>`
-                                  : `<li><a href="${c.url}">${c.label}</a></li>`
-                              )
-                              .join('')}
-                          </ol>
-                        </li>`;
-                    }
-                    return `<li><a href="${u.url}">${u.label}</a></li>`;
-                  })
-                  .join('');
-
-                return `
-                  <li>
-                    <a href="${ch.url}" class="${isCurrentChapter ? 'is-active' : ''}">${ch.label}</a>
-                    ${isCurrentChapter ? `<ol>${unitList}</ol>` : ''}
-                  </li>`;
-              })
-              .join('')}
-          </ol>
-        </nav>
-      `;
-    }
-
-    /* ---------- Frères (même niveau, même parent) ---------- */
-    const sib = document.querySelector('[data-org-siblings]');
-    if (sib && path.length > 1) {
-      const parent = path[path.length - 2];
-      const siblings = parent.children || parent.units || [];
-      if (siblings.length > 1) {
-        sib.innerHTML = `
-          <div class="block-heading heading-row">
-            <div>
-              <p>Explorer</p>
-              <h2 class="secretariats-title">Autres unités — ${parent.label}</h2>
-            </div>
-          </div>
-          <div class="secretariat-list">
-            ${siblings
-              .filter((s) => s.id !== currentId && s.url)
-              .map((s) => `<a href="${s.url}"><span>${s.code || '—'}</span><strong>${s.label}</strong><i aria-hidden="true">↗</i></a>`)
-              .join('')}
-          </div>
-        `;
+          <li class="org-tree__unit" id="${esc(unit.id)}">
+            ${body}
+            <ul class="org-tree__sub">
+              ${unit.children.map(unitItem).join('')}
+            </ul>
+          </li>`;
       }
-    }
+      return `<li class="org-tree__unit" id="${esc(unit.id)}">${body}</li>`;
+    };
 
-    /* ---------- Titre + kicker ---------- */
-    const t = document.querySelector('[data-org-title]');
-    if (t) t.textContent = `${node.label} | CNDT Cameroun`;
-    const k = document.querySelector('[data-org-kicker]');
-    if (k && node.code) k.textContent = `${node.code} · ${path[1]?.label || ''}`;
-  };
+    /* ---------- Un chapitre ---------- */
+    const chapterBlock = (chapter) => {
+      const head = chapter.url
+        ? `<a class="org-tree__chapter-head" href="${root}${esc(chapter.url)}">
+             <span class="org-tree__code">${esc(chapter.code)}</span>
+             <strong>${esc(chapter.label)}</strong>
+             <i aria-hidden="true">→</i>
+           </a>`
+        : `<p class="org-tree__chapter-head">
+             <span class="org-tree__code">${esc(chapter.code)}</span>
+             <strong>${esc(chapter.label)}</strong>
+           </p>`;
 
-  document.addEventListener('DOMContentLoaded', renderOrgPage);
+      const units = (chapter.units || []).map(unitItem).join('');
 
+      return `
+        <section class="org-tree__chapter" id="${esc(chapter.id)}">
+          ${head}
+          <ul class="org-tree__units">${units}</ul>
+        </section>`;
+    };
+
+    /* ---------- Assemblage ---------- */
+    mount.innerHTML = `
+      <div class="org-tree">
+        <a class="org-tree__root" href="${root}comite.html">
+          <span class="org-tree__code">CNDT</span>
+          <strong>Comité National de Développement des Technologies</strong>
+          <small>Secrétariat Permanent</small>
+        </a>
+        <div class="org-tree__chapters">
+          ${window.CNDT_ORG.chapters.map(chapterBlock).join('')}
+        </div>
+      </div>`;
+  })();
 
     /* =========================================================
      12. BARRE DE RECHERCHE NAVBAR
@@ -663,29 +615,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const results = navSearch.querySelector('[data-nav-search-results]');
 
     /* ---------- Index du site ----------
-       Ajoutez/supprimez des entrées selon votre arborescence réelle.
-       Le chemin est RELATIF à la racine du site (index.html).
-       Si vos pages sont dans des sous-dossiers (organisation/, membres/…),
-       indiquez les chemins complets. */
-    const BASE = (() => {
-      // Détecte si on est dans un sous-dossier pour préfixer les liens
-      const path = window.location.pathname;
-      // On remonte à la racine du site en comptant les niveaux après le domaine
-      const depth = (path.match(/\//g) || []).length;
-      // Ajustez cette valeur si votre site est déployé dans un sous-répertoire
-      // (ex: /cndt-site/…) — sinon laissez '' pour un déploiement à la racine.
-      return '';
-    })();
+       Les chemins sont RELATIFS À LA RACINE du site.
+       Le préfixe (sous-dossier éventuel) est ajouté au rendu via BASE. */
+    const BASE = window.CNDT_SITE.root;
 
     const SEARCH_INDEX = [
       /* --- Pages principales --- */
       { title: "Accueil",                    url: "index.html",
         group: "Pages", excerpt: "Présentation institutionnelle du CNDT",
-        keywords: "accueil cndt accueil comité technologie cameroun" },
+        keywords: "accueil cndt comité technologie cameroun" },
 
       { title: "Organigramme",               url: "organigramme.html",
         group: "Pages", excerpt: "Structure et organisation du CNDT",
-        keywords: "organigramme organisation équipe structure hierarchy" },
+        keywords: "organigramme organisation structure hiérarchie chapitres" },
 
       { title: "Personnel",                  url: "personnel.html",
         group: "Pages", excerpt: "Annuaire du personnel par niveau hiérarchique",
@@ -699,80 +641,42 @@ document.addEventListener('DOMContentLoaded', () => {
         group: "Pages", excerpt: "Rapports, actes et documents scientifiques",
         keywords: "publications documents rapports technomag médias" },
 
+      { title: "Galerie photo",              url: "galerie.html",
+        group: "Pages", excerpt: "Albums photos des activités du CNDT",
+        keywords: "galerie photos albums images" },
+
+      { title: "Contact",                    url: "contact.html",
+        group: "Pages", excerpt: "Coordonnées et formulaire de contact",
+        keywords: "contact email téléphone adresse formulaire" },
+
       /* --- Organisation --- */
+      { title: "Comité du CNDT",             url: "comite.html",
+        group: "Organisation", excerpt: "Le Comité national et ses membres",
+        keywords: "comité membres session ministère" },
+
       { title: "Cabinet du Secrétaire Permanent", url: "cabinet.html",
-        group: "Organisation", excerpt: "Chapitre I — 7 unités rattachées au SP",
-        keywords: "cabinet secrétaire permanent chapitre I" },
+        group: "Organisation", excerpt: "Chapitre I — 7 cellules rattachées au SP",
+        keywords: "cabinet secrétaire permanent chapitre" },
 
-      { title: "Commission Opérationnelle",  url: "organisation/commission-operationnelle.html",
-        group: "Organisation", excerpt: "Chapitre II — Recherche, projets, communication",
-        keywords: "commission opérationnelle recherche projets communication" },
+      { title: "Commission Recherche & Management des Projets", url: "crmp.html",
+        group: "Organisation", excerpt: "Recherche, projets et secrétariats techniques",
+        keywords: "recherche management projets commission" },
 
-      { title: "Commission Support",         url: "organisation/commission-support.html",
-        group: "Organisation", excerpt: "Chapitre III — RH, coopération, finances",
-        keywords: "commission support ressources humaines finances juridique" },
+      { title: "Commission Documentation, Communication & Relations Publiques", url: "cdcrp.html",
+        group: "Organisation", excerpt: "Documentation, communication et relations publiques",
+        keywords: "documentation communication relations publiques archives" },
 
-      /* --- Secrétariats techniques --- */
-      { title: "Secrétariat 01 — TIC & IA",
-        url: "organisation/recherche-projets/commissions-techniques/01-tic-ia.html",
-        group: "Secrétariats", excerpt: "Technologies de l'information et intelligence artificielle",
-        keywords: "tic ia numérique intelligence artificielle réseaux cybersécurité" },
+      { title: "Commission RH, Coopération & Affaires Juridiques", url: "rhcaj.html",
+        group: "Organisation", excerpt: "Ressources humaines, coopération et juridique",
+        keywords: "ressources humaines coopération juridique contentieux" },
 
-      { title: "Secrétariat 02 — Transformations industrielles",
-        url: "organisation/recherche-projets/commissions-techniques/02-transformations.html",
-        group: "Secrétariats", excerpt: "Technologies et transformations industrielles",
-        keywords: "industries transformation fabrication procédés" },
+      { title: "Commission des Affaires Administratives & Financières", url: "caaf.html",
+        group: "Organisation", excerpt: "Affaires administratives, financières et engagements",
+        keywords: "affaires administratives financières engagements budget" },
 
-      { title: "Secrétariat 03 — Énergie, mines & environnement",
-        url: "organisation/recherche-projets/commissions-techniques/03-biosciences.html",
-        group: "Secrétariats", excerpt: "Technologies énergétiques, minières et environnementales",
-        keywords: "énergie mines environnement renouvelable" },
-
-      { title: "Secrétariat 04 — Biosciences",
-        url: "organisation/recherche-projets/commissions-techniques/04-energie-mines.html",
-        group: "Secrétariats", excerpt: "Biosciences et technologies agricoles",
-        keywords: "biosciences agriculture agroalimentaire biotech" },
-
-      { title: "Secrétariat 05 — Politiques S&T",
-        url: "organisation/recherche-projets/commissions-techniques/05-politiques.html",
-        group: "Secrétariats", excerpt: "Politiques scientifiques et technologiques",
-        keywords: "politiques scientifiques technologiques stratégie" },
-
-      /* --- Unités du Cabinet --- */
-      { title: "Secrétariat du Secrétaire Permanent",
-        url: "organisation/cabinet/secretariat-sp.html",
-        group: "Cabinet", excerpt: "Accueil, protocole, courrier et archives",
-        keywords: "secrétariat courrier protocole archives" },
-
-      { title: "Cellule Audit Interne",
-        url: "organisation/cabinet/audit-interne.html",
-        group: "Cabinet", excerpt: "Suivi, contrôle et audit interne du CNDT",
-        keywords: "audit interne contrôle suivi conformité" },
-
-      { title: "Cellule Informatique",
-        url: "organisation/cabinet/cellule-informatique.html",
-        group: "Cabinet", excerpt: "Stratégie TIC, parc informatique, site web",
-        keywords: "informatique tic réseau site web cybersécurité" },
-
-      { title: "Comptabilité-Matières",
-        url: "organisation/cabinet/comptabilite-matieres.html",
-        group: "Cabinet", excerpt: "Gestion des biens et du matériel",
-        keywords: "comptabilité matières biens matériel équipements" },
-
-      { title: "Cellule de Traduction",
-        url: "organisation/cabinet/cellule-traduction.html",
-        group: "Cabinet", excerpt: "Traduction FR/EN et terminologie scientifique",
-        keywords: "traduction français anglais terminologie bilingue" },
-
-      { title: "Action Sociale & Multiculturalisme",
-        url: "organisation/cabinet/action-sociale.html",
-        group: "Cabinet", excerpt: "Assistance sociale, santé, genre et bilinguisme",
-        keywords: "action sociale santé genre bilinguisme multiculturalisme" },
-
-      { title: "Vulgarisation & Transfert",
-        url: "organisation/cabinet/vulgarisation-transfert.html",
-        group: "Cabinet", excerpt: "Formation, séminaires et Centre des métiers",
-        keywords: "vulgarisation transfert formation séminaires ateliers" },
+      { title: "Commission Technique",       url: "ct.html",
+        group: "Organisation", excerpt: "Les cinq secrétariats techniques du CNDT",
+        keywords: "technique tic ia industrie biosciences énergie mines politiques" },
     ];
 
     /* ---------- Normalisation ---------- */
@@ -864,7 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
         items.forEach((item) => {
           html += `
             <a class="nav-search__item"
-               href="${item.url}"
+               href="${BASE}${item.url}"
                role="option"
                data-nav-search-item>
               <strong>${highlight(item.title, item._tokens)}</strong>
@@ -1106,40 +1010,10 @@ if (megaTrigger && megaMenu) {
 
 
 /* =========================================================
-   15. INJECTION DES RÉSEAUX SOCIAUX DANS LA NAVBAR
+   Font Awesome — injection du CDN si absent
+   (les icônes des réseaux sociaux sont déjà dans le template
+   du header, section 0)
    ========================================================= */
-(() => {
-  const navSearch = document.querySelector('.nav-search');
-  if (!navSearch) return;
-
-  // Éviter les doublons si déjà présent
-  if (navSearch.parentElement.querySelector('.nav-socials')) return;
-
-  const socialsHTML = `
-    <ul class="nav-socials" aria-label="Nos réseaux sociaux">
-      <li>
-        <a href="https://www.facebook.com/cndtcameroun"
-           target="_blank" rel="noopener"
-           aria-label="Page Facebook du CNDT"
-           class="nav-social nav-social--facebook">
-          <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.youtube.com/channel/UC3OfHkDXBNVGwiI8henjNww"
-           target="_blank" rel="noopener"
-           aria-label="Chaîne YouTube du CNDT"
-           class="nav-social nav-social--youtube">
-          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-        </a>
-      </li>
-    </ul>
-  `;
-
-  navSearch.insertAdjacentHTML('afterend', socialsHTML);
-})();
-
-// Injection du CDN si absent (à placer au début d'app.js)
 (() => {
   const FA_URL = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
   if (!document.querySelector(`link[href="${FA_URL}"]`)) {

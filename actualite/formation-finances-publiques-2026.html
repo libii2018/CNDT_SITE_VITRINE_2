@@ -13,87 +13,7 @@
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <header class="site-header">
-    <div class="utility-bar">
-      <div class="container utility-inner">
-        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
-        <div class="utility-links">
-          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
-          <span aria-hidden="true">|</span>
-          <a href="#" lang="en" aria-label="English version">English</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="main-nav-wrap">
-      <div class="main-nav">
-        <a class="brand" href="../index.html" aria-label="Accueil du CNDT">
-          <img src="../assets/logo-cndt.webp" alt="Logo du CNDT" width="94" height="76">
-          <span class="brand-copy">
-            <strong>Comité National de Développement des Technologies</strong>
-            <small>La technologie au service du développement</small>
-          </span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>Menu</span>
-        </button>
-
-        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
-          <a class="active" href="../index.html">Accueil</a>
-          <a href="../index.html#secretariats">Secrétariats Permanents</a>
-          <a href="../actualites.html">Actualités</a>
-          <a href="../publication.html">Publications</a>
-          <a href="../contact.html">Contact</a>
-
-          <!-- Barre de recherche -->
-          <div class="nav-search" data-nav-search role="search">
-            <form class="nav-search__form" autocomplete="off" novalidate>
-              <label class="visually-hidden" for="nav-search-input">Rechercher sur le site</label>
-
-              <svg class="nav-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M10 4a6 6 0 1 0 3.9 10.56l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
-              </svg>
-
-              <input
-                id="nav-search-input"
-                class="nav-search__input"
-                type="search"
-                name="q"
-                placeholder="Rechercher…"
-                aria-autocomplete="list"
-                aria-controls="nav-search-results"
-                aria-expanded="false"
-                data-nav-search-input
-              >
-
-              <button
-                class="nav-search__clear"
-                type="button"
-                aria-label="Effacer la recherche"
-                data-nav-search-clear
-                hidden
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
-                </svg>
-              </button>
-            </form>
-
-            <div
-              id="nav-search-results"
-              class="nav-search__results"
-              role="listbox"
-              aria-label="Résultats de recherche"
-              hidden
-              data-nav-search-results
-            ></div>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
+  <header class="site-header" data-site-header data-root="../"></header>
 
   <main id="contenu">
 
@@ -192,23 +112,23 @@
                 <h2 id="news-title">Actualités du CNDT</h2>
               </div>
               <div class="agenda-list">
-                <a href="atelier-finances-publiques.html">
+                <a href="formation-finances-publiques-2026.html">
                   <time datetime="2026-08-19"><small>MER</small><strong>19</strong><span>AOÛ<br>2026</span></time>
                   <p>Atelier sur l'évolution du cadre légal et réglementaire de la gestion des finances publiques</p>
                 </a>
-                <a href="actualites.html#per-numerique">
+                <a href="../actualites.html#per-numerique">
                   <time datetime="2026-09-15"><small>MAR</small><strong>15</strong><span>SEP<br>2026</span></time>
                   <p>Le Cameroun à la 70ᵉ Conférence Générale de l'AIEA</p>
                 </a>
-                <a href="actualites.html#sia-2026">
+                <a href="../actualites.html#sia-2026">
                   <time datetime="2026-06-15"><small>LUN</small><strong>15</strong><span>JUN<br>2026</span></time>
                   <p>Première édition de la Semaine de l'Intelligence Artificielle au MINRESI</p>
                 </a>
-                <a href="actualites.html#souverainete-numerique">
+                <a href="../actualites.html#souverainete-numerique">
                   <time datetime="2026-05-25"><small>LUN</small><strong>25</strong><span>MAI<br>2026</span></time>
                   <p>Intelligence artificielle et souveraineté numérique : chercheurs et experts en dialogue</p>
                 </a>
-                <a href="actualites.html#propriete-intellectuelle">
+                <a href="../actualites.html#propriete-intellectuelle">
                   <time datetime="2026-03-18"><small>MER</small><strong>18</strong><span>MAR<br>2026</span></time>
                   <p>Renforcement des capacités en propriété intellectuelle et import-substitution</p>
                 </a>
@@ -297,39 +217,8 @@
     </div>
   </section>
 
-  <footer id="contact" class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="../assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
-        <p>Comité National de Développement des Technologies</p>
-      </div>
-      <div>
-        <h2>Coordonnées</h2>
-        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
-        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
-        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
-      </div>
-      <div>
-        <h2>Accès rapide</h2>
-        <a href="../index.html#institution">Présentation</a>
-        <a href="../index.html#secretariats">Secrétariats</a>
-        <a href="../organigramme.html">Organigramme</a>
-        <a href="../actualites.html">Actualités</a>
-        <a href="../publication.html">Publications</a>
-      </div>
-      <div>
-        <h2>Institution de tutelle</h2>
-        <p>Ministère de la Recherche Scientifique et de l'Innovation</p>
-        <a class="footer-external" href="https://minresi.gov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
-      <p>La technologie au service du développement</p>
-    </div>
-  </footer>
+  <footer id="contact" class="site-footer" data-site-footer data-root="../"></footer>
 
-  <script src="../app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
