@@ -1151,3 +1151,185 @@ if (megaTrigger && megaMenu) {
     document.head.appendChild(link);
   }
 })();
+
+
+
+/* =========================================================
+   GALERIE PHOTO — Navigation albums + Lightbox
+   Aucune donnée : tout est lu depuis le HTML
+   ========================================================= */
+(() => {
+  const viewAlbums = document.querySelector('[data-gallery-view="albums"]');
+  const albumViews = [...document.querySelectorAll('[data-album-view]')];
+  const openButtons = [...document.querySelectorAll('[data-album-open]')];
+  const backButtons = [...document.querySelectorAll('[data-album-back]')];
+
+  if (!viewAlbums || !albumViews.length) return;   // pas la page galerie
+
+  /* ---------- Références lightbox ---------- */
+  const lightbox   = document.getElementById('lightbox');
+  const lbImg      = lightbox.querySelector('[data-lb-img]');
+  const lbCaption  = lightbox.querySelector('[data-lb-caption]');
+  const lbIndex    = lightbox.querySelector('[data-lb-index]');
+  const lbTotal    = lightbox.querySelector('[data-lb-total]');
+  const lbThumbs   = lightbox.querySelector('[data-lb-thumbs]');
+  const lbClose    = lightbox.querySelector('[data-lb-close]');
+  const lbPrev     = lightbox.querySelector('[data-lb-prev]');
+  const lbNext     = lightbox.querySelector('[data-lb-next]');
+
+  let currentPhotos = [];   // [{ src, caption }]
+  let currentIndex  = 0;
+
+  /* =========================================================
+     1. Navigation entre albums et liste
+     ========================================================= */
+  const showAlbums = () => {
+    viewAlbums.hidden = false;
+    albumViews.forEach((v) => (v.hidden = true));
+    history.replaceState({}, '', location.pathname);
+  };
+
+  const showAlbum = (id) => {
+    const target = document.querySelector(`[data-album-view="${id}"]`);
+    if (!target) return;
+
+    viewAlbums.hidden = true;
+    albumViews.forEach((v) => (v.hidden = v !== target));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.pushState({ albumId: id }, '', `?album=${id}`);
+  };
+
+  openButtons.forEach((btn) => {
+    btn.addEventListener('click', () => showAlbum(btn.dataset.albumOpen));
+  });
+
+  backButtons.forEach((btn) => {
+    btn.addEventListener('click', showAlbums);
+  });
+
+  // Support du bouton retour du navigateur
+  window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.albumId) showAlbum(e.state.albumId);
+    else showAlbums();
+  });
+
+  // Ouverture directe via URL ?album=…
+  const params = new URLSearchParams(location.search);
+  if (params.get('album')) setTimeout(() => showAlbum(params.get('album')), 50);
+
+  /* =========================================================
+     2. Ouverture de la lightbox à partir d'une photo
+     ========================================================= */
+  function openLightbox(photos, startIndex) {
+    currentPhotos = photos;
+    currentIndex = startIndex;
+    updateLightbox();
+    buildThumbs();
+
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+  }
+
+  function gotoPhoto(index) {
+    const total = currentPhotos.length;
+    currentIndex = (index + total) % total;
+    updateLightbox();
+    updateThumbActive();
+  }
+
+  function updateLightbox() {
+    const photo = currentPhotos[currentIndex];
+    lbImg.src = photo.src;
+    lbImg.alt = photo.caption || `Photo ${currentIndex + 1}`;
+
+    if (photo.caption) {
+      lbCaption.textContent = photo.caption;
+      lbCaption.hidden = false;
+    } else {
+      lbCaption.hidden = true;
+    }
+
+    lbIndex.textContent = currentIndex + 1;
+    lbTotal.textContent = currentPhotos.length;
+  }
+
+  function buildThumbs() {
+    lbThumbs.innerHTML = currentPhotos.map((photo, i) => `
+      <button type="button" class="lightbox__thumb ${i === currentIndex ? 'is-current' : ''}"
+              data-thumb-index="${i}"
+              aria-label="Voir la photo ${i + 1}">
+        <img src="${photo.src}" alt="" loading="lazy">
+      </button>
+    `).join('');
+
+    lbThumbs.querySelectorAll('[data-thumb-index]').forEach((btn) => {
+      btn.addEventListener('click', () => gotoPhoto(Number(btn.dataset.thumbIndex)));
+    });
+
+    const active = lbThumbs.querySelector('.lightbox__thumb.is-current');
+    active?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }
+
+  function updateThumbActive() {
+    lbThumbs.querySelectorAll('.lightbox__thumb').forEach((btn, i) => {
+      btn.classList.toggle('is-current', i === currentIndex);
+    });
+    const active = lbThumbs.querySelector('.lightbox__thumb.is-current');
+    active?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  }
+
+  /* =========================================================
+     3. Branchement de toutes les photos de tous les albums
+     ========================================================= */
+  albumViews.forEach((albumView) => {
+    // Récupère toutes les photos de cet album (dans l'ordre du DOM)
+    const photoButtons = [...albumView.querySelectorAll('.gallery-photo')];
+    const photos = photoButtons.map((btn) => ({
+      src: btn.dataset.photoSrc,
+      caption: btn.dataset.photoCaption || '',
+    }));
+
+    photoButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => openLightbox(photos, index));
+    });
+  });
+
+  /* =========================================================
+     4. Contrôles de la lightbox
+     ========================================================= */
+  lbClose?.addEventListener('click', closeLightbox);
+  lbPrev?.addEventListener('click', () => gotoPhoto(currentIndex - 1));
+  lbNext?.addEventListener('click', () => gotoPhoto(currentIndex + 1));
+
+  // Clic sur le fond noir → fermer
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Clavier : Échap + flèches
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  gotoPhoto(currentIndex - 1);
+    if (e.key === 'ArrowRight') gotoPhoto(currentIndex + 1);
+  });
+
+  // Swipe tactile
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    const diff = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(diff) < 60) return;
+    gotoPhoto(diff > 0 ? currentIndex - 1 : currentIndex + 1);
+  });
+})();

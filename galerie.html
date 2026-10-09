@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Galerie photo du Comité National de Développement des Technologies — Albums par événement.">
+  <meta name="theme-color" content="#1f663f">
+  <title>Galerie photo | CNDT Cameroun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="utility-inner">
+        <p>République du Cameroun <span>Paix · Travail · Patrie</span></p>
+        <div class="utility-links">
+          <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" lang="en" aria-label="English version">English</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="main-nav">
+        <a class="brand" href="index.html" aria-label="Accueil du CNDT">
+          <img src="assets/logo-cndt.webp" alt="Logo du CNDT">
+          <span class="brand-copy">
+            <strong>Comité National de Développement des Technologies</strong>
+            <small>La technologie au service du développement</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+
+          <button type="button" class="primary-nav__trigger" aria-expanded="false"
+                  aria-controls="mega-organisation" data-mega-trigger>
+            <span>Secrétariats Permanents</span>
+            <svg class="primary-nav__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.4 9.2 12 14.8l5.6-5.6-1.4-1.4L12 12l-4.2-4.2z"/>
+            </svg>
+          </button>
+
+          <a href="actualites.html">Actualités</a>
+          <a class="active" href="galerie.html">Galerie</a>
+          <a href="publication.html">Publications</a>
+          <a href="contact.html">Contact</a>
+
+          <div id="mega-organisation" class="mega-menu" aria-hidden="true" data-mega-menu>
+            <div class="mega-menu__inner">
+              <div class="container">
+                <div class="mega-menu__head">
+                  <p class="mega-menu__eyebrow">Explorer l'organisation du CNDT</p>
+                  <button type="button" class="mega-menu__close"
+                          aria-label="Fermer le menu Organisation" data-mega-close>
+                    Fermer
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="mega-menu__grid">
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="index.html#institution"><span>Mot du Secrétaire Permanent</span></a></li>
+                      <li><a href="comite.html"><span>Comité</span></a></li>
+                      <li><a href="cabinet.html"><span>Cabinet du Secrétaire Permanent</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="crmp.html"><span>Commission Recherche et Management des Projets</span></a></li>
+                      <li><a href="caaf.html"><span>Commission des Affaires Administratives, Financières et des Engagements</span></a></li>
+                      <li><a href="cdcrp.html"><span>Commission Documentation, Communication et Relations Publiques</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu__col">
+                    <ul class="mega-menu__list">
+                      <li><a href="rhcaj.html"><span>Commission des Ressources Humaines, de la Coopération et des Affaires Juridiques</span></a></li>
+                      <li><a href="ct.html"><span>Commission Technique</span></a></li>
+                      <li><a href="personnel.html"><span>Catalogue du personnel</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- <section class="inner-hero">
+      <img src="assets/header_personnel.jpg" alt="Galerie photo du CNDT" width="1100" height="825">
+      <div class="container">
+        <h1>Galerie photo</h1>
+        <p>Retrouvez en images les événements, ateliers et rencontres organisés par le CNDT et ses partenaires.</p>
+      </div>
+    </section> -->
+
+    <section class="inner-section">
+    <div class="container">
+
+        <!-- =========================================================
+            VUE 1 — GRILLE DES ALBUMS
+            ========================================================= -->
+        <div class="gallery-view gallery-view--albums" data-gallery-view="albums">
+        <div class="page-heading">
+            <div>
+            <p class="page-kicker">Nos événements</p>
+            <h2>Tous les albums</h2>
+            </div>
+            <p>Cliquez sur un album pour découvrir les photos qu'il contient.</p>
+        </div>
+
+        <div class="gallery-albums">
+
+            <!-- Album 1 — AIEA 70 -->
+            <button type="button" class="gallery-album" data-album-open="aiea-70-2026">
+            <div class="gallery-album__cover">
+                <img src="assets/aiea/1.jpg" alt="Cameroun — 70ᵉ Conférence Générale de l'AIEA" loading="lazy">
+            </div>
+            <div class="gallery-album__body">
+                <p class="gallery-album__date">Septembre 2026</p>
+                <h3 class="gallery-album__title">Cameroun — 70ᵉ Conférence Générale de l'AIEA</h3>
+            </div>
+            </button>
+
+            <!-- Album 2 — Atelier IA -->
+            <button type="button" class="gallery-album" data-album-open="atelier-ia-2026">
+            <div class="gallery-album__cover">
+                <img src="assets/ia-recherche/1.jpg" alt="Atelier IA &amp; Recherche Scientifique" loading="lazy">
+            </div>
+            <div class="gallery-album__body">
+                <p class="gallery-album__date">21 mai 2026</p>
+                <h3 class="gallery-album__title">Atelier IA &amp; Recherche Scientifique</h3>
+            </div>
+            </button>
+
+            <!-- Album 3 — 43ᵉ Session -->
+            <button type="button" class="gallery-album" data-album-open="cndt-43e-session-2026">
+            <div class="gallery-album__cover">
+                <img src="assets/comite-43/1.jpg" alt="CNDT — 43ᵉ Session du Comité" loading="lazy">
+            </div>
+            <div class="gallery-album__body">
+                <p class="gallery-album__date">9 juillet 2026</p>
+                <h3 class="gallery-album__title">CNDT — 43ᵉ Session du Comité</h3>
+            </div>
+            </button>
+
+            <!-- Album 4 — Formation Finances -->
+            <button type="button" class="gallery-album" data-album-open="formation-finances-2026">
+            <div class="gallery-album__cover">
+                <img src="assets/formation_finances_publiques/1.jpg" alt="Atelier sur la gestion des finances publiques" loading="lazy">
+            </div>
+            <div class="gallery-album__body">
+                <p class="gallery-album__date">19-20 août 2026</p>
+                <h3 class="gallery-album__title">Atelier sur la gestion des finances publiques</h3>
+            </div>
+            </button>
+
+        </div>
+        </div>
+
+        <!-- =========================================================
+            VUES D'ALBUMS
+            ========================================================= -->
+
+        <!-- ---------- Album AIEA 70 — 3 photos ---------- -->
+        <div class="gallery-view gallery-view--album" data-album-view="aiea-70-2026" hidden>
+
+        <button type="button" class="gallery-back" data-album-back>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+        </button>
+
+        <div class="gallery-album-head">
+            <h2 class="gallery-album-title">Cameroun — 70ᵉ Conférence Générale de l'AIEA</h2>
+            <p class="gallery-album-meta">Septembre 2026 · Vienne, Autriche · <span>3 photos</span></p>
+            <p class="gallery-album-desc">Participation de la délégation camerounaise à la 70ᵉ Conférence Générale de l'AIEA.</p>
+        </div>
+
+        <div class="gallery-photos">
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/aiea/1.jpg"
+                    data-photo-caption="Ouverture de la Conférence Générale">
+            <img src="assets/aiea/1.jpg" alt="Ouverture de la Conférence Générale" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/aiea/2.jpg"
+                    data-photo-caption="Délégation camerounaise">
+            <img src="assets/aiea/2.jpg" alt="Délégation camerounaise" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/aiea/3.jpg"
+                    data-photo-caption="Déclaration du Cameroun en plénière">
+            <img src="assets/aiea/3.jpg" alt="Déclaration du Cameroun en plénière" loading="lazy">
+            </button>
+        </div>
+        </div>
+
+        <!-- ---------- Album Atelier IA — 4 photos ---------- -->
+        <div class="gallery-view gallery-view--album" data-album-view="atelier-ia-2026" hidden>
+
+        <button type="button" class="gallery-back" data-album-back>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+        </button>
+
+        <div class="gallery-album-head">
+            <h2 class="gallery-album-title">Atelier IA &amp; Recherche Scientifique</h2>
+            <p class="gallery-album-meta">21 mai 2026 · MINRESI — Yaoundé · <span>4 photos</span></p>
+            <p class="gallery-album-desc">Atelier de formation sur la recherche scientifique et l'intelligence artificielle émergente.</p>
+        </div>
+
+        <div class="gallery-photos">
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/ia-recherche/1.jpg"
+                    data-photo-caption="Allocution du Secrétaire Permanent">
+            <img src="assets/ia-recherche/1.jpg" alt="Allocution du Secrétaire Permanent" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/ia-recherche/2.jpg"
+                    data-photo-caption="Présentation du formateur">
+            <img src="assets/ia-recherche/2.jpg" alt="Présentation du formateur" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/ia-recherche/3.jpg"
+                    data-photo-caption="Participants à l'atelier">
+            <img src="assets/ia-recherche/3.jpg" alt="Participants à l'atelier" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/ia-recherche/4.jpg"
+                    data-photo-caption="Séance de travail">
+            <img src="assets/ia-recherche/4.jpg" alt="Séance de travail" loading="lazy">
+            </button>
+        </div>
+        </div>
+
+        <!-- ---------- Album 43ᵉ Session — 5 photos ---------- -->
+        <div class="gallery-view gallery-view--album" data-album-view="cndt-43e-session-2026" hidden>
+
+        <button type="button" class="gallery-back" data-album-back>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+        </button>
+
+        <div class="gallery-album-head">
+            <h2 class="gallery-album-title">CNDT — 43ᵉ Session du Comité</h2>
+            <p class="gallery-album-meta">9 juillet 2026 · CNDT — Yaoundé · <span>5 photos</span></p>
+            <p class="gallery-album-desc">43ᵉ session du Comité National de Développement des Technologies, présidée par le Dr Madeleine TCHUINTE.</p>
+        </div>
+
+        <div class="gallery-photos">
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/comite-43/1.jpg"
+                    data-photo-caption="Ouverture de la session">
+            <img src="assets/comite-43/1.jpg" alt="Ouverture de la session" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/comite-43/2.jpg"
+                    data-photo-caption="Présidence de la session">
+            <img src="assets/comite-43/2.jpg" alt="Présidence de la session" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/comite-43/3.jpg"
+                    data-photo-caption="Membres du Comité">
+            <img src="assets/comite-43/3.jpg" alt="Membres du Comité" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/comite-43/4.jpg"
+                    data-photo-caption="Délibérations du Comité">
+            <img src="assets/comite-43/4.jpg" alt="Délibérations du Comité" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/comite-43/5.jpg"
+                    data-photo-caption="Clôture de la session">
+            <img src="assets/comite-43/5.jpg" alt="Clôture de la session" loading="lazy">
+            </button>
+        </div>
+        </div>
+
+        <!-- ---------- Album Formation Finances — 5 photos ---------- -->
+        <div class="gallery-view gallery-view--album" data-album-view="formation-finances-2026" hidden>
+
+        <button type="button" class="gallery-back" data-album-back>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+        </button>
+
+        <div class="gallery-album-head">
+            <h2 class="gallery-album-title">Atelier sur la gestion des finances publiques</h2>
+            <p class="gallery-album-meta">19-20 août 2026 · CNDT — Yaoundé · <span>5 photos</span></p>
+            <p class="gallery-album-desc">Atelier sur l'évolution du cadre légal et réglementaire de la gestion des finances publiques au Cameroun.</p>
+        </div>
+
+        <div class="gallery-photos">
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/formation_finances_publiques/1.jpg"
+                    data-photo-caption="Ouverture de l'atelier">
+            <img src="assets/formation_finances_publiques/1.jpg" alt="Ouverture de l'atelier" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/formation_finances_publiques/2.jpg"
+                    data-photo-caption="Formateurs en finances publiques">
+            <img src="assets/formation_finances_publiques/2.jpg" alt="Formateurs en finances publiques" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/formation_finances_publiques/3.jpg"
+                    data-photo-caption="Participants à l'atelier">
+            <img src="assets/formation_finances_publiques/3.jpg" alt="Participants à l'atelier" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/formation_finances_publiques/4.jpg"
+                    data-photo-caption="Séance de travail en groupe">
+            <img src="assets/formation_finances_publiques/4.jpg" alt="Séance de travail en groupe" loading="lazy">
+            </button>
+            <button type="button" class="gallery-photo"
+                    data-photo-src="assets/formation_finances_publiques/5.jpg"
+                    data-photo-caption="Clôture de l'atelier">
+            <img src="assets/formation_finances_publiques/5.jpg" alt="Clôture de l'atelier" loading="lazy">
+            </button>
+        </div>
+        </div>
+
+    </div>
+    </section>
+
+    <section class="instituts">
+      <div class="block-heading">
+        <h2 class="sp-title">Instituts sous tutelle du MINRESI</h2>
+      </div>
+      <div class="swiper instituts-carousel">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href="https://www.cndtcameroun.cm/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/logo-cndt.webp" alt="CNDT" loading="lazy"></a></div>
+          <div class="swiper-slide"><a href="http://anrp.cm/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/instituts/anrp-1.jpg" alt="ANRP" loading="lazy"></a></div>
+          <div class="swiper-slide"><a href="http://irad.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/instituts/irad-1.jpg" alt="IRAD" loading="lazy"></a></div>
+          <div class="swiper-slide"><a href="https://impm-cm.org/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/instituts/impm.png" alt="IMPM" loading="lazy"></a></div>
+          <div class="swiper-slide"><a href="http://www.inc.ayoos.com/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/instituts/inc-1.jpg" alt="INC" loading="lazy"></a></div>
+          <div class="swiper-slide"><a href="http://www.mipromalo.cm/index.php/fr/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/instituts/mipromalo-1.jpg" alt="MIPROMALO" loading="lazy"></a></div>
+          <div class="swiper-slide"><a href="http://195.24.207.248/~minresi/index.php/2015/07/21/accueil_principal/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/instituts/cne-1.jpeg" alt="CNE" loading="lazy"></a></div>
+          <div class="swiper-slide"><a href="https://irgm-cameroun.org/" target="_blank" rel="noopener noreferrer" class="partner-card"><img src="assets/instituts/irgm-1.jpg" alt="IRGM" loading="lazy"></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       VISIONNEUSE PLEIN ÉCRAN (lightbox)
+       ========================================================= -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visionneuse de photos">
+    <header class="lightbox__top">
+      <button type="button" class="lightbox__close" aria-label="Fermer" data-lb-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z"/>
+        </svg>
+      </button>
+      <p class="lightbox__counter">
+        <span data-lb-index>1</span> / <span data-lb-total>1</span>
+      </p>
+      <button type="button" class="lightbox__delete" hidden></button>
+    </header>
+
+    <div class="lightbox__stage">
+      <button type="button" class="lightbox__nav lightbox__nav--prev"
+              aria-label="Photo précédente" data-lb-prev>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+      </button>
+
+      <figure class="lightbox__figure">
+        <img src="" alt="" data-lb-img>
+        <figcaption class="lightbox__caption" data-lb-caption hidden></figcaption>
+      </figure>
+
+      <button type="button" class="lightbox__nav lightbox__nav--next"
+              aria-label="Photo suivante" data-lb-next>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4L13.2 12z"/></svg>
+      </button>
+    </div>
+
+    <footer class="lightbox__thumbs" data-lb-thumbs></footer>
+  </div>
+
+  <footer id="contact-footer" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-cndt.webp" alt="CNDT" width="120" height="97" loading="lazy">
+        <p>Comité National de Développement des Technologies</p>
+      </div>
+      <div>
+        <h2>Coordonnées</h2>
+        <address>Centre administratif, Yaoundé<br>B.P. 1457 — Cameroun</address>
+        <a href="tel:+237222222509">(+237) 222 22 25 09</a>
+        <a href="mailto:contact@cndtcameroun.cm">contact@cndtcameroun.cm</a>
+      </div>
+      <div>
+        <h2>Accès rapide</h2>
+        <a href="index.html#institution">Présentation</a>
+        <a href="index.html#secretariats">Secrétariats</a>
+        <a href="organigramme.html">Organigramme</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="publication.html">Publications</a>
+      </div>
+      <div>
+        <h2>Institution de tutelle</h2>
+        <p>Ministère de la Recherche Scientifique et de l'Innovation</p>
+        <a class="footer-external" href="https://minresi.gov.cm" target="_blank" rel="noopener">Visiter le MINRESI <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 CNDT Cameroun. Tous droits réservés.</p>
+      <p>La technologie au service du développement</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>
