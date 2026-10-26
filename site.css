@@ -2555,6 +2555,69 @@ a.project-card:focus-visible::after {
   border-top: 1px solid var(--line);
 }
 
+/* Illustrations inline d'article */
+.project-figure {
+  margin: 22px 0;
+  background: var(--white);
+  box-shadow: 0 6px 20px rgba(13, 46, 32, 0.06);
+}
+.project-figure img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.project-figure figcaption {
+  padding: 11px 14px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Badge auteur d'article */
+.author-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 10px 20px 10px 10px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(13, 46, 32, 0.06);
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.author-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(13, 46, 32, 0.12);
+}
+.author-badge img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+.author-badge__body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+.author-badge__label {
+  color: var(--muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.author-badge strong {
+  color: var(--green-900);
+  font-size: 0.95rem;
+}
+.author-badge__role {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 /* Rapports */
 .report-list {
   margin: 8px 0 0;
