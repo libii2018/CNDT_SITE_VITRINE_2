@@ -1,8 +1,0 @@
-.DS_Store
-Thumbs.db
-
-# Dashboard React
-dashboard/node_modules/
-dashboard/dist/
-
-# Dashboard — fichiers volumineux régénérés par le build (déployés dans admin/)
